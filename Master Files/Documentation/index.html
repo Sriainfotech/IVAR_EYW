@@ -1,0 +1,1131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Organze || Template Documentation</title>
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+    <style type="text/css" media="screen">
+        p,
+        table,
+        hr,
+        .box {
+            margin-bottom: 25px;
+        }
+
+        .box p {
+            margin-bottom: 10px;
+        }
+
+        .added1 {
+            background-color: #336600;
+            color: #FFFFFF;
+        }
+
+    </style>
+
+    <!-- Syntax Highlighter -->
+    <link rel="stylesheet" type="text/css" href="syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="syntax-highlighter/styles/shThemeDefault.css" media="all">
+</head>
+
+
+<body>
+    <div class="container">
+
+        <h3 class="center alt">&ldquo;Organze&rdquo; Documentation by &ldquo;ThemeEaster&rdquo; v1.0</h3>
+
+        <hr>
+
+        <h1 class="center">&ldquo;Organze&rdquo;</h1>
+
+        <div class="borderTop">
+            <div class="span-6 colborder info prepend-1">
+                <p class="prepend-top">
+                    <strong>
+                        Updated: 28/05/2025<br>
+                        By: <a href="https://www.themeforest.net/user/themeeaster">ThemeEaster</a><br>
+                        <br>
+                    </strong><strong><br>
+                    </strong>
+                </p>
+            </div><!-- end div .span-6 -->
+
+            <div class="span-12 last">
+                <p class="prepend-top append-0">Thank you for purchasing our theme. If you have any questions that are beyond the scope of this help file, please contact our support. Thanks so much!</p>
+            </div>
+        </div><!-- end div .borderTop -->
+
+        <hr>
+
+        <h2 id="toc" class="alt">Table of Contents</h2>
+        <ol class="alpha">
+            <li><a href="#htmlStructure">HTML Structure</a></li>
+            <li><a href="#temp-components">Template Components</a></li>
+            <li><a href="#cssFiles">CSS Files and Structure</a></li>
+            <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#credits">Sources and Credits</a></li>
+        </ol>
+
+        <hr>
+
+        <h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+        <p>Below is the general HTML structure of the landing page.<br>
+        </p>
+
+        <h4 id="front-html-structures"><strong>1) index.html File Structure</strong> - <a href="#toc">top</a></h4>
+
+        <p>The template page's layout consist of top that show the logo and main menu, hero section that show background image, beforecontent that show some amaizing content, about section contain about your some info & feature, service section contained all services, work section you can showcase your portfolio with awesome animation, skills section here you can add some skills, team section is for your team members, testimonial section here you can published your customer reviews, call to action this for call to action content, contact section here you can put your contact information & footer that show copyright information.</p>
+
+        <pre class="brush: html;" id="front-html-structure-pre">
+&lt;!doctype html>
+&lt;!--[if lt IE 7]>      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> &lt;![endif]-->
+&lt;!--[if IE 7]>         &lt;html class="no-js lt-ie9 lt-ie8" lang=""> &lt;![endif]-->
+&lt;!--[if IE 8]>         &lt;html class="no-js lt-ie9" lang=""> &lt;![endif]-->
+&lt;!--[if gt IE 8]>&lt;!--> &lt;html class="no-js" lang="en"> &lt;!--&lt;![endif]-->
+    &lt;head>
+        &lt;meta charset="utf-8">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+        &lt;meta name="description" content="Organic food &amp; farming html project">
+        &lt;meta name="author" content="teamXcel">
+       
+        &lt;title>OrganZe | Organic food &amp; farming html project&lt;/title>
+        
+        &lt;link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        
+        &lt;!-- Font Awesome CSS -->
+        &lt;link rel="stylesheet" href="css/fontawesome.min.css">
+        &lt;!-- Themify Icons CSS -->
+        &lt;link rel="stylesheet" href="css/themify-icons.css">
+        &lt;!-- Elegant Icons CSS -->
+        &lt;link rel="stylesheet" href="css/elegant-font-icons.css">
+        &lt;!-- Flat Icons CSS -->
+        &lt;link rel="stylesheet" href="css/food-icon.css">
+        &lt;!-- animate CSS -->
+        &lt;link rel="stylesheet" href="css/animate.min.css">
+        &lt;!-- Bootstrap CSS -->
+        &lt;link rel="stylesheet" href="css/bootstrap.min.css">
+        &lt;!-- Slicknav CSS -->
+        &lt;link rel="stylesheet" href="css/slicknav.min.css">
+        &lt;!--Slick Slider-->
+        &lt;link rel="stylesheet" href="css/slick.css">
+        &lt;!--Slider CSS-->
+        &lt;link rel="stylesheet" href="css/slider.css">
+        &lt;!-- Venobox CSS -->
+        &lt;link rel="stylesheet" href="css/venobox/venobox.css">
+        &lt;!-- OWL-Carousel CSS -->
+        &lt;link rel="stylesheet" href="css/owl.carousel.min.css">
+        &lt;!-- Main CSS -->
+        &lt;link rel="stylesheet" href="css/main.css">
+        &lt;!-- Responsive CSS -->
+        &lt;link rel="stylesheet" href="css/responsive.css">
+
+        &lt;script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js">&lt;/script>
+    &lt;/head>
+    &lt;body data-spy="scroll" data-target="#navmenu" data-offset="70">
+        &lt;!--[if lt IE 8]>
+            &lt;p class="browserupgrade">You are using an &lt;strong>outdated&lt;/strong> browser. Please &lt;a href="http://browsehappy.com/">upgrade your browser&lt;/a> to improve your experience.&lt;/p>
+        &lt;![endif]-->
+        
+        &lt;div class="site-preloader-wrap">
+            &lt;div class="spinner">&lt;/div>
+        &lt;/div>&lt;!-- Preloader -->
+        
+        &lt;header id="header" class="header-section">
+            &lt;div class="container">
+                &lt;nav class="navbar ">
+                    &lt;a href="index.html" class="navbar-brand">
+                        &lt;img class="logo-dark" src="img/logo-dark.png" alt="Saasbiz">
+                    &lt;/a>
+                    &lt;div class="d-flex menu-wrap">
+                       &lt;div id="mainmenu" class="mainmenu">
+                           &lt;ul class="nav">
+                               &lt;li>&lt;a data-scroll class="nav-link active" href="index.html">Home&lt;span class="sr-only">(current)&lt;/span>&lt;/a> 
+                                &lt;/li>
+                                &lt;li>&lt;a href="about.html">About Us&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="services.html">Services&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="shop.html">Shop&lt;/a> 
+                                    &lt;ul>
+                                       &lt;li>&lt;a href="shop.html">Shop Page&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="product-details.html">Product Details&lt;/a>&lt;/li>
+                                    &lt;/ul>
+                                &lt;/li>
+                                &lt;li>&lt;a href="#">Pages&lt;/a> 
+                                    &lt;ul>
+                                       &lt;li>&lt;a href="gallery.html">Gallery&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="team.html">Our Team&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="testimonial.html">Testimonial&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="faq.html">FAQ's&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="404.html">404 Error&lt;/a>&lt;/li>
+                                    &lt;/ul>
+                                &lt;/li>
+                                &lt;li>&lt;a href="#">Blog&lt;/a> 
+                                    &lt;ul>
+                                       &lt;li>&lt;a href="blog-grid.html">Blog Grid&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="blog-classic.html">Blog Classic&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="blog-single.html">Blog Single&lt;/a>&lt;/li>
+                                    &lt;/ul>
+                                &lt;/li>
+                                &lt;li>&lt;a href="contact.html">Contact&lt;/a>&lt;/li>
+                            &lt;/ul>
+                       &lt;/div>
+                        &lt;div class="header-right">
+                             &lt;a class="menu-btn btn-white" href="#">Get Started&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/nav>
+            &lt;/div>
+        &lt;/header> &lt;!--.header-section -->
+        
+        &lt;div class="header-height">&lt;/div>
+
+        &lt;div id="main-slider" class="dl-slider">
+            
+        &lt;/div>&lt;!--/.slider-section-->
+        
+        &lt;section class="promo-section padding bg-grey pos-rel">
+           &lt;div class="food-1">&lt;/div>
+           &lt;div class="food-2">&lt;/div>
+            
+        &lt;/section>&lt;!--/.promo-section-->
+        
+        &lt;section class="about-section padding">
+            
+        &lt;/section>&lt;!--/.about-section-->
+        
+        &lt;section class="product-carousel-section bg-grey padding">
+            
+        &lt;/section>&lt;!--/.product-carousel-section-->
+        
+        &lt;section class="feature-section padding">
+            
+        &lt;/section>&lt;!--/.feature-section-->
+        
+        &lt;section class="product-section padding bg-grey">
+            
+        &lt;/section>&lt;!--/.product-section-->
+        
+        &lt;section class="cta-section padding">
+            
+        &lt;/section>&lt;!--/.cta-section-->
+        
+        &lt;section class="team-section padding bg-grey">
+            
+        &lt;/section>&lt;!--/.team-section-->
+        
+        &lt;section class="gallery-section padding">
+            
+        &lt;/section>&lt;!--/.gallery-section-->
+        
+        &lt;section class="testimonial-section bg-grey padding">
+            
+        &lt;/section>&lt;!--/.testimonial-section-->
+        
+        &lt;section class="faq-section padding">
+            
+        &lt;/section>&lt;!--/.faq-section-->
+        
+        &lt;section class="blog-section bg-grey padding">
+            
+        &lt;/section>&lt;!--/.blog-section-->
+        
+        &lt;div class="sponsor-section">
+            
+        &lt;/div>&lt;!--/.sponsor-section-->
+        
+        &lt;footer class="widget-section">
+           &lt;div class="widget-wrap padding">
+               
+            &lt;/div>
+            &lt;div class="footer-section align-center">
+                &lt;div class="container">
+                    &lt;p>&copy; 2020 OrganZe Powered by teamXcel&lt;/p>
+                &lt;/div>
+            &lt;/div>&lt;!-- /.footer-section -->
+        &lt;/footer>&lt;!--/.widget-section-->
+
+        &lt;a data-scroll href="#header" id="scroll-to-top">&lt;i class="ti-arrow-up">&lt;/i>&lt;/a>
+    
+        &lt;!-- jQuery Lib -->
+        &lt;script src="js/vendor/jquery-1.12.4.min.js">&lt;/script>
+        &lt;script src="js/vendor/bootstrap.min.js">&lt;/script>
+        &lt;script src="js/vendor/tether.min.js">&lt;/script>
+        &lt;script src="js/vendor/jquery.slicknav.min.js">&lt;/script>
+        &lt;script src="js/vendor/owl.carousel.min.js">&lt;/script>
+        &lt;script src="js/vendor/smooth-scroll.min.js">&lt;/script>
+        &lt;script src="js/vendor/jquery.isotope.v3.0.2.js">&lt;/script>
+        &lt;script src="js/vendor/imagesloaded.pkgd.min.js">&lt;/script>
+        &lt;script src="js/vendor/venobox.min.js">&lt;/script>
+        &lt;script src="js/vendor/jquery.ajaxchimp.min.js">&lt;/script>
+        &lt;script src="js/vendor/slick.min.js">&lt;/script>
+        &lt;script src="js/vendor/wow.min.js">&lt;/script>
+        &lt;script src="js/main.js">&lt;/script>
+
+    &lt;/body>
+&lt;/html>
+        </pre>
+        <hr>
+
+
+        <h3 id="temp-components"><strong>B) Template Components</strong> - <a href="#toc">top</a></h3>
+        <p>The site is made of many sections like header, slider, testimonials, services and more...</p>
+
+        <h4 id="slider"><strong>1) Header Section</strong> - <a href="#toc">top</a></h4>
+
+
+        <pre class="brush: html;">
+&lt;header id="header" class="header-section">
+    &lt;div class="container">
+        &lt;nav class="navbar ">
+            &lt;a href="index.html" class="navbar-brand">
+                &lt;img class="logo-dark" src="img/logo-dark.png" alt="Saasbiz">
+            &lt;/a>
+            &lt;div class="d-flex menu-wrap">
+               &lt;div id="mainmenu" class="mainmenu">
+                   &lt;ul class="nav">
+                       &lt;li>&lt;a data-scroll class="nav-link active" href="index.html">Home&lt;span class="sr-only">(current)&lt;/span>&lt;/a> 
+                        &lt;/li>
+                        &lt;li>&lt;a href="about.html">About Us&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="services.html">Services&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="shop.html">Shop&lt;/a> 
+                            &lt;ul>
+                               &lt;li>&lt;a href="shop.html">Shop Page&lt;/a>&lt;/li>
+                               &lt;li>&lt;a href="product-details.html">Product Details&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/li>
+                        &lt;li>&lt;a href="#">Pages&lt;/a> 
+                            &lt;ul>
+                               &lt;li>&lt;a href="gallery.html">Gallery&lt;/a>&lt;/li>
+                               &lt;li>&lt;a href="team.html">Our Team&lt;/a>&lt;/li>
+                               &lt;li>&lt;a href="testimonial.html">Testimonial&lt;/a>&lt;/li>
+                               &lt;li>&lt;a href="faq.html">FAQ's&lt;/a>&lt;/li>
+                               &lt;li>&lt;a href="404.html">404 Error&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/li>
+                        &lt;li>&lt;a href="#">Blog&lt;/a> 
+                            &lt;ul>
+                               &lt;li>&lt;a href="blog-grid.html">Blog Grid&lt;/a>&lt;/li>
+                               &lt;li>&lt;a href="blog-classic.html">Blog Classic&lt;/a>&lt;/li>
+                               &lt;li>&lt;a href="blog-single.html">Blog Single&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/li>
+                        &lt;li>&lt;a href="contact.html">Contact&lt;/a>&lt;/li>
+                    &lt;/ul>
+               &lt;/div>
+                &lt;div class="header-right">
+                     &lt;a class="menu-btn btn-white" href="#">Get Started&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/nav>
+    &lt;/div>
+&lt;/header> &lt;!--.header-section -->
+
+&lt;div class="header-height">&lt;/div>
+</pre>
+
+
+        <hr>
+        <h4 id="portfolio"><strong>2) Slider Section</strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;div id="main-slider" class="dl-slider">
+    &lt;div class="single-slide">
+        &lt;div class="bg-img" style="background-image: url(img/slider1.jpg);">&lt;/div>
+        &lt;div class="slider-content-wrap d-flex align-items-center text-left">
+            &lt;div class="container">
+                &lt;div class="slider-content">
+                    &lt;div class="dl-caption medium">&lt;div class="inner-layer">&lt;div data-animation="fade-in-right" data-delay="1s">Extra 50% off for all winter foods.&lt;/div>&lt;/div>&lt;/div>
+                    &lt;div class="dl-caption big">&lt;div class="inner-layer">&lt;div data-animation="fade-in-left" data-delay="2s">Live With Organic &lt;/div>&lt;/div>
+                    &lt;/div>
+                    &lt;div class="dl-caption big">&lt;div class="inner-layer">&lt;div data-animation="fade-in-left" data-delay="2.5s">foods Live Healthily.&lt;/div>&lt;/div>&lt;/div>
+                    &lt;div class="dl-caption small">&lt;div class="inner-layer">&lt;div data-animation="fade-in-left" data-delay="3s">Your journey to a healthier life starts here.&lt;/div>&lt;/div>&lt;/div>
+                    &lt;div class="dl-btn-group">
+                        &lt;div class="inner-layer">
+                            &lt;a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Product &lt;i class="arrow_right">&lt;/i>&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>  
+    &lt;/div>&lt;!--Slide-1-->
+    &lt;div class="single-slide">
+        &lt;div class="bg-img" style="background-image: url(img/slider2.jpg);">&lt;/div>
+        &lt;div class="slider-content-wrap d-flex align-items-center text-left">
+            &lt;div class="container">
+                &lt;div class="slider-content">
+                    &lt;div class="dl-caption medium">&lt;div class="inner-layer">&lt;div data-animation="fade-in-right" data-delay="1s">Extra 50% off for all winter foods.&lt;/div>&lt;/div>&lt;/div>
+                    &lt;div class="dl-caption big">&lt;div class="inner-layer">&lt;div data-animation="fade-in-left" data-delay="2s">Organic food is good &lt;/div>&lt;/div>
+                    &lt;/div>
+                    &lt;div class="dl-caption big">&lt;div class="inner-layer">&lt;div data-animation="fade-in-left" data-delay="2.5s">for health.&lt;/div>&lt;/div>&lt;/div>
+                    &lt;div class="dl-caption small">&lt;div class="inner-layer">&lt;div data-animation="fade-in-left" data-delay="3s">Get fresh food from our table to your table.&lt;/div>&lt;/div>&lt;/div>
+                    &lt;div class="dl-btn-group">
+                        &lt;div class="inner-layer">
+                            &lt;a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View Product &lt;i class="arrow_right">&lt;/i>&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>  
+    &lt;/div>&lt;!--Slide-2-->
+&lt;/div>&lt;!--/.slider-section-->
+</pre>
+
+        <hr>
+
+        <h4 id="portfolio"><strong>3) Promo Section</strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="promo-section padding bg-grey pos-rel">
+   &lt;div class="food-1">&lt;/div>
+   &lt;div class="food-2">&lt;/div>
+    &lt;div class="container">
+        &lt;div class="promo-wrap row">
+            &lt;div class="col-md-4 col-sm-6 xs-padding">
+                &lt;div class="promo-item text-center">
+                    &lt;i class="food-icon food-iconolives">&lt;/i>
+                    &lt;h3>Natural Food&lt;/h3>
+                    &lt;p>Organic food is food produced by methods that comply with the standards of farming.&lt;/p>
+                    &lt;a href="#">Read More&lt;/a>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-md-4 col-sm-6 xs-padding">
+                &lt;div class="promo-item active text-center">
+                    &lt;i class="food-icon food-iconcauliflower">&lt;/i>
+                    &lt;h3>Biologically Safe&lt;/h3>
+                    &lt;p>Organic food is food produced by methods that comply with the standards of farming.&lt;/p>
+                    &lt;a href="#">Read More&lt;/a>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-md-4 col-sm-6 xs-padding">
+                &lt;div class="promo-item text-center">
+                    &lt;i class="food-icon food-iconwatermelon">&lt;/i>
+                    &lt;h3>Conser Diversity&lt;/h3>
+                    &lt;p>Organic food is food produced by methods that comply with the standards of farming.&lt;/p>
+                    &lt;a href="#">Read More&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.promo-section-->
+</pre>
+
+        <br>
+
+        <hr>
+
+        <h4 id="portfolio"><strong>4) About Section</strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="about-section padding">
+    &lt;div class="container">
+        &lt;div class="about-wrap row">
+            &lt;div class="col-md-6 xs-padding">
+                &lt;div class="about-content">
+                   &lt;div class="section-heading">
+                        &lt;img src="img/title-border.png" alt="img">
+                        &lt;h2>We Provide Good Food &lt;br>For Your Family!&lt;/h2>
+                        &lt;p>Organic food is food produced by methods that comply with the standards of organic farming. Standards vary worldwide, but organic farming features practices that cycle resources.&lt;/p>
+                   &lt;/div>
+                    &lt;ul class="about-info">
+                        &lt;li>&lt;i class="ti-hand-point-right">&lt;/i>Premium Quality&lt;/li>
+                        &lt;li>&lt;i class="ti-hand-point-right">&lt;/i>Harvest Everyday&lt;/li>
+                        &lt;li>&lt;i class="ti-hand-point-right">&lt;/i>100% Organic&lt;/li>
+                        &lt;li>&lt;i class="ti-hand-point-right">&lt;/i>Fast Delivery&lt;/li>
+                    &lt;/ul>
+                    &lt;a class="default-btn" href="#">Browse Our Foods&lt;span>&lt;/span>&lt;/a>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-md-6 xs-padding">
+                &lt;div class="about-img">
+                    &lt;img src="img/about-1.png" alt="img">
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.about-section-->
+</pre>
+
+        <br>
+
+        <hr />
+
+        <h4 id="portfolio"><strong>5) Product Carousel Section</strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="product-carousel-section bg-grey padding">
+    &lt;div class="container">
+       &lt;div class="section-heading mb-40 text-center">
+           &lt;img src="img/title-border.png" alt="img">
+           &lt;h2>Featured Product&lt;/h2>
+           &lt;p>Organic food is food produced by methods that comply with the standards &lt;br>of organic farming. Standards vary worldwide.&lt;/p>
+       &lt;/div>
+        &lt;div id="product-carousel" class="product-carousel owl-carousel">
+            &lt;div class="product-item">
+                &lt;div class="product-thumb">
+                    &lt;img src="img/product-1.jpg" alt="img">
+                    &lt;ul class="product-btn-group">
+                        &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+                &lt;div class="product-content text-center">
+                    &lt;h3>Cheese butter burger&lt;/h3>
+                    &lt;h4>&lt;span>$72.28&lt;/span>&lt;span class="old">$95.50&lt;/span>&lt;/h4>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.product-carousel-section-->
+</pre>
+
+        <br>
+
+        <hr />
+
+        <h4 id="portfolio"><strong>6) Features Section</strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="feature-section padding">
+    &lt;div class="container">
+        &lt;div class="feature-wrap row">
+            &lt;div class="col-lg-6 sm-padding">
+                &lt;div class="feature-info">
+                   &lt;div class="section-heading">
+                       &lt;img src="img/title-border.png" alt="img">
+                        &lt;h2>The Best Trusted &lt;br>Farms For You&lt;/h2>
+                        &lt;p>Organic food is food produced by methods that comply with the standards of organic farming. Standards vary worldwide, but organic farming features practices that cycle resources.&lt;/p>
+                   &lt;/div>
+                    &lt;ul class="feature-list">
+                        &lt;li>
+                            &lt;i class="fa fa-check">&lt;/i>
+                            &lt;div class="feature-content">&lt;h3>Natural Process&lt;/h3>
+                            &lt;p>Organic food is food produced by methods that comply with the standards of organic farming.&lt;/p>
+                            &lt;/div>
+                        &lt;/li>
+                        &lt;li>
+                            &lt;i class="fa fa-check">&lt;/i>
+                            &lt;div class="feature-content">&lt;h3>Homegrown Goodness&lt;/h3>
+                            &lt;p>Organic food is food produced by methods that comply with the standards of organic farming.&lt;/p>
+                            &lt;/div>
+                        &lt;/li>
+                        &lt;li>
+                            &lt;i class="fa fa-check">&lt;/i>
+                            &lt;div class="feature-content">&lt;h3>Organic Products&lt;/h3>
+                            &lt;p>Organic food is food produced by methods that comply with the standards of organic farming.&lt;/p>
+                            &lt;/div>
+                        &lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-6 sm-padding">
+                &lt;div class="feature-img">
+                    &lt;img src="img/feature-1.jpg" alt="img">
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.feature-section-->
+</pre>
+
+        <br>
+
+        <hr />
+
+        <h4 id="portfolio"><strong>7) Product Section</strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="product-section padding bg-grey">
+    &lt;div class="container">
+       &lt;div class="section-heading mb-40 text-center">
+           &lt;img src="img/title-border.png" alt="img">
+           &lt;h2>Our Products&lt;/h2>
+           &lt;p>Organic food is food produced by methods that comply with the standards &lt;br>of organic farming. Standards vary worldwide.&lt;/p>
+       &lt;/div>
+       &lt;div class="row">
+           &lt;div class="col-lg-12">
+               &lt;ul class="product-filter text-center">
+                    &lt;li class="active" data-filter="*">All&lt;/li>
+                    &lt;li data-filter=".food">Food&lt;/li>
+                    &lt;li data-filter=".fruits">Fruits&lt;/li>
+                    &lt;li data-filter=".vegitable">Vegitable&lt;/li>
+                    &lt;li data-filter=".juice">Juice&lt;/li>
+                &lt;/ul>
+           &lt;/div>
+       &lt;/div>
+        &lt;div class="product-items row">
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item food juice">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-1.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Cheese butter burger&lt;/h3>
+                        &lt;h4>&lt;span>$72.28&lt;/span>&lt;span class="old">$95.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item fruits vegitable">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-2.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Fresh Orange&lt;/h3>
+                        &lt;h4>&lt;span>$67.28&lt;/span>&lt;span class="old">$82.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item vegitable juice">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-3.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Fresh Grapes&lt;/h3>
+                        &lt;h4>&lt;span>$75.28&lt;/span>&lt;span class="old">$89.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item juice fruits">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-4.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Impulse Duffle&lt;/h3>
+                        &lt;h4>&lt;span>$45.28&lt;/span>&lt;span class="old">$70.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item fruits juice">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-5.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Fresh Tomatos&lt;/h3>
+                        &lt;h4>&lt;span>$65.28&lt;/span>&lt;span class="old">$78.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item vegitable fruits">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-6.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Cheese butter&lt;/h3>
+                        &lt;h4>&lt;span>$48.28&lt;/span>&lt;span class="old">$65.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item fruits food">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-7.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Fresh Onion&lt;/h3>
+                        &lt;h4>&lt;span>$30.28&lt;/span>&lt;span class="old">$45.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-3 col-sm-6 padding-15 single-item food vagitable">
+                &lt;div class="product-item">
+                    &lt;div class="product-thumb">
+                        &lt;img src="img/product-8.jpg" alt="img">
+                        &lt;ul class="product-btn-group">
+                            &lt;li>&lt;a href="#">&lt;i class="ti-shopping-cart-full">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-gallery">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="ti-heart">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="product-content text-center">
+                        &lt;h3>Fresh Butter&lt;/h3>
+                        &lt;h4>&lt;span>$44.28&lt;/span>&lt;span class="old">$66.50&lt;/span>&lt;/h4>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.product-section-->
+</pre>
+
+        <br>
+
+        <hr />
+
+        <h4 id="portfolio"><strong>8) Cta Section</strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="cta-section padding">
+    &lt;div class="container">
+        &lt;div class="cta-wrap row">
+            &lt;div class="col-lg-8 sm-padding">
+                &lt;div class="cta-content">
+                    &lt;h2>We are Professional & Expert &lt;br>Trusted Organic Agency!&lt;/h2>
+                    &lt;p>Organic food is food produced by methods that comply with the standards of organic farming. Standards vary worldwide, but organic farming features practices that cycle resources.&lt;/p>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-4 sm-padding">
+                &lt;div class="cta-btn text-right">
+                    &lt;a class="default-btn" href="#">Visit Our Store&lt;span>&lt;/span>&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.cta-section-->
+</pre>
+
+        <hr />
+
+
+        <h4 id="portfolio"><strong>9) Team Section </strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="team-section padding bg-grey">
+    &lt;div class="container">
+        &lt;div class="section-heading mb-40 text-center">
+            &lt;img src="img/title-border.png" alt="img">
+            &lt;h2>Our Farmers&lt;/h2>
+            &lt;p>Organic food is food produced by methods that comply with the standards &lt;br>of organic farming. Standards vary worldwide.&lt;/p>
+        &lt;/div>
+        &lt;div class="team-wrap row">
+            &lt;div class="col-lg-3 col-sm-6 padding-15">
+                &lt;div class="team-box">
+                    &lt;div class="team-item">
+                        &lt;img src="img/team1.jpg" alt="img">
+                        &lt;ul class="team-social">
+                            &lt;li>&lt;a href="#">&lt;i class="fab fa-facebook">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="fab fa-instagram">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="fab fa-behance">&lt;/i>&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">&lt;i class="fab fa-twitter">&lt;/i>&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;div class="team-content text-center">
+                        &lt;h3>José Carpio&lt;span>Organic Farmers&lt;/span>&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.team-section-->
+</pre>
+
+        <hr />
+
+        <h4 id="portfolio"><strong>10) Gallery Section </strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="gallery-section padding">
+    &lt;div class="container">
+       &lt;div class="section-heading mb-40 text-center">
+           &lt;img src="img/title-border.png" alt="img">
+           &lt;h2>Organze Food Gallery&lt;/h2>
+           &lt;p>Organic food is food produced by methods that comply with the standards &lt;br>of organic farming. Standards vary worldwide.&lt;/p>
+       &lt;/div>
+        &lt;div class="gallery-wrap row">
+            &lt;div class="col-lg-4 col-sm-6 padding-15">
+                &lt;div class="gallery-item">
+                    &lt;img src="img/gallery-1.jpg" alt="img">
+                    &lt;div class="gallery-content">
+                        &lt;h3>&lt;a class="img-popup vbox-item" href="img/gallery-1.jpg">Fresh Living&lt;span>Farming&lt;/span>&lt;/a>&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.gallery-section-->
+</pre>
+
+        <hr />
+
+        <h4 id="portfolio"><strong>11) Testimonials Section </strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="testimonial-section bg-grey padding">
+    &lt;div class="container">
+        &lt;div class="section-heading mb-40 text-center">
+           &lt;img src="img/title-border.png" alt="img">
+           &lt;h2>What Our Customers Say&lt;/h2>
+           &lt;p>Organic food is food produced by methods that comply with the standards &lt;br>of organic farming. Standards vary worldwide.&lt;/p>
+        &lt;/div>
+        &lt;div id="testimonial-carousel" class="testimonial-carousel owl-carousel">
+            &lt;div class="testi-item d-flex align-items-center">
+                &lt;img src="img/testi-1.jpg" alt="img">
+                &lt;div class="testi-content">
+                    &lt;p>"Thank you for guiding us through the construction process, understanding, and always ready to accommodate our needs. We love our new space and know that it was built by the very best!"&lt;/p>
+                    &lt;h3>Kyle Frederick&lt;/h3>
+                    &lt;ul class="rattings">
+                        &lt;li>&lt;i class="fa fa-star">&lt;/i>&lt;/li>
+                        &lt;li>&lt;i class="fa fa-star">&lt;/i>&lt;/li>
+                        &lt;li>&lt;i class="fa fa-star">&lt;/i>&lt;/li>
+                        &lt;li>&lt;i class="fa fa-star">&lt;/i>&lt;/li>
+                        &lt;li>&lt;i class="fa fa-star">&lt;/i>&lt;/li>
+                    &lt;/ul>
+                    &lt;span>Director&lt;/span>
+                &lt;/div>
+                &lt;i class="fa fa-quote-right">&lt;/i>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.testimonial-section-->
+</pre>
+
+        <hr />
+
+        <br>
+        <hr />
+
+        <h4 id="portfolio"><strong>12) FAQ Section </strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="faq-section padding">
+    &lt;div class="container">
+        &lt;div class="section-heading mb-40 text-center">
+           &lt;img src="img/title-border.png" alt="img">
+           &lt;h2>Frequently Asked Questions&lt;/h2>
+           &lt;p>Organic food is food produced by methods that comply with the standards &lt;br>of organic farming. Standards vary worldwide.&lt;/p>
+        &lt;/div>
+        &lt;div class="faq-wrap row">
+            &lt;div class="col-md-6 xs-padding">
+                &lt;div class="faq-item">
+                    &lt;img src="img/faq.webp" alt="img">
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-md-6 xs-padding">
+                &lt;div id="accordion" class="faq-item">
+                    &lt;div class="card">
+                        &lt;div class="card-header" id="headingOne">
+                            &lt;h5 class="mb-0">
+                                &lt;button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  What Do You Eat Orange Food?
+                                &lt;/button>
+                            &lt;/h5>
+                        &lt;/div>
+                        &lt;div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            &lt;div class="card-body">This one is a big one that has been haunting me since teenage years. When I was in highschool. This one is a big one that has been haunting me since teenage years.
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="card">
+                        &lt;div class="card-header" id="headingTwo">
+                            &lt;h5 class="mb-0">
+                                &lt;button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Why Milk is Good For Health?
+                                &lt;/button>
+                            &lt;/h5>
+                        &lt;/div>
+                        &lt;div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            &lt;div class="card-body">This one is a big one that has been haunting me since teenage years. When I was in highschool. This one is a big one that has been haunting me since teenage years.
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                   &lt;div class="card">
+                        &lt;div class="card-header" id="headingThree">
+                            &lt;h5 class="mb-0">
+                                &lt;button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  How Can you Get Good food?
+                                &lt;/button>
+                            &lt;/h5>
+                        &lt;/div>
+                        &lt;div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            &lt;div class="card-body">This one is a big one that has been haunting me since teenage years. When I was in highschool. This one is a big one that has been haunting me since teenage years.
+                            &lt;/div>
+                        &lt;/div>
+                   &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.faq-section-->
+</pre>
+
+        <hr />
+
+        <h4 id="portfolio"><strong>13) Blog Section </strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt;section class="blog-section bg-grey padding">
+    &lt;div class="container">
+        &lt;div class="section-heading mb-40 text-center">
+           &lt;img src="img/title-border.png" alt="img">
+           &lt;h2>Speciallized News&lt;/h2>
+           &lt;p>Organic food is food produced by methods that comply with the standards &lt;br>of organic farming. Standards vary worldwide.&lt;/p>
+        &lt;/div>
+        &lt;div class="row blog-wrap">
+            &lt;div class="col-lg-4 col-sm-6 sm-padding">
+                &lt;div class="blog-item">
+                    &lt;div class="blog-thumb">
+                        &lt;img src="img/post-1.jpg" alt="post">
+                        &lt;span class="category">&lt;a href="#">interior&lt;/a>&lt;/span>
+                    &lt;/div>
+                    &lt;div class="blog-content">
+                        &lt;h3>&lt;a href="#">How to steam & purée your sugar pie pumkin.&lt;/a>&lt;/h3>
+                        &lt;p>Building first evolved out dynamics between needs means available building materials attendant skills.&lt;/p>
+                        &lt;a href="#" class="read-more">Read More&lt;/a>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-4 col-sm-6 sm-padding">
+                &lt;div class="blog-item">
+                    &lt;div class="blog-thumb">
+                        &lt;img src="img/post-2.jpg" alt="post">
+                        &lt;span class="category">&lt;a href="#">Architecture&lt;/a>&lt;/span>
+                    &lt;/div>
+                    &lt;div class="blog-content">
+                       &lt;h3>&lt;a href="#">Great bulk recipes to help use all your organic vegetables.&lt;/a>&lt;/h3>
+                        &lt;p>Building first evolved out dynamics between needs means available building materials attendant skills.&lt;/p>
+                        &lt;a href="#" class="read-more">Read More&lt;/a>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="col-lg-4 col-sm-6 sm-padding">
+                &lt;div class="blog-item">
+                    &lt;div class="blog-thumb">
+                        &lt;img src="img/post-3.jpg" alt="post">
+                        &lt;span class="category">&lt;a href="#">Design&lt;/a>&lt;/span>
+                    &lt;/div>
+                    &lt;div class="blog-content">
+                        &lt;h3>&lt;a href="#">How can salmon be raised organically in fish farms?&lt;/a>&lt;/h3>
+                        &lt;p>Building first evolved out dynamics between needs means available building materials attendant skills.&lt;/p>
+                        &lt;a href="#" class="read-more">Read More&lt;/a>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>&lt;!--/.blog-section-->
+</pre>
+
+        <hr />
+
+        <br>
+
+        <h4 id="portfolio"><strong>14) Sponsor Section </strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+;div class="sponsor-section">
+    &lt;div class="container">
+        &lt;div id="sponsor-carousel" class="sponsor-carousel owl-carousel">
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor1.png" alt="sponsor">
+            &lt;/div>
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor2.png" alt="sponsor">
+            &lt;/div>
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor3.png" alt="sponsor">
+            &lt;/div>
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor4.png" alt="sponsor">
+            &lt;/div>
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor5.png" alt="sponsor">
+            &lt;/div>
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor6.png" alt="sponsor">
+            &lt;/div>
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor7.png" alt="sponsor">
+            &lt;/div>
+            &lt;div class="sponsor-item">
+                &lt;img src="img/sponsor8.png" alt="sponsor">
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>&lt;!--/.sponsor-section-->
+</pre>
+
+        <hr />
+
+        <br>
+        <h4 id="portfolio"><strong>15) Footer Section </strong> - <a href="#toc">top</a></h4>
+        <br>
+        <pre class="brush: html;">
+&lt&lt;footer class="widget-section">
+   &lt;div class="widget-wrap padding">
+       &lt;div class="container">
+            &lt;div class="row">
+                &lt;div class="col-lg-3 col-sm-6 sm-padding">
+                    &lt;div class="widget-content">
+                        &lt;a href="#">&lt;img src="img/logo-light.png" alt="brand">&lt;/a>
+                        &lt;p>Building your own home is about desire, fantasy. But it’s achievable anyone can do it.&lt;/p>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="col-lg-2 col-sm-6 sm-padding">
+                    &lt;div class="widget-content footer">
+                        &lt;h4>Company&lt;/h4>
+                        &lt;ul class="widget-links">
+                            &lt;li>&lt;a href="#">About Us&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Clients Reviews&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="col-lg-3 col-sm-6 sm-padding">
+                    &lt;div class="widget-content footer">
+                        &lt;h4>Headquaters&lt;/h4>
+                        &lt;p>962 Fifth Avenue, 3rd Floor New York, NY10022&lt;/p>
+                        &lt;span>Hello@teamXcel.net&lt;/span>
+                        &lt;span>(+123) 456 789 101&lt;/span>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="col-lg-4 col-sm-6 sm-padding">
+                    &lt;div class="widget-content footer">
+                        &lt;h4>Newslatter Subscription&lt;/h4>
+                        &lt;p>Subscribe and get 10% off from our &lt;br>architecture company.&lt;/p>
+                        &lt;div class="subscribe-box clearfix">
+                            &lt;div class="subscribe-form-wrap">
+                                &lt;form action="#" class="subscribe-form">
+                                    &lt;input type="email" name="email" id="subs-email" class="form-input" placeholder="Enter Your Email Address...">
+                                    &lt;button type="submit" class="submit-btn">Subscribe&lt;/button>
+                                    &lt;div id="subscribe-result">
+                                        &lt;p class="subscription-success">&lt;/p>
+                                        &lt;p class="subscription-error">&lt;/p>
+                                    &lt;/div>
+                                &lt;/form>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="footer-section align-center">
+        &lt;div class="container">
+            &lt;p>&copy; 2020 OrganZe Powered by teamXcel&lt;/p>
+        &lt;/div>
+    &lt;/div>&lt;!-- /.footer-section -->
+&lt;/footer>&lt;!--/.widget-section-->
+</pre>
+
+        <hr />
+
+        <br>
+
+        <p>&nbsp;</p>
+
+        <hr>
+        <h3 id="cssFiles"><strong>C) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+        <p>These are the css files:</p>
+        <ol>
+            <li>bootstrap.min.css</li>
+            <li>animate.min.css</li>
+            <li>elegant-font-icons.css</li>
+            <li>elegant-line-icons.css</li>
+            <li>owl.carousel.css</li>
+            <li>main.css </li>
+            <li>responsive.css</li>
+        </ol>
+
+
+        <p>&nbsp;</p>
+        <hr>
+
+        <h3 id="javascript"><strong>D) JavaScript</strong> - <a href="#toc">top</a></h3>
+
+        <p>This theme use these Javascript files:</p>
+
+        <ol>
+            <li>jQuery<br>
+                jQuery is a Javascript library that greatly reduces the amount of code that you must write. jQuery use these javascript files:
+                <pre>
+            	bootstrap.min.js
+                smooth-scroll.min.js
+                owl.carousel.min.js
+                jquery.ajaxchimp.min.js
+                jquery-1.12.4.min.js
+                jquery.mb.YTPlayer.min.js
+                owl.carousel.min.js
+                venobox.min.js
+                wow.min.js
+                jquery.counterup.min.js
+                main.js
+            </pre>
+                You can edit the contact.js files. for setting contact form
+                <br>
+                <br>
+            </li>
+        </ol>
+
+        <hr>
+
+        <h3 id="credits"><strong>F) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+        <ol>
+            <li><a href="http://getbootstrap.com" target="_blank">Bootstrap 3.3</a></li>
+            <li><a href="http://www.owlcarousel.owlgraphic.com" target="_blank">OWL Carousel</a></li>
+            <li><a href="https://wowjs.uk/" target="_blank">WOW JS</a></li>
+            <li><a href="http://veno.es/venobox/" target="_blank">VenoBox</a></li>
+            <li><a href="https://github.com/cferdinandi/smooth-scroll" target="_blank">Smooth Scroll</a></li>
+            <li><a href="https://github.com/pupunzi/jquery.mb.YTPlayer/wiki" target="_blank">YTPlayer</a></li>
+            <li><a href="http://plugins.jquery.com/ajaxchimp/" target="_blank">AjaxChimp</a></li>
+        </ol>
+        <p>
+
+            <hr>
+        <h3 id="php"><strong>G) PHP Code Explanation </strong> - <a href="#toc">top</a></h3>
+        <p>There are only one php code for contact page which is contact.php, open this file and change the email and subject on line 24 and line 27.
+            No need to edit other code unless you really want to.
+            <hr>
+        <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist.</p>
+
+        <p class="append-bottom alt large"><strong>ThemeEaster</strong></p>
+        <p><a href="#toc">Go To Table of Contents</a></p>
+
+        <hr class="space">
+    </div>
+    <!-- end div .container -->
+    <script type="text/javascript" src="syntax-highlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="syntax-highlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="syntax-highlighter/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all()
+
+    </script>
+</body>
+
+</html>
