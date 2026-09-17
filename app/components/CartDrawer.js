@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import { useProductModal } from "../context/ProductModalContext";
 import { money } from "../data/products";
+import { buildWhatsAppLink } from "../lib/whatsapp";
 
 export default function CartDrawer() {
   const { lines, subtotal, isOpen, change, remove, closeCart } = useCart();
@@ -120,6 +121,18 @@ export default function CartDrawer() {
             >
               Checkout
             </Link>
+            <a
+              href={buildWhatsAppLink(
+                `Hi Ivar 🌿 I'd like to order:\n\n${lines
+                  .map((l) => `• ${l.product.name} x${l.qty} — ${money(l.product.price * l.qty)}`)
+                  .join("\n")}\n\nSubtotal: ${money(subtotal)}`
+              )}
+              target="_blank"
+              rel="noreferrer"
+              className="block text-center w-full mt-2.5 rounded-full px-6 py-3.5 font-semibold text-[13px] tracking-wide border border-[#25D366] text-[#128C4A] transition-colors duration-200 hover:bg-[#25D366]/10"
+            >
+              💬 Checkout via WhatsApp
+            </a>
             <Link
               href="/cart"
               onClick={closeCart}

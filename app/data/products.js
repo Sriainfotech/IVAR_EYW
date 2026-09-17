@@ -10,6 +10,7 @@ export const products = [
     price: 249,
     desc: "Wholesome nutrition for an active you — high fibre and heart-healthy.",
     ingredients: ["Whole rolled oats", "Natural dietary fibre", "No added sugar", "No preservatives"],
+    nutrition: { kcal: 180, proteinG: 6, carbsG: 32, fatG: 3, fiberG: 5 },
     img: "/assets/products/eat/oats.jpg",
   },
   {
@@ -20,6 +21,7 @@ export const products = [
     price: 329,
     desc: "A healthy start every day — rich in nutrients, no added preservatives.",
     ingredients: ["Wheat", "Oats", "Ragi", "Bajra", "Roasted soy"],
+    nutrition: { kcal: 200, proteinG: 7, carbsG: 34, fatG: 4, fiberG: 6 },
     img: "/assets/products/eat/multigrain-breakfast-mix.jpg",
   },
   {
@@ -30,6 +32,7 @@ export const products = [
     price: 299,
     desc: "Traditional nutrition, modern living — high calcium and natural energy.",
     ingredients: ["Ragi (finger millet) flour", "Roasted gram", "Jaggery", "Cardamom"],
+    nutrition: { kcal: 190, proteinG: 5, carbsG: 36, fatG: 3, fiberG: 4 },
     img: "/assets/products/eat/ragi-mix.jpg",
   },
   {
@@ -40,6 +43,7 @@ export const products = [
     price: 289,
     desc: "Ancient grains for modern health — gluten free, goodness in every bowl.",
     ingredients: ["Foxtail millet", "Little millet", "Barnyard millet", "Kodo millet"],
+    nutrition: { kcal: 185, proteinG: 6, carbsG: 33, fatG: 3, fiberG: 5 },
     img: "/assets/products/eat/millet-mix.jpg",
   },
 
@@ -52,6 +56,7 @@ export const products = [
     price: 899,
     desc: "Clean nutrition, stronger you — plant-based high protein, no added sugar.",
     ingredients: ["Pea protein isolate", "Brown rice protein", "Natural cocoa", "Stevia"],
+    nutrition: { kcal: 130, proteinG: 24, carbsG: 6, fatG: 2, fiberG: 3 },
     img: "/assets/products/eat/plant-protein-mix.jpg",
   },
   {
@@ -62,6 +67,7 @@ export const products = [
     price: 949,
     desc: "Fuel your day with high protein, vitamins, minerals and muscle recovery support.",
     ingredients: ["Whey protein concentrate", "Digestive enzyme blend", "Vitamins & minerals", "Natural flavouring"],
+    nutrition: { kcal: 140, proteinG: 25, carbsG: 5, fatG: 2, fiberG: 2 },
     img: "/assets/products/eat/active-protein.jpg",
   },
   {
@@ -72,6 +78,7 @@ export const products = [
     price: 79,
     desc: "Lemon Lime, Orange Electrolyte, Berry Boost, Aam Panna and Coconut Water — natural, electrolyte-rich hydration.",
     ingredients: ["Purified water", "Electrolyte blend (sodium, potassium)", "Natural fruit extracts", "Vitamin C"],
+    nutrition: { kcal: 40, proteinG: 0, carbsG: 10, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/active-drinks.jpg",
   },
 
@@ -84,6 +91,7 @@ export const products = [
     price: 349,
     desc: "Small seeds, big benefits — rich in Omega 3 with immunity support.",
     ingredients: ["Pumpkin seeds", "Sunflower seeds", "Flax seeds", "Chia seeds"],
+    nutrition: { kcal: 160, proteinG: 6, carbsG: 10, fatG: 11, fiberG: 6 },
     img: "/assets/products/eat/seed-mix.jpg",
   },
   {
@@ -94,6 +102,7 @@ export const products = [
     price: 399,
     desc: "Pure. Natural. Nutritious. No added salt, no preservatives.",
     ingredients: ["Almonds", "Cashews", "Walnuts", "Himalayan pink salt"],
+    nutrition: { kcal: 170, proteinG: 6, carbsG: 7, fatG: 14, fiberG: 3 },
     img: "/assets/products/eat/roasted-nuts.jpg",
   },
   {
@@ -104,6 +113,7 @@ export const products = [
     price: 349,
     desc: "Energy on the go — nuts, seeds and dried fruits for natural energy.",
     ingredients: ["Roasted nuts", "Raisins", "Dried cranberries", "Pumpkin seeds"],
+    nutrition: { kcal: 165, proteinG: 5, carbsG: 18, fatG: 9, fiberG: 4 },
     img: "/assets/products/eat/trail-mix.jpg",
   },
   {
@@ -114,6 +124,7 @@ export const products = [
     price: 199,
     desc: "Light. Crunchy. Nutritious. Roasted fox nuts with Himalayan salt — rich in protein, low calorie.",
     ingredients: ["Roasted fox nuts (makhana)", "Himalayan pink salt", "Peri-peri seasoning"],
+    nutrition: { kcal: 120, proteinG: 4, carbsG: 20, fatG: 3, fiberG: 2 },
     img: "/assets/products/eat/makhana-crunch.jpg",
   },
   {
@@ -124,6 +135,7 @@ export const products = [
     price: 179,
     desc: "Spicy masala roasted chana — rich in plant protein and a good source of fibre.",
     ingredients: ["Roasted chickpeas", "Masala spice blend", "Rock salt"],
+    nutrition: { kcal: 140, proteinG: 7, carbsG: 20, fatG: 3, fiberG: 5 },
     img: "/assets/products/eat/roasted-chana-mix.jpg",
   },
   {
@@ -134,6 +146,7 @@ export const products = [
     price: 189,
     desc: "Classic masala crisps made with ragi — plant based, rich in fibre.",
     ingredients: ["Ragi flour", "Rice flour", "Masala seasoning", "Edible oil"],
+    nutrition: { kcal: 145, proteinG: 3, carbsG: 22, fatG: 5, fiberG: 2 },
     img: "/assets/products/eat/ragi-crisps.jpg",
   },
   {
@@ -144,6 +157,7 @@ export const products = [
     price: 179,
     desc: "Peri-peri millet puffs — small bites, big goodness, rich in fibre.",
     ingredients: ["Puffed millet", "Peri-peri seasoning", "Rock salt"],
+    nutrition: { kcal: 110, proteinG: 3, carbsG: 20, fatG: 2, fiberG: 2 },
     img: "/assets/products/eat/millet-puffs.jpg",
   },
   {
@@ -154,6 +168,7 @@ export const products = [
     price: 219,
     desc: "Multigrain herb crackers made with seeds, millets and herbs.",
     ingredients: ["Millet flour", "Flax seeds", "Sesame seeds", "Mixed herbs"],
+    nutrition: { kcal: 150, proteinG: 4, carbsG: 20, fatG: 6, fiberG: 3 },
     img: "/assets/products/eat/millet-seeds-crackers.jpg",
   },
 
@@ -166,6 +181,7 @@ export const products = [
     price: 249,
     desc: "Goodness in every meal — natural grains, high fibre, no additives.",
     ingredients: ["Wheat", "Ragi", "Jowar", "Bajra", "Soy"],
+    nutrition: { kcal: 340, proteinG: 12, carbsG: 68, fatG: 3, fiberG: 10 },
     img: "/assets/products/eat/multigrain-atta.jpg",
   },
   {
@@ -176,6 +192,7 @@ export const products = [
     price: 449,
     desc: "Nutritious by nature — high protein, gluten free, rich in fibre.",
     ingredients: ["100% natural quinoa seeds"],
+    nutrition: { kcal: 360, proteinG: 13, carbsG: 64, fatG: 6, fiberG: 7 },
     img: "/assets/products/eat/quinoa.jpg",
   },
   {
@@ -186,6 +203,7 @@ export const products = [
     price: 299,
     desc: "Tiny seeds, mighty benefits — everyday nutrition in every spoon.",
     ingredients: ["100% natural chia seeds"],
+    nutrition: { kcal: 140, proteinG: 5, carbsG: 12, fatG: 9, fiberG: 10 },
     img: "/assets/products/eat/chia-seeds.jpg",
   },
   {
@@ -196,6 +214,7 @@ export const products = [
     price: 199,
     desc: "For a healthier heart — everyday seeds, everyday goodness.",
     ingredients: ["100% natural flax seeds"],
+    nutrition: { kcal: 150, proteinG: 5, carbsG: 8, fatG: 12, fiberG: 8 },
     img: "/assets/products/eat/flax-seeds.jpg",
   },
 
@@ -208,6 +227,7 @@ export const products = [
     price: 299,
     desc: "Calm mind, healthy you — a soothing daily herbal blend.",
     ingredients: ["Tulsi", "Chamomile", "Lemongrass", "Ginger"],
+    nutrition: { kcal: 5, proteinG: 0, carbsG: 1, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/herbal-tea.jpg",
   },
   {
@@ -218,6 +238,7 @@ export const products = [
     price: 279,
     desc: "Refresh naturally — a light, everyday green tea.",
     ingredients: ["Green tea leaves", "Natural antioxidants"],
+    nutrition: { kcal: 2, proteinG: 0, carbsG: 0, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/green-tea.jpg",
   },
   {
@@ -228,6 +249,7 @@ export const products = [
     price: 329,
     desc: "Golden wellness in a cup — a comforting turmeric latte mix.",
     ingredients: ["Turmeric", "Ginger", "Black pepper", "Coconut milk powder"],
+    nutrition: { kcal: 90, proteinG: 2, carbsG: 14, fatG: 3, fiberG: 1 },
     img: "/assets/products/eat/turmeric-latte.jpg",
   },
 
@@ -240,6 +262,7 @@ export const products = [
     price: 279,
     desc: "Quick. Healthy. Tasty. No added sugar, ready in minutes.",
     ingredients: ["Rolled oats", "Milk solids", "Dried fruits", "Jaggery"],
+    nutrition: { kcal: 180, proteinG: 5, carbsG: 32, fatG: 3, fiberG: 4 },
     img: "/assets/products/eat/instant-porridge-mix.jpg",
   },
   {
@@ -250,6 +273,7 @@ export const products = [
     price: 299,
     desc: "Healthy indulgence — high fibre, no maida, natural goodness.",
     ingredients: ["Whole wheat flour", "Oats flour", "Baking powder", "Jaggery"],
+    nutrition: { kcal: 210, proteinG: 6, carbsG: 36, fatG: 4, fiberG: 3 },
     img: "/assets/products/eat/pancake-mix.jpg",
   },
   {
@@ -260,6 +284,7 @@ export const products = [
     price: 349,
     desc: "Blend. Drink. Nourish. Fruits, superfoods and natural energy.",
     ingredients: ["Mixed fruit powder", "Yogurt solids", "Chia seeds", "Honey powder"],
+    nutrition: { kcal: 170, proteinG: 4, carbsG: 34, fatG: 2, fiberG: 3 },
     img: "/assets/products/eat/smoothie-mix.jpg",
   },
 
@@ -272,6 +297,7 @@ export const products = [
     price: 199,
     desc: "Wholesome. Nutritious. Everyday. A simple oats bowl made fresh.",
     ingredients: ["Rolled oats", "Milk", "Seasonal fruits", "Honey"],
+    nutrition: { kcal: 220, proteinG: 7, carbsG: 38, fatG: 4, fiberG: 5 },
     img: "/assets/products/eat/classic-oats-bowl.jpg",
   },
   {
@@ -282,6 +308,7 @@ export const products = [
     price: 219,
     desc: "Grains. Fruits. Real nutrition. A fresh muesli bowl made daily.",
     ingredients: ["Rolled oats", "Dried fruits", "Nuts", "Milk"],
+    nutrition: { kcal: 240, proteinG: 7, carbsG: 40, fatG: 5, fiberG: 5 },
     img: "/assets/products/eat/ivar-muesli.jpg",
   },
   {
@@ -292,6 +319,7 @@ export const products = [
     price: 249,
     desc: "Healthy indulgence, guilt free — fluffy millet pancakes made fresh.",
     ingredients: ["Millet flour", "Buttermilk", "Jaggery"],
+    nutrition: { kcal: 230, proteinG: 6, carbsG: 38, fatG: 5, fiberG: 3 },
     img: "/assets/products/eat/millet-pancakes.jpg",
   },
   {
@@ -302,6 +330,7 @@ export const products = [
     price: 179,
     desc: "Traditional goodness, lasting energy — a comforting ragi upma.",
     ingredients: ["Ragi rava", "Mixed vegetables", "Mustard seeds", "Curry leaves"],
+    nutrition: { kcal: 210, proteinG: 5, carbsG: 34, fatG: 5, fiberG: 4 },
     img: "/assets/products/eat/ragi-upma.jpg",
   },
   {
@@ -312,6 +341,7 @@ export const products = [
     price: 149,
     desc: "Light on the stomach, rich in nutrition — a wholesome millet dosa.",
     ingredients: ["Millet batter", "Urad dal", "Fenugreek seeds"],
+    nutrition: { kcal: 180, proteinG: 4, carbsG: 32, fatG: 3, fiberG: 3 },
     img: "/assets/products/eat/millet-dosa.jpg",
   },
   {
@@ -322,6 +352,7 @@ export const products = [
     price: 229,
     desc: "Natural fuel, active you — a fresh protein smoothie made to order.",
     ingredients: ["Whey or plant protein", "Banana", "Milk", "Peanut butter"],
+    nutrition: { kcal: 220, proteinG: 18, carbsG: 26, fatG: 4, fiberG: 3 },
     img: "/assets/products/eat/protein-smoothie.jpg",
   },
   {
@@ -332,6 +363,7 @@ export const products = [
     price: 249,
     desc: "Simple. Natural. Powerful. A fresh bowl of fruits, nuts and seeds.",
     ingredients: ["Seasonal fruits", "Mixed nuts", "Chia & flax seeds", "Honey"],
+    nutrition: { kcal: 260, proteinG: 7, carbsG: 30, fatG: 12, fiberG: 6 },
     img: "/assets/products/eat/fruits-nuts-seeds.jpg",
   },
 
@@ -344,6 +376,7 @@ export const products = [
     price: 279,
     desc: "Bold pepper, real flavor — a high-protein premium non-veg snack.",
     ingredients: ["Chicken breast", "Black pepper", "Garlic", "Mixed herbs"],
+    nutrition: { kcal: 210, proteinG: 22, carbsG: 4, fatG: 11, fiberG: 1 },
     img: "/assets/products/eat/chicken-pepper-bites.jpg",
   },
   {
@@ -354,6 +387,7 @@ export const products = [
     price: 299,
     desc: "Light. Crispy. Delicious. Ocean goodness in every bite.",
     ingredients: ["Fish fillet", "Breadcrumbs", "Lemon", "Mixed herbs"],
+    nutrition: { kcal: 200, proteinG: 20, carbsG: 10, fatG: 9, fiberG: 1 },
     img: "/assets/products/eat/fish-crispy-bites.jpg",
   },
   {
@@ -364,6 +398,7 @@ export const products = [
     price: 329,
     desc: "Spicy. Juicy. Irresistible. Coastal flavours, rich in Omega-3.",
     ingredients: ["Prawns", "Masala spice blend", "Ginger-garlic paste"],
+    nutrition: { kcal: 190, proteinG: 21, carbsG: 6, fatG: 8, fiberG: 1 },
     img: "/assets/products/eat/prawn-masala-bites.jpg",
   },
   {
@@ -374,6 +409,7 @@ export const products = [
     price: 229,
     desc: "Classic taste, reimagined — spicy masala, perfect crunch, anytime snack.",
     ingredients: ["Eggs", "Masala spice blend", "Onion", "Mixed herbs"],
+    nutrition: { kcal: 180, proteinG: 14, carbsG: 5, fatG: 12, fiberG: 1 },
     img: "/assets/products/eat/egg-masala-crunch.jpg",
   },
   {
@@ -384,6 +420,7 @@ export const products = [
     price: 299,
     desc: "Smoky taste on the go — grilled goodness in every bite.",
     ingredients: ["Minced chicken", "Onion", "Mixed spices", "Fresh coriander"],
+    nutrition: { kcal: 220, proteinG: 23, carbsG: 4, fatG: 12, fiberG: 1 },
     img: "/assets/products/eat/chicken-seekh-kebab-bites.jpg",
   },
 
@@ -396,6 +433,7 @@ export const products = [
     price: 179,
     desc: "Roasted jowar goodness — light, crunchy and naturally gluten free.",
     ingredients: ["Jowar (sorghum)", "Rock salt", "Roasted spices"],
+    nutrition: { kcal: 140, proteinG: 3, carbsG: 24, fatG: 4, fiberG: 2 },
     img: "/assets/products/eat/jowar-crunch.jpg",
   },
   {
@@ -406,6 +444,7 @@ export const products = [
     price: 179,
     desc: "Airy sorghum puffs, lightly seasoned — a wholesome anytime snack.",
     ingredients: ["Puffed jowar", "Peri-peri seasoning", "Rock salt"],
+    nutrition: { kcal: 115, proteinG: 3, carbsG: 21, fatG: 2, fiberG: 2 },
     img: "/assets/products/eat/jowar-puffs.jpg",
   },
 
@@ -418,6 +457,7 @@ export const products = [
     price: 249,
     desc: "Naturally sweet, protein rich — a guilt-free energy boost.",
     ingredients: ["Dates", "Cocoa powder", "Plant protein", "Almonds"],
+    nutrition: { kcal: 140, proteinG: 8, carbsG: 16, fatG: 5, fiberG: 3 },
     img: "/assets/products/eat/date-chocolate-protein-bites.jpg",
   },
   {
@@ -428,6 +468,7 @@ export const products = [
     price: 229,
     desc: "Tropical fruit, real coconut — a refreshing bite of natural energy.",
     ingredients: ["Dried mango", "Desiccated coconut", "Dates"],
+    nutrition: { kcal: 120, proteinG: 2, carbsG: 20, fatG: 4, fiberG: 2 },
     img: "/assets/products/eat/mango-coconut-fruit-bites.jpg",
   },
   {
@@ -438,6 +479,7 @@ export const products = [
     price: 239,
     desc: "Wholesome millets meet rich cocoa — a nourishing indulgence.",
     ingredients: ["Millets", "Cocoa", "Dates", "Mixed nuts"],
+    nutrition: { kcal: 130, proteinG: 4, carbsG: 18, fatG: 5, fiberG: 2 },
     img: "/assets/products/eat/millet-chocolate-bites.jpg",
   },
   {
@@ -448,6 +490,7 @@ export const products = [
     price: 219,
     desc: "Crisp, hearty and lightly sweet — everyday cookies made wholesome.",
     ingredients: ["Oats", "Millet flour", "Jaggery", "Ghee"],
+    nutrition: { kcal: 150, proteinG: 4, carbsG: 22, fatG: 5, fiberG: 2 },
     img: "/assets/products/eat/oats-millet-cookies.jpg",
   },
   {
@@ -458,6 +501,7 @@ export const products = [
     price: 199,
     desc: "A traditional favourite — peanuts, sesame and jaggery, no refined sugar.",
     ingredients: ["Roasted peanuts", "Sesame seeds", "Jaggery"],
+    nutrition: { kcal: 160, proteinG: 6, carbsG: 16, fatG: 9, fiberG: 2 },
     img: "/assets/products/eat/peanut-sesame-jaggery-bites.jpg",
   },
   {
@@ -468,6 +512,7 @@ export const products = [
     price: 219,
     desc: "Calcium-rich ragi with a hint of cocoa — a wholesome treat.",
     ingredients: ["Ragi flour", "Cocoa powder", "Jaggery", "Ghee"],
+    nutrition: { kcal: 145, proteinG: 4, carbsG: 20, fatG: 5, fiberG: 2 },
     img: "/assets/products/eat/ragi-cocoa-cookies.jpg",
   },
 
@@ -480,6 +525,7 @@ export const products = [
     price: 99,
     desc: "Wake up right — a natural shot to energize your morning.",
     ingredients: ["Amla extract", "Ginger", "Lemon", "Honey"],
+    nutrition: { kcal: 25, proteinG: 0, carbsG: 6, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/morning-boost.jpg",
   },
   {
@@ -490,6 +536,7 @@ export const products = [
     price: 99,
     desc: "Unwind and recover — a calming shot for restful sleep.",
     ingredients: ["Ashwagandha", "Chamomile extract", "Warm milk base"],
+    nutrition: { kcal: 20, proteinG: 0, carbsG: 5, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/night-reset.jpg",
   },
   {
@@ -500,6 +547,7 @@ export const products = [
     price: 129,
     desc: "Daily defence, naturally — immune support in every sip.",
     ingredients: ["Tulsi", "Turmeric", "Black pepper", "Honey"],
+    nutrition: { kcal: 20, proteinG: 0, carbsG: 4, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/immunity-shield.jpg",
   },
   {
@@ -510,6 +558,7 @@ export const products = [
     price: 99,
     desc: "Gentle on the gut — a natural shot to support easy digestion.",
     ingredients: ["Ajwain (carom seed) extract", "Ginger", "Fennel", "Lemon"],
+    nutrition: { kcal: 15, proteinG: 0, carbsG: 3, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/digest-ease.jpg",
   },
   {
@@ -520,7 +569,65 @@ export const products = [
     price: 99,
     desc: "Fresh from within — a natural shot for lasting freshness.",
     ingredients: ["Mint", "Fennel", "Clove", "Lemon"],
+    nutrition: { kcal: 15, proteinG: 0, carbsG: 3, fatG: 0, fiberG: 0 },
     img: "/assets/products/eat/breath-fresh.jpg",
+  },
+
+  // ---------- EAT — Protein Bowls (new) ----------
+  {
+    id: 77,
+    name: "Garlic Steak & Prawns Bowl",
+    group: "Eat",
+    cat: "Protein Bowls",
+    price: 449,
+    desc: "A perfect balance of taste and nutrition — 45g protein, served with cauliflower mash.",
+    ingredients: ["Garlic butter steak", "Prawns", "Cauliflower mash", "Fresh herbs"],
+    nutrition: { kcal: 420, proteinG: 38, carbsG: 20, fatG: 18, fiberG: 4 },
+    img: "/assets/products/eat/garlic-steak-prawns-bowl.jpg",
+  },
+  {
+    id: 78,
+    name: "Grilled Chicken Quinoa Bowl",
+    group: "Eat",
+    cat: "Protein Bowls",
+    price: 379,
+    desc: "Nutrition meets great taste — 42g protein, with avocado and greens.",
+    ingredients: ["Grilled chicken breast", "Quinoa", "Avocado", "Mixed greens", "Cherry tomatoes"],
+    nutrition: { kcal: 400, proteinG: 35, carbsG: 32, fatG: 12, fiberG: 5 },
+    img: "/assets/products/eat/grilled-chicken-quinoa-bowl.jpg",
+  },
+  {
+    id: 79,
+    name: "Lemon Herb Salmon Bowl",
+    group: "Eat",
+    cat: "Protein Bowls",
+    price: 469,
+    desc: "Clean nutrition, stronger you — 40g protein, with brown rice and steamed veggies.",
+    ingredients: ["Lemon herb salmon", "Brown rice", "Steamed broccoli", "Asparagus", "Cherry tomatoes"],
+    nutrition: { kcal: 380, proteinG: 32, carbsG: 28, fatG: 15, fiberG: 4 },
+    img: "/assets/products/eat/lemon-herb-salmon-bowl.jpg",
+  },
+  {
+    id: 80,
+    name: "High-Protein Paneer Bowl",
+    group: "Eat",
+    cat: "Protein Bowls",
+    price: 329,
+    desc: "Plant power, real everyday — 38g protein, with millet and roasted veggies.",
+    ingredients: ["Grilled paneer", "Millet", "Roasted mixed vegetables", "Quinoa"],
+    nutrition: { kcal: 360, proteinG: 26, carbsG: 30, fatG: 14, fiberG: 5 },
+    img: "/assets/products/eat/high-protein-paneer-bowl.jpg",
+  },
+  {
+    id: 81,
+    name: "Egg & Avocado Power Bowl",
+    group: "Eat",
+    cat: "Protein Bowls",
+    price: 299,
+    desc: "Nourish, balance, thrive — 28g protein, with sweet potato.",
+    ingredients: ["Boiled eggs", "Avocado", "Roasted sweet potato", "Mixed greens", "Red cabbage"],
+    nutrition: { kcal: 340, proteinG: 24, carbsG: 26, fatG: 16, fiberG: 6 },
+    img: "/assets/products/eat/egg-avocado-power-bowl.jpg",
   },
 
   // ---------- YOGA ----------

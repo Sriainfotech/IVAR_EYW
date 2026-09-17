@@ -32,17 +32,7 @@ const focus = [
   {
     label: "Eat",
     desc: "Wholesome breakfasts, snacks and everyday foods rooted in Indian grains and modern nutrition science.",
-    href: "/shop?group=Eat",
-  },
-  {
-    label: "Yoga",
-    desc: "Props, sessions and guidance built for a consistent, sustainable practice — at home or on the mat.",
-    href: "/shop?group=Yoga",
-  },
-  {
-    label: "Wellness",
-    desc: "Traditional therapies and modern wellness programs designed around balance, not just relaxation.",
-    href: "/shop?group=Wellness",
+    href: "/shop",
   },
 ];
 
@@ -109,13 +99,13 @@ export default function StoryPage() {
         <div className="max-w-[1100px] mx-auto">
           <Reveal className="text-center mb-14">
             <p className="text-[11px] tracking-[0.3em] font-semibold text-ivar-green mb-4 uppercase">
-              One Brand, Three Parts of Your Day
+              What We Make
             </p>
             <h2 className="font-serif font-medium text-[32px] md:text-[40px] leading-[1.1]">
-              Eat. Yoga. Wellness.
+              Eat.
             </h2>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 max-w-[420px] mx-auto gap-6">
             {focus.map((f, i) => (
               <Reveal
                 key={f.label}

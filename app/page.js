@@ -1,7 +1,6 @@
 import Hero from "./components/Hero";
 import PromoStrip from "./components/PromoStrip";
 import Story from "./components/Story";
-import Categories from "./components/Categories";
 import FeaturedProducts from "./components/FeaturedProducts";
 import Feature from "./components/Feature";
 import CTASection from "./components/CTASection";
@@ -16,7 +15,6 @@ export default function Home() {
       <Hero />
       <PromoStrip />
       <Story />
-      <Categories />
       <FeaturedProducts />
       <Feature />
       <CTASection />

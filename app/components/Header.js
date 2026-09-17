@@ -7,6 +7,10 @@ import { useCart } from "../context/CartContext";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/shop", label: "Shop" },
+  { href: "/build", label: "Build" },
+  { href: "/planner", label: "Planner" },
+  { href: "/plans", label: "Plans" },
+  { href: "/corporate-orders", label: "Corporate" },
   { href: "/story", label: "Our Story" },
   { href: "/contact", label: "Contact" },
 ];
@@ -32,7 +36,7 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex gap-8 text-[13px] tracking-wide ml-auto">
+          <nav className="hidden lg:flex gap-5 text-[13px] tracking-wide ml-auto whitespace-nowrap">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -59,7 +63,7 @@ export default function Header() {
           </button>
 
           <button
-            className="md:hidden ml-auto flex flex-col justify-center items-center gap-[5px] w-9 h-9 shrink-0"
+            className="lg:hidden ml-auto flex flex-col justify-center items-center gap-[5px] w-9 h-9 shrink-0"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -84,7 +88,7 @@ export default function Header() {
         </div>
 
         <div
-          className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out border-t border-[#e8e5da] ${
+          className={`lg:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out border-t border-[#e8e5da] ${
             menuOpen ? "max-h-64" : "max-h-0 border-t-0"
           }`}
         >

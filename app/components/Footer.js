@@ -21,24 +21,6 @@ export default function Footer() {
         </h4>
         <Link
           className="block text-[#a9bdb3] text-xs my-3 transition-colors duration-200 hover:text-white"
-          href="/shop?group=Eat"
-        >
-          Eat
-        </Link>
-        <Link
-          className="block text-[#a9bdb3] text-xs my-3 transition-colors duration-200 hover:text-white"
-          href="/shop?group=Yoga"
-        >
-          Yoga <span className="text-[#7d9285]">(Coming Soon)</span>
-        </Link>
-        <Link
-          className="block text-[#a9bdb3] text-xs my-3 transition-colors duration-200 hover:text-white"
-          href="/shop?group=Wellness"
-        >
-          Wellness <span className="text-[#7d9285]">(Coming Soon)</span>
-        </Link>
-        <Link
-          className="block text-[#a9bdb3] text-xs my-3 transition-colors duration-200 hover:text-white"
           href="/shop"
         >
           All Products
