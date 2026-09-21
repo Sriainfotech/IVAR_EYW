@@ -30,7 +30,7 @@ export default function ProductDetails({ product }) {
         <img
           src={product.img}
           alt={product.name}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
         />
       </div>
       <div className="flex flex-col justify-center">

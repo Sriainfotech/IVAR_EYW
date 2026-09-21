@@ -11,6 +11,7 @@ import ProductModal from "./components/ProductModal";
 import FloatingMiniCart from "./components/FloatingMiniCart";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import AskIvarWidget from "./components/AskIvarWidget";
+import NetworkStatus from "./components/NetworkStatus";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
       <body className="bg-[#fbfaf5] text-[#173126] pb-16 md:pb-0">
         <CartProvider>
           <ProductModalProvider>
+            <NetworkStatus />
             <Header />
             {children}
             <Footer />

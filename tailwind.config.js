@@ -12,6 +12,8 @@ module.exports = {
           green: "#4f7a33",
           leaf: "#6fa441",
           text: "#173126",
+          coral: "#ff6b4a",
+          mint: "#eaf5ec",
         },
       },
       fontFamily: {

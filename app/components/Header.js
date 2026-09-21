@@ -6,12 +6,11 @@ import { useCart } from "../context/CartContext";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Shop" },
+  { href: "/shop", label: "Menu" },
   { href: "/build", label: "Build" },
-  { href: "/planner", label: "Planner" },
+  { href: "/planner", label: "AI Planner" },
   { href: "/plans", label: "Plans" },
-  { href: "/corporate-orders", label: "Corporate" },
-  { href: "/story", label: "Our Story" },
+  { href: "/corporate-orders", label: "Corporate Orders" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -21,12 +20,8 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-ivar-dark text-white text-center text-[11px] tracking-[0.16em] py-2.5">
-        FREE SHIPPING ON ORDERS OVER ₹999 · WELCOME TO IVAR
-      </div>
-
-      <header className="bg-[#fffdf8]/95 backdrop-blur supports-[backdrop-filter]:bg-[#fffdf8]/80 sticky top-0 z-30 border-b border-[#e8e5da]">
-        <div className="h-[84px] flex items-center gap-6 px-[6vw]">
+      <header className="bg-white/95 backdrop-blur sticky top-0 z-30 shadow-[0_2px_14px_#0a3d2410]">
+        <div className="h-[76px] flex items-center gap-6 px-[6vw]">
           <Link href="/" aria-label="Ivar home" className="shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -36,11 +31,11 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden lg:flex gap-5 text-[13px] tracking-wide ml-auto whitespace-nowrap">
+          <nav className="hidden lg:flex gap-6 text-[14px] font-medium ml-auto whitespace-nowrap">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                className="transition-colors duration-200 hover:text-ivar-leaf"
+                className="transition-colors duration-200 hover:text-ivar-coral"
                 href={link.href}
               >
                 {link.label}
@@ -61,6 +56,13 @@ export default function Header() {
               {count}
             </b>
           </button>
+
+          <Link
+            href="/shop"
+            className="hidden md:inline-flex bg-ivar-coral text-white font-semibold text-[13px] rounded-full px-5 py-2.5 shadow-[0_6px_16px_#ff6b4a44] hover:brightness-105 transition"
+          >
+            Order Now
+          </Link>
 
           <button
             className="lg:hidden ml-auto flex flex-col justify-center items-center gap-[5px] w-9 h-9 shrink-0"
@@ -89,7 +91,7 @@ export default function Header() {
 
         <div
           className={`lg:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out border-t border-[#e8e5da] ${
-            menuOpen ? "max-h-64" : "max-h-0 border-t-0"
+            menuOpen ? "max-h-96" : "max-h-0 border-t-0"
           }`}
         >
           <nav className="flex flex-col px-[6vw] py-4 gap-1 text-sm">

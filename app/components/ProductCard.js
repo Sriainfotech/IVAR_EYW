@@ -51,7 +51,7 @@ export default function ProductCard({ product }) {
           <img
             src={product.img}
             alt={product.name}
-            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.05]"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
           />
         </button>
         {comingSoon ? (

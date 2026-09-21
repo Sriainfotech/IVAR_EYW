@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useProductModal } from "../context/ProductModalContext";
 import { products } from "../data/products";
 import IvarLoader from "./IvarLoader";
+import { fetchWithTimeout } from "../lib/fetchWithTimeout";
 
 const QUICK_REPLIES = ["Breakfast ideas", "High protein", "Snacks", "Teas & drinks"];
 
@@ -26,7 +27,7 @@ export default function AskIvarWidget() {
     setInput("");
     setLoading(true);
     try {
-      const res = await fetch("/api/chat", {
+      const res = await fetchWithTimeout("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text }),
@@ -36,10 +37,10 @@ export default function AskIvarWidget() {
         ...m,
         { role: "assistant", content: data.reply, recommendations: data.recommendations },
       ]);
-    } catch {
+    } catch (err) {
       setMessages((m) => [
         ...m,
-        { role: "assistant", content: "Sorry, I'm having trouble right now — try again in a moment!" },
+        { role: "assistant", content: err.message?.includes("network") ? err.message : "Sorry, I'm having trouble right now — try again in a moment!" },
       ]);
     } finally {
       setLoading(false);

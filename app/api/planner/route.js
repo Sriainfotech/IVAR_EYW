@@ -21,7 +21,7 @@ function allergyFilter(allergies) {
 function fallbackInsights(input, score) {
   const insights = [
     `Your nutrition score of ${score}/100 reflects your current activity level and lifestyle — small, consistent changes will move this up quickly.`,
-    `Based on your goal (${input.goal.replace("-", " ")}), your macro targets are weighted toward protein to support satiety.`,
+    `Based on your goal (${(input.goal || "healthy-eating").replace("-", " ")}), your macro targets are weighted toward protein to support satiety.`,
   ];
   if (input.sleepHours < 7) insights.push("Try to get closer to 7-8 hours of sleep — it directly affects hunger hormones and recovery.");
   if (input.waterLitres < 2.5) insights.push("Aim for at least 2.5L of water a day to support metabolism and digestion.");
@@ -30,7 +30,7 @@ function fallbackInsights(input, score) {
 
 export async function POST(request) {
   const input = await request.json();
-  if (!input?.weightKg || !input?.heightCm || !input?.age) {
+  if (!input?.weightKg || !input?.heightCm || !input?.age || !input?.goal) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 

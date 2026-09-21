@@ -8,6 +8,7 @@ import { products as allProducts } from "../data/products";
 import { buildWhatsAppLink } from "../lib/whatsapp";
 import PageHeader from "../components/PageHeader";
 import IvarLoader from "../components/IvarLoader";
+import { fetchWithTimeout } from "../lib/fetchWithTimeout";
 
 const TOTAL_STEPS = 6;
 
@@ -137,16 +138,15 @@ export default function PlannerPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/planner", {
+      const res = await fetchWithTimeout("/api/planner", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error("failed");
       const data = await res.json();
       setReport(data);
-    } catch {
-      setError("Something went wrong generating your plan — please try again.");
+    } catch (err) {
+      setError(err.message?.includes("network") ? err.message : "Something went wrong generating your plan — please try again.");
     } finally {
       setLoading(false);
     }
