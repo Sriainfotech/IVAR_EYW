@@ -31,16 +31,21 @@ export default function IvarHero() {
         <div
           key={s.img}
           aria-hidden="true"
-          className={`absolute inset-y-0 right-0 w-full lg:w-[68%] transition-opacity duration-[900ms] ${
+          className={`absolute inset-0 transition-opacity duration-[900ms] ${
             i === active ? "opacity-100" : "opacity-0"
           }`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={s.img} alt="" className="w-full h-full object-cover [mask-image:linear-gradient(to_right,transparent,#000_20%)] [-webkit-mask-image:linear-gradient(to_right,transparent,#000_20%)]" />
+          <img src={s.img} alt="" className="w-full h-full object-cover" />
         </div>
       ))}
-      <div className="absolute inset-0 bg-ivar-paper/70 lg:hidden" />
 
+      <div aria-hidden="true" className="absolute inset-0 bg-ivar-paper/75 md:hidden" />
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute inset-0"
+        style={{ background: "linear-gradient(90deg, #F5F0E5 0%, rgba(245,240,229,0.92) 24%, rgba(245,240,229,0) 50%)" }}
+      />
       <div
         aria-hidden="true"
         className="hidden md:block absolute top-8 right-[5%] w-[210px] text-right -rotate-[8deg] text-white"
@@ -58,7 +63,8 @@ export default function IvarHero() {
         <LineIcon name="leaf" size={22} stroke={1.6} className="ml-auto mt-1" />
       </div>
 
-      <div className="relative max-w-[1500px] mx-auto px-[4vw] pt-10 md:pt-10 pb-12 min-h-[430px] md:min-h-[360px] flex flex-col justify-center">
+      <div className="relative max-w-[1500px] mx-auto px-[4vw] py-8 md:py-10 min-h-[430px] md:min-h-[400px] flex items-center">
+       <div className="w-full max-w-[620px]">
         <h1 className="font-serif font-semibold text-[40px] md:text-[50px] leading-[1.04] text-[#111111] max-w-[620px]">
           Food First.
           <br />
@@ -98,6 +104,7 @@ export default function IvarHero() {
             </li>
           ))}
         </ul>
+       </div>
 
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
           {slides.map((s, i) => (

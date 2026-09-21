@@ -7,7 +7,7 @@ function PillLink({ href, children, className = "" }) {
   return (
     <Link
       href={href}
-      className={`inline-flex items-center gap-3 bg-ivar-forest text-white text-[12.5px] font-semibold rounded-full pl-5 pr-4 py-2.5 hover:bg-ivar-forestDeep transition-colors ${className}`}
+      className={`inline-flex w-fit items-center gap-2.5 whitespace-nowrap bg-ivar-forest text-white text-[12.5px] font-semibold rounded-full pl-5 pr-4 py-2.5 hover:bg-ivar-forestDeep transition-colors ${className}`}
     >
       {children} <LineIcon name="arrow" size={14} stroke={2.2} />
     </Link>
@@ -23,10 +23,11 @@ export function CategoryCards() {
   return (
     <section className={`${wrap} py-10 md:py-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8`}>
       {cards.map((c) => (
-        <article key={c.title} className="relative overflow-hidden rounded-lg bg-ivar-beige min-h-[145px] border border-[#e6e3d6]">
+        <article key={c.title} className="relative overflow-hidden rounded-lg bg-ivar-beige min-h-[160px] border border-[#e6e3d6]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={c.img} alt="" aria-hidden="true" loading="lazy" className="absolute inset-y-0 right-0 w-[58%] h-full object-cover [mask-image:linear-gradient(to_right,transparent,#000_28%)] [-webkit-mask-image:linear-gradient(to_right,transparent,#000_28%)]" />
-          <div className="relative p-6 max-w-[60%]">
+          <img src={c.img} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+          <div aria-hidden="true" className="absolute inset-0" style={{ background: "linear-gradient(90deg, #EEE6D5 0%, rgba(238,230,213,0.92) 28%, rgba(238,230,213,0) 60%)" }} />
+          <div className="relative p-6 max-w-[68%]">
             <h3 className="font-serif font-semibold text-[22px] md:text-[24px] leading-tight text-[#1c2a20] mb-2">{c.title}</h3>
             <p className="text-[13px] leading-snug text-[#33413a] mb-5">{c.text}</p>
             <PillLink href={c.href}>{c.cta}</PillLink>
