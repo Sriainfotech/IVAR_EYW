@@ -20,7 +20,7 @@ export default function NetworkStatus() {
   if (online) return null;
 
   return (
-    <div className="fixed top-0 inset-x-0 z-[200] bg-[#a9433a] text-white text-xs sm:text-sm text-center py-2 px-4">
+    <div className="fixed top-0 inset-x-0 z-[200] bg-[#E85D3A] text-white text-xs sm:text-sm text-center py-2 px-4">
       No internet connection — some features won't load until you're back online.
     </div>
   );

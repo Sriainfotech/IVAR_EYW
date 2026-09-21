@@ -54,7 +54,7 @@ export default function CartDrawer() {
                 <img
                   src={l.product.img}
                   alt=""
-                  className="w-16 h-16 object-cover rounded-xl bg-[#eef1e8]"
+                  className="w-16 h-16 object-cover rounded-xl bg-[#EEE6D5]"
                 />
                 <div>
                   <h4 className="font-serif font-medium m-0 mb-1 text-sm">

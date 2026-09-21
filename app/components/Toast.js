@@ -12,7 +12,7 @@ export default function Toast() {
       }`}
     >
       {toast && (
-        <div className="bg-ivar-dark text-white rounded-xl shadow-[0_12px_30px_#0a3d2440] px-5 py-4 flex items-center gap-3 max-w-[320px]">
+        <div className="bg-ivar-dark text-white rounded-xl shadow-[0_12px_30px_#064C3540] px-5 py-4 flex items-center gap-3 max-w-[320px]">
           <span className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center text-xs shrink-0">
             ✓
           </span>

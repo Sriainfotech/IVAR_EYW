@@ -1,64 +1,61 @@
 import Link from "next/link";
+import { products } from "../data/products";
+import ChatCta from "./ChatCta";
 
-const floaters = [
-  { e: "🥑", cls: "top-[8%] left-[4%] text-5xl", d: "0s" },
-  { e: "🍅", cls: "top-[14%] right-[46%] text-4xl", d: "0.6s" },
-  { e: "🌿", cls: "bottom-[14%] left-[8%] text-4xl", d: "1.2s" },
-  { e: "🍋", cls: "top-[6%] right-[6%] text-5xl", d: "0.3s" },
-];
+const eat = products.filter((p) => p.group === "Eat");
+const maxProtein = Math.max(...eat.map((p) => p.nutrition?.proteinG ?? 0));
 
 export default function BowlHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-ivar-mint via-[#f6fbf4] to-[#fff6ef]">
-      {floaters.map((f) => (
-        <span
-          key={f.e}
-          aria-hidden="true"
-          className={`hidden md:block absolute select-none opacity-90 ${f.cls}`}
-          style={{ animation: "ivarAvocadoBob 3.4s ease-in-out infinite", animationDelay: f.d }}
-        >
-          {f.e}
-        </span>
-      ))}
-
-      <div className="max-w-[1320px] mx-auto px-[6vw] py-14 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div className="relative z-10">
-          <span className="inline-block bg-white text-ivar-green text-[11px] font-bold tracking-[0.14em] uppercase px-3.5 py-1.5 rounded-full shadow-sm mb-5">
-            Freshly made · High protein
+    <section className="relative overflow-hidden bg-ivar-cream">
+      <div
+        aria-hidden="true"
+        className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-ivar-mint opacity-70"
+      />
+      <div className="relative max-w-[1320px] mx-auto px-[6vw] py-12 md:py-20 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
+        <div>
+          <span className="inline-flex items-center gap-2 text-sm text-[#4B5563] mb-5">
+            <span aria-hidden="true">🌱</span> Fresh food · Made daily
           </span>
-          <h1 className="font-extrabold text-[40px] md:text-[64px] leading-[1.04] text-ivar-dark mb-5">
-            Fresh food.
+          <h1 className="font-extrabold text-[44px] md:text-[68px] leading-[1.1] mb-5">
+            <span className="text-[#1A1A1A]">Fresh food.</span>
             <br />
-            <span className="text-ivar-coral">Good vibes.</span>
+            <span className="text-ivar-dark">Good vibes.</span>
           </h1>
-          <p className="text-base md:text-lg text-[#4d5f55] leading-relaxed max-w-[480px] mb-8">
-            Protein-packed bowls, breakfast and everyday nutrition from Ivar — made with wholesome
-            Indian ingredients, no preservatives.
+          <p className="text-base md:text-lg text-[#4B5563] leading-relaxed max-w-[500px] mb-8">
+            Protein-packed bowls, breakfast and everyday nutrition crafted with wholesome Indian ingredients — for
+            creators, gym-goers and everyone who eats with intention.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
             <Link
               href="/planner"
-              className="bg-ivar-coral text-white font-semibold text-sm rounded-full px-7 py-3.5 shadow-[0_8px_20px_#ff6b4a44] hover:brightness-105 transition"
+              className="bg-ivar-dark text-white font-semibold rounded-3xl px-8 py-3 hover:bg-ivar-darker hover:-translate-y-0.5 transition-all"
             >
-              Start Your Meal Plan
+              Start Your Meal Plan ✨
             </Link>
             <Link
               href="/build"
-              className="bg-ivar-dark text-white font-semibold text-sm rounded-full px-7 py-3.5 hover:bg-ivar-green transition-colors"
+              className="bg-white border-2 border-ivar-dark text-ivar-dark font-semibold rounded-3xl px-8 py-3 hover:bg-ivar-cream transition-colors"
             >
-              Build My Bowl
+              Build My Box
             </Link>
-            <Link
-              href="/plans"
-              className="bg-white text-ivar-dark font-semibold text-sm rounded-full px-7 py-3.5 border border-[#d6e4d8] hover:border-ivar-dark transition-colors"
-            >
-              Subscribe Weekly
-            </Link>
+          </div>
+          <Link href="/plans" className="text-sm text-[#4B5563] hover:text-ivar-dark underline underline-offset-4">
+            Subscribe Weekly
+          </Link>
+
+          <div className="mt-8 flex">
+            <div className="inline-flex items-center gap-3 bg-white border border-[#D0D8DC] rounded-3xl px-5 py-3">
+              <span aria-hidden="true">🍴</span>
+              <p className="text-xs font-bold tracking-wide uppercase text-[#1A1A1A]">
+                {eat.length}+ products · up to {maxProtein}g protein
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="relative">
-          <div className="relative aspect-square max-w-[520px] mx-auto rounded-full overflow-hidden shadow-[0_30px_60px_#0a3d2430] border-[10px] border-white">
+          <div className="relative aspect-square max-w-[500px] mx-auto rounded-2xl overflow-hidden bg-white shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/products/eat/egg-avocado-power-bowl.jpg"
@@ -66,13 +63,8 @@ export default function BowlHero() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute top-2 right-2 md:right-6 bg-white rounded-2xl shadow-lg px-4 py-2.5 text-center">
-            <p className="font-extrabold text-ivar-dark text-lg leading-none">28g+</p>
-            <p className="text-[10px] text-[#6b7771] mt-1">protein</p>
-          </div>
-          <div className="absolute bottom-6 left-0 md:left-4 bg-white rounded-2xl shadow-lg px-4 py-2.5 text-center">
-            <p className="font-extrabold text-ivar-coral text-lg leading-none">100%</p>
-            <p className="text-[10px] text-[#6b7771] mt-1">no preservatives</p>
+          <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:right-0 md:-right-4">
+            <ChatCta />
           </div>
         </div>
       </div>

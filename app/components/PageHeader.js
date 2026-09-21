@@ -1,32 +1,13 @@
-export default function PageHeader({ title, subtitle, img }) {
+export default function PageHeader({ title, subtitle, eyebrow }) {
   return (
-    <section className="relative bg-ivar-darker text-white min-h-[320px] md:min-h-[420px] flex items-center py-[70px] md:py-[90px] px-[6vw] overflow-hidden">
-      {img ? (
-        <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={img}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-ivar-darker/90 via-ivar-darker/75 to-ivar-darker/55" />
-        </>
-      ) : (
-        <div
-          className="absolute inset-0 opacity-[0.12] pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 30%, #ffffff 0, transparent 45%), radial-gradient(circle at 80% 70%, #ffffff 0, transparent 40%)",
-          }}
-        />
-      )}
-      <div className="relative w-full max-w-[1440px] mx-auto text-center">
-        <h1 className="font-serif font-medium text-[38px] md:text-[48px] leading-[1.05] m-0">
-          {title}
-        </h1>
+    <section className="relative bg-ivar-cream py-10 md:py-14 px-[6vw] overflow-hidden">
+      <div className="relative w-full max-w-[1320px] mx-auto text-center md:text-left">
+        {eyebrow ? (
+          <p className="text-xs tracking-[0.12em] font-semibold text-ivar-dark uppercase mb-3">{eyebrow}</p>
+        ) : null}
+        <h1 className="font-extrabold text-[40px] md:text-[64px] leading-[1.1] text-[#1A1A1A] m-0">{title}</h1>
         {subtitle ? (
-          <p className="text-[#c9d8cf] mt-4 max-w-[560px] mx-auto font-light">
+          <p className="text-[#4B5563] mt-4 max-w-[640px] text-base md:text-lg leading-relaxed mx-auto md:mx-0">
             {subtitle}
           </p>
         ) : null}

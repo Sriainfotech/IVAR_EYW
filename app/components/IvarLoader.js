@@ -47,7 +47,7 @@ export default function IvarLoader({ label = "Preparing something fresh…", siz
 
   if (fullScreen) {
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#fbfaf5]">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#F5F0E5]">
         {content}
       </div>
     );

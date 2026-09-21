@@ -95,7 +95,7 @@ export default function CorporateOrdersPage() {
         {/* Meal plan cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
           {CORPORATE_PLANS.map((plan) => (
-            <div key={plan.id} className={`rounded-2xl border p-5 flex flex-col ${plan.bestValue ? "border-ivar-dark bg-[#eef1e8]" : "border-[#e6e4dc]"}`}>
+            <div key={plan.id} className={`rounded-2xl border p-5 flex flex-col ${plan.bestValue ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc]"}`}>
               {plan.bestValue && <span className="text-[10px] font-bold uppercase tracking-wide bg-ivar-dark text-white rounded-full px-2.5 py-1 w-max mb-2">Best Value</span>}
               <h3 className="font-serif text-lg font-medium mb-1">Corporate {plan.label} Plan</h3>
               <p className="text-xl font-bold text-ivar-dark mb-1">{money(plan.pricePerPersonPerDay)} <span className="text-xs font-normal text-[#6b7771]">/person/day</span></p>
@@ -141,11 +141,11 @@ export default function CorporateOrdersPage() {
             </label>
           </div>
           <div className="grid grid-cols-3 gap-4 text-center mb-6">
-            <div className="bg-[#eef1e8] rounded-xl py-3">
+            <div className="bg-[#EEE6D5] rounded-xl py-3">
               <p className="text-sm font-bold">{money(calcResult.perPerson)}</p>
               <p className="text-[10px] text-[#6b7771]">Per Person</p>
             </div>
-            <div className="bg-[#eef1e8] rounded-xl py-3">
+            <div className="bg-[#EEE6D5] rounded-xl py-3">
               <p className="text-sm font-bold">{calcPeople} × {calcResult.days}</p>
               <p className="text-[10px] text-[#6b7771]">People × Days</p>
             </div>
@@ -171,7 +171,7 @@ export default function CorporateOrdersPage() {
           <p className="text-xs text-[#6b7771] mb-5">Indicative totals for the Full-Day Plan at {money(FULL_DAY_PLAN.pricePerPersonPerDay)}/person/day.</p>
           <div className="overflow-x-auto rounded-2xl border border-[#e6e4dc]">
             <table className="w-full text-sm">
-              <thead className="bg-[#eef1e8] text-left">
+              <thead className="bg-[#EEE6D5] text-left">
                 <tr>
                   <th className="p-3">Team Size</th>
                   {CORPORATE_DURATIONS.map((d) => <th key={d.id} className="p-3">{d.label}</th>)}
@@ -254,7 +254,7 @@ export default function CorporateOrdersPage() {
         </div>
 
         {/* Delivery info */}
-        <div className="rounded-2xl bg-[#eef1e8] p-6 mb-16">
+        <div className="rounded-2xl bg-[#EEE6D5] p-6 mb-16">
           <p className="text-xs font-bold uppercase tracking-wide text-[#6b8276] mb-2">Delivery Information</p>
           <p className="text-sm mb-1">Ivar Kitchen — delivering across your city</p>
           <p className="text-sm mb-1">Delivery Charge: ₹{CORPORATE_DELIVERY_RATE_PER_KM} Per KM</p>

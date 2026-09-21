@@ -11,6 +11,47 @@ body {
     BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select,
+textarea {
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #064C35;
+  box-shadow: 0 0 0 3px rgba(6, 76, 53, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9CA3AF;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #064C35;
+  outline-offset: 2px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #eceeec 25%, #f6f7f6 50%, #eceeec 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

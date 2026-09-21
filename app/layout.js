@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Caveat } from "next/font/google";
 import { CartProvider } from "./context/CartContext";
 import { ProductModalProvider } from "./context/ProductModalContext";
 import Header from "./components/Header";
@@ -18,6 +18,13 @@ const playfair = Playfair_Display({
   weight: ["500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -57,13 +64,13 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0a3d24",
+  themeColor: "#064C35",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="bg-[#fbfaf5] text-[#173126] pb-16 md:pb-0">
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${caveat.variable}`}>
+      <body className="bg-[#F5F0E5] text-[#1A1A1A] pb-16 md:pb-0">
         <CartProvider>
           <ProductModalProvider>
             <NetworkStatus />

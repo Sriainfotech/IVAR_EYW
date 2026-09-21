@@ -138,16 +138,16 @@ export default function PlansPage() {
   return (
     <main>
       <PageHeader
-        title="Ivar Subscription Plans"
-        subtitle="Build a recurring box from your favourite Ivar products, delivered weekly or monthly."
-        img="/assets/hero-couple-cooking.jpg"
+        eyebrow="🌱 Subscribe to Ivar"
+        title="Build the perfect meal plan for you."
+        subtitle="Pick your meals, choose delivery dates and pause anytime. Save up to 15% with weekly and monthly plans."
       />
 
       <section className="max-w-[1300px] mx-auto px-[6vw] py-[70px] md:py-[90px] grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12">
         <div>
           <div className="flex items-center gap-1.5 mb-8">
             {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
-              <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#eef1e8]"}`} />
+              <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#EEE6D5]"}`} />
             ))}
           </div>
 
@@ -175,7 +175,7 @@ export default function PlansPage() {
                       key={meal}
                       onClick={() => setMeals((m) => ({ ...m, [meal]: !m[meal] }))}
                       className={`rounded-2xl border p-4 text-left cursor-pointer transition-colors ${
-                        meals[meal] ? "border-ivar-dark bg-[#eef1e8]" : "border-[#e6e4dc]"
+                        meals[meal] ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc]"
                       }`}
                       suppressHydrationWarning
                     >
@@ -186,7 +186,7 @@ export default function PlansPage() {
                   ))}
                 </div>
                 {selectedMealKeys.length > 0 && (
-                  <div className="rounded-2xl bg-[#eef1e8] p-4">
+                  <div className="rounded-2xl bg-[#EEE6D5] p-4">
                     <p className="text-sm font-semibold">{money(pricePerDay)}/day blended · {selectedMealKeys.length} meal(s) selected</p>
                   </div>
                 )}
@@ -197,12 +197,12 @@ export default function PlansPage() {
               <>
                 <h2 className="font-serif text-xl font-medium">3. Plan Duration</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <button onClick={() => setDuration("weekly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "weekly" ? "border-ivar-dark bg-[#eef1e8]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
+                  <button onClick={() => setDuration("weekly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "weekly" ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
                     <p className="font-serif font-medium mb-1">Weekly</p>
                     <p className="text-xs text-[#6b7771] mb-2">5 delivery days · Most Flexible</p>
                     <p className="text-sm font-semibold text-ivar-dark">{SUBSCRIPTION_DISCOUNT.weekly}% OFF</p>
                   </button>
-                  <button onClick={() => setDuration("monthly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "monthly" ? "border-ivar-dark bg-[#eef1e8]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
+                  <button onClick={() => setDuration("monthly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "monthly" ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
                     <p className="font-serif font-medium mb-1">Monthly</p>
                     <p className="text-xs text-[#6b7771] mb-2">Choose delivery days · Best Value</p>
                     <p className="text-sm font-semibold text-ivar-dark">{SUBSCRIPTION_DISCOUNT.monthly}% OFF</p>
@@ -232,7 +232,7 @@ export default function PlansPage() {
                   {deliveryDates.map((date) => {
                     const paused = pausedDates.includes(date);
                     return (
-                      <button key={date} onClick={() => togglePause(date)} className={`px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer ${paused ? "line-through text-[#8a938c] border-[#e6e4dc]" : "border-ivar-dark bg-[#eef1e8]"}`} suppressHydrationWarning>
+                      <button key={date} onClick={() => togglePause(date)} className={`px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer ${paused ? "line-through text-[#8a938c] border-[#e6e4dc]" : "border-ivar-dark bg-[#EEE6D5]"}`} suppressHydrationWarning>
                         ▷ {new Date(date).toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" })}
                       </button>
                     );
@@ -348,17 +348,17 @@ export default function PlansPage() {
           <div className="rounded-3xl border border-[#e6e4dc] bg-white p-6 space-y-4">
             <p className="font-serif text-lg font-medium">Your Subscription</p>
             <div className="text-sm space-y-1.5 text-[#6b7771]">
-              <div className="flex justify-between"><span>Plan</span><span className="text-[#173126] capitalize">{duration}{duration === "monthly" ? ` (${monthlyDays})` : ""}</span></div>
-              <div className="flex justify-between"><span>Meals</span><span className="text-[#173126] capitalize">{selectedMealKeys.join(", ") || "—"}</span></div>
-              <div className="flex justify-between"><span>Delivery Days</span><span className="text-[#173126]">{activeDays} of {deliveryDates.length}</span></div>
-              <div className="flex justify-between"><span>Start Date</span><span className="text-[#173126]">{deliveryDates[0]}</span></div>
-              <div className="flex justify-between"><span>People</span><span className="text-[#173126]">{people}</span></div>
-              <div className="flex justify-between"><span>Total Bowls</span><span className="text-[#173126]">{totalBowls}</span></div>
+              <div className="flex justify-between"><span>Plan</span><span className="text-[#1A1A1A] capitalize">{duration}{duration === "monthly" ? ` (${monthlyDays})` : ""}</span></div>
+              <div className="flex justify-between"><span>Meals</span><span className="text-[#1A1A1A] capitalize">{selectedMealKeys.join(", ") || "—"}</span></div>
+              <div className="flex justify-between"><span>Delivery Days</span><span className="text-[#1A1A1A]">{activeDays} of {deliveryDates.length}</span></div>
+              <div className="flex justify-between"><span>Start Date</span><span className="text-[#1A1A1A]">{deliveryDates[0]}</span></div>
+              <div className="flex justify-between"><span>People</span><span className="text-[#1A1A1A]">{people}</span></div>
+              <div className="flex justify-between"><span>Total Bowls</span><span className="text-[#1A1A1A]">{totalBowls}</span></div>
             </div>
 
             <div className="flex gap-1.5 overflow-x-auto no-scrollbar">
               {deliveryDates.map((d) => (
-                <span key={d} className="shrink-0 text-[10px] bg-[#eef1e8] rounded-full px-2 py-1">
+                <span key={d} className="shrink-0 text-[10px] bg-[#EEE6D5] rounded-full px-2 py-1">
                   {new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}
                 </span>
               ))}

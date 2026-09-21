@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { products } from "../../data/products";
-import PageHeader from "../../components/PageHeader";
+import Link from "next/link";
 import ProductDetails from "../../components/ProductDetails";
 
 export function generateStaticParams() {
@@ -61,12 +61,12 @@ export default function ProductPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <PageHeader
-        title={product.name}
-        subtitle={product.cat}
-        img="/assets/hero-veg-spices.jpg"
-      />
-      <section className="max-w-[1200px] mx-auto px-[6vw] py-[70px] md:py-[90px]">
+      <nav aria-label="Breadcrumb" className="max-w-[1100px] mx-auto px-[6vw] pt-6 text-[12px] text-[#4b564f]">
+        <Link href="/shop" className="hover:text-ivar-dark">Menu</Link>
+        <span className="mx-2">/</span>
+        <span>{product.cat}</span>
+      </nav>
+      <section className="max-w-[1100px] mx-auto px-[6vw] py-8 md:py-12">
         <ProductDetails product={product} />
       </section>
     </main>

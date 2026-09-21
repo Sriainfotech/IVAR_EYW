@@ -23,6 +23,17 @@ function eatByCat(cats) {
   return products.filter((p) => p.group === "Eat" && cats.includes(p.cat));
 }
 
+function ProductThumb({ product }) {
+  return (
+    <div className="relative shrink-0 size-[88px] rounded-xl overflow-hidden bg-ivar-cream">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={product.img} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 w-full h-full object-cover blur-lg scale-125 opacity-60" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={product.img} alt={product.name} loading="lazy" className="relative w-full h-full object-contain" />
+    </div>
+  );
+}
+
 function Step({ n, title, subtitle, children }) {
   return (
     <div className="mb-12">
@@ -42,43 +53,48 @@ function Step({ n, title, subtitle, children }) {
 
 function QtyPicker({ items, qty, onChange }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
       {items.map((p) => (
-        <div key={p.id} className="flex items-center justify-between rounded-2xl border border-[#e6e4dc] p-3.5">
-          <div>
-            <p className="text-sm font-medium">{p.name}</p>
-            <p className="text-xs text-[#6b7771]">
+        <div key={p.id} className="flex items-center gap-3.5 rounded-2xl border border-[#e6e4dc] bg-white p-3">
+          <ProductThumb product={p} />
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold leading-snug line-clamp-2">{p.name}</p>
+            <p className="text-xs text-[#6b7771] mt-0.5">
               {money(p.price)}
-              {p.nutrition ? ` · Est. ${p.nutrition.kcal}kcal, ${p.nutrition.proteinG}g protein` : ""}
+              {p.nutrition ? ` · ${p.nutrition.kcal} kcal · ${p.nutrition.proteinG}g protein` : ""}
             </p>
-          </div>
-          {qty[p.id] > 0 ? (
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => onChange(p.id, -1)}
-                className="size-7 rounded-full border border-[#d6ddd7] flex items-center justify-center cursor-pointer hover:border-ivar-dark"
-                suppressHydrationWarning
-              >
-                −
-              </button>
-              <span className="text-sm w-4 text-center">{qty[p.id]}</span>
-              <button
-                onClick={() => onChange(p.id, 1)}
-                className="size-7 rounded-full border border-[#d6ddd7] flex items-center justify-center cursor-pointer hover:border-ivar-dark"
-                suppressHydrationWarning
-              >
-                +
-              </button>
+            <div className="mt-2">
+              {qty[p.id] > 0 ? (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => onChange(p.id, -1)}
+                    aria-label={`Remove one ${p.name}`}
+                    className="size-7 rounded-full border border-[#d6ddd7] flex items-center justify-center cursor-pointer hover:border-ivar-dark"
+                    suppressHydrationWarning
+                  >
+                    −
+                  </button>
+                  <span className="text-sm w-5 text-center">{qty[p.id]}</span>
+                  <button
+                    onClick={() => onChange(p.id, 1)}
+                    aria-label={`Add one ${p.name}`}
+                    className="size-7 rounded-full border border-[#d6ddd7] flex items-center justify-center cursor-pointer hover:border-ivar-dark"
+                    suppressHydrationWarning
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => onChange(p.id, 1)}
+                  className="text-xs font-semibold border border-ivar-dark text-ivar-dark rounded-full px-4 py-1.5 cursor-pointer hover:bg-ivar-dark hover:text-white transition-colors"
+                  suppressHydrationWarning
+                >
+                  + Add
+                </button>
+              )}
             </div>
-          ) : (
-            <button
-              onClick={() => onChange(p.id, 1)}
-              className="text-xs font-semibold border border-ivar-dark text-ivar-dark rounded-full px-3 py-1.5 cursor-pointer hover:bg-ivar-dark hover:text-white transition-colors"
-              suppressHydrationWarning
-            >
-              + Add
-            </button>
-          )}
+          </div>
         </div>
       ))}
     </div>
@@ -154,9 +170,9 @@ export default function BuildPage() {
   return (
     <main>
       <PageHeader
-        title="Build Your Own Box"
-        subtitle="Mix real Ivar favourites into your own custom box — base, protein, and everyday add-ons."
-        img="/assets/hero-grain-bowl.jpg"
+        eyebrow="Box Builder"
+        title="Design your perfect box"
+        subtitle="Base included. Pick a base, mix proteins, layer add-ons and snacks. Calories, macros and price update live."
       />
 
       <section className="max-w-[1300px] mx-auto px-[6vw] py-[70px] md:py-[90px] grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12">
@@ -196,21 +212,25 @@ export default function BuildPage() {
           </Step>
 
           <Step n={3} title="Pick your base" subtitle="Included — pick one breakfast or ready-mix base">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
               {bases.map((p) => (
                 <button
                   key={p.id}
                   onClick={() => setBaseId(p.id)}
-                  className={`text-left rounded-2xl border p-4 cursor-pointer transition-colors ${
-                    baseId === p.id ? "border-ivar-dark bg-[#eef1e8]" : "border-[#e6e4dc] hover:border-ivar-dark"
+                  className={`text-left flex items-center gap-3.5 rounded-2xl border p-3 cursor-pointer transition-colors ${
+                    baseId === p.id ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc] bg-white hover:border-ivar-dark"
                   }`}
                   suppressHydrationWarning
                 >
-                  <p className="text-sm font-medium">{p.name}</p>
-                  <p className="text-xs text-[#6b7771] mt-1">
-                    {money(p.price)}
-                    {p.nutrition ? ` · Est. ${p.nutrition.kcal}kcal, ${p.nutrition.proteinG}g protein` : ""}
-                  </p>
+                  <ProductThumb product={p} />
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold leading-snug line-clamp-2">{p.name}</p>
+                    <p className="text-xs text-[#6b7771] mt-1">
+                      {money(p.price)}
+                      {p.nutrition ? ` · ${p.nutrition.kcal} kcal · ${p.nutrition.proteinG}g protein` : ""}
+                    </p>
+                    {baseId === p.id && <p className="text-[11px] font-semibold text-ivar-dark mt-1">✓ Selected</p>}
+                  </div>
                 </button>
               ))}
             </div>
@@ -249,21 +269,21 @@ export default function BuildPage() {
           <div className="rounded-3xl border border-[#e6e4dc] bg-white p-6 space-y-5">
             <div className="flex items-center justify-between">
               <p className="font-serif text-lg font-medium">{bowlName()}</p>
-              <span className="text-[10px] font-bold uppercase tracking-wide bg-[#eef1e8] text-ivar-dark rounded-full px-2.5 py-1 shrink-0 ml-2">
+              <span className="text-[10px] font-bold uppercase tracking-wide bg-[#EEE6D5] text-ivar-dark rounded-full px-2.5 py-1 shrink-0 ml-2">
                 Live
               </span>
             </div>
 
             <div className="grid grid-cols-3 gap-2 text-center">
-              <div className="bg-[#eef1e8] rounded-xl py-2">
+              <div className="bg-[#EEE6D5] rounded-xl py-2">
                 <p className="text-sm font-bold">{macros.kcal}</p>
                 <p className="text-[10px] text-[#6b7771]">KCAL</p>
               </div>
-              <div className="bg-[#eef1e8] rounded-xl py-2">
+              <div className="bg-[#EEE6D5] rounded-xl py-2">
                 <p className="text-sm font-bold">{macros.proteinG}g</p>
                 <p className="text-[10px] text-[#6b7771]">PROTEIN</p>
               </div>
-              <div className="bg-[#eef1e8] rounded-xl py-2">
+              <div className="bg-[#EEE6D5] rounded-xl py-2">
                 <p className="text-sm font-bold">{money(finalPrice)}</p>
                 <p className="text-[10px] text-[#6b7771]">TOTAL</p>
               </div>
@@ -288,7 +308,7 @@ export default function BuildPage() {
                     <span>{row.label}</span>
                     <span>{row.value}{row.unit} / {row.target}{row.unit}</span>
                   </div>
-                  <div className="h-1.5 rounded-full bg-[#eef1e8] overflow-hidden">
+                  <div className="h-1.5 rounded-full bg-[#EEE6D5] overflow-hidden">
                     <div
                       className="h-full bg-ivar-dark rounded-full transition-all"
                       style={{ width: `${Math.min(100, (row.value / row.target) * 100)}%` }}

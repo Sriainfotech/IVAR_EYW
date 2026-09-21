@@ -72,7 +72,7 @@ export default function ProductModal() {
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10 md:p-8">
-          <div className="bg-[#eef1e8] h-[240px] md:h-[420px] md:rounded-2xl overflow-hidden">
+          <div className="bg-[#EEE6D5] h-[240px] md:h-[420px] md:rounded-2xl overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={product.img}
@@ -113,7 +113,7 @@ export default function ProductModal() {
                   {product.ingredients.map((item) => (
                     <li
                       key={item}
-                      className="text-xs bg-[#eef1e8] text-ivar-text rounded-full px-3 py-1.5"
+                      className="text-xs bg-[#EEE6D5] text-ivar-text rounded-full px-3 py-1.5"
                     >
                       {item}
                     </li>

@@ -78,7 +78,7 @@ function Tile({ active, onClick, children }) {
     <button
       onClick={onClick}
       className={`rounded-2xl border p-3 text-left cursor-pointer transition-colors ${
-        active ? "border-ivar-dark bg-[#eef1e8]" : "border-[#e6e4dc] hover:border-ivar-dark"
+        active ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc] hover:border-ivar-dark"
       }`}
       suppressHydrationWarning
     >
@@ -272,7 +272,7 @@ export default function PlannerPage() {
       <section className="max-w-[900px] mx-auto px-[6vw] py-[70px] md:py-[90px]">
         <div className="flex items-center gap-1.5 mb-2">
           {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
-            <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#eef1e8]"}`} />
+            <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#EEE6D5]"}`} />
           ))}
         </div>
         <p className="text-xs text-[#8a938c] mb-8">Step {step}/{TOTAL_STEPS}</p>
@@ -439,7 +439,7 @@ export default function PlannerPage() {
                   <p className="text-[11px] text-[#8a938c] pt-3">
                     By generating your report you agree to be contacted by Ivar with your personalized plan.
                   </p>
-                  {error && <p className="text-sm text-[#a9433a]">{error}</p>}
+                  {error && <p className="text-sm text-[#E85D3A]">{error}</p>}
                   <button
                     onClick={handleGenerate}
                     className="w-full rounded-full px-6 py-4 font-semibold text-[13px] tracking-wide bg-ivar-dark text-white transition-colors duration-200 hover:bg-ivar-green cursor-pointer"
