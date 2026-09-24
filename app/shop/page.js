@@ -151,6 +151,7 @@ export default function ShopPage() {
         eyebrow="Ivar"
         title="The Menu"
         subtitle="Breakfast to bowls, snacks to teas — all in one place. Fresh, high protein, made daily."
+        img="/assets/products/eat/makhana-crunch.jpg"
       />
       <section className="max-w-[1320px] mx-auto px-[6vw] pb-14 md:pb-20">
         <ShopContent />

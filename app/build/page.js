@@ -173,6 +173,7 @@ export default function BuildPage() {
         eyebrow="Box Builder"
         title="Design your perfect box"
         subtitle="Base included. Pick a base, mix proteins, layer add-ons and snacks. Calories, macros and price update live."
+        img="/assets/hero-grain-bowl.jpg"
       />
 
       <section className="max-w-[1300px] mx-auto px-[6vw] py-[70px] md:py-[90px] grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12">

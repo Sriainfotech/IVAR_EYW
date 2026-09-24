@@ -8,8 +8,8 @@ import { useCart } from "../context/CartContext";
 import LineIcon from "./LineIcon";
 
 const navLinks = [
-  { href: "/shop", label: "Foods" },
-  { href: "/shop", label: "Processed Foods" },
+  { href: "/foods", label: "Foods" },
+  { href: "/foods/ready-to-cook", label: "Processed Foods" },
   { href: "/ingredients", label: "Ingredients" },
   { href: "/innovation", label: "Innovation" },
   { href: "/packaging", label: "Packaging" },

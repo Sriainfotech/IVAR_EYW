@@ -1,6 +1,6 @@
 import IvarHero from "./components/IvarHero";
-import IndiaFoodStory from "./components/IndiaFoodStory";
-import IvarJourney from "./components/IvarJourney";
+import IndiaJourneyCircles from "./components/IndiaJourneyCircles";
+import HomeCategoryCards from "./components/HomeCategoryCards";
 import WhatIvarDoes from "./components/WhatIvarDoes";
 import FeaturedCarousel from "./components/FeaturedCarousel";
 import MakhanaStory from "./components/MakhanaStory";
@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <main id="home">
       <IvarHero />
-      <IndiaFoodStory />
-      <IvarJourney />
+      <IndiaJourneyCircles />
+      <HomeCategoryCards />
       <WhatIvarDoes />
       <FeaturedCarousel />
       <MakhanaStory />

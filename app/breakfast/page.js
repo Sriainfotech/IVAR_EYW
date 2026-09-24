@@ -14,6 +14,7 @@ export default function BreakfastPage() {
         eyebrow="Start the day right"
         title="Breakfast"
         subtitle="Wholesome mixes, grains and café favourites for a better morning."
+        img="/assets/products/eat/multigrain-breakfast-mix.jpg"
       />
       <section className="max-w-[1320px] mx-auto px-[6vw] py-10 md:py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

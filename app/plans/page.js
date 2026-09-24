@@ -141,6 +141,7 @@ export default function PlansPage() {
         eyebrow="🌱 Subscribe to Ivar"
         title="Build the perfect meal plan for you."
         subtitle="Pick your meals, choose delivery dates and pause anytime. Save up to 15% with weekly and monthly plans."
+        img="/assets/hero-couple-cooking.jpg"
       />
 
       <section className="max-w-[1300px] mx-auto px-[6vw] py-[70px] md:py-[90px] grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12">

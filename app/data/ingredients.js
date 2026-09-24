@@ -3,11 +3,25 @@ export const ingredients = [
   {
     name: "Amla",
     slug: "amla",
+    tagline: "The Indian Gooseberry",
     origin: "Uttar Pradesh & Madhya Pradesh, India",
     description: "The Indian gooseberry — a small, tart fruit central to Indian food and Ayurvedic tradition.",
+    overview: "Amla has been valued in Indian tradition for centuries. Today it continues to inspire modern food innovations through its exceptional nutrient profile and versatility across food, beverage and everyday formats.",
     traditionalUses: ["Pickles", "Murabba (candied preserve)", "Dried chips", "Juices"],
     applications: ["Candy", "Ready-to-drink beverages", "Chutneys", "Pickles"],
     processing: ["Sorting", "Washing", "Steaming", "Drying / pressing", "Preservation"],
+    benefits: [
+      { title: "Rich in Vitamin C", icon: "leaf" },
+      { title: "Naturally Occurring Antioxidants", icon: "shield" },
+      { title: "Traditional Wellness Use", icon: "heart" },
+      { title: "Versatile in the Kitchen", icon: "flask" },
+    ],
+    products: [
+      { name: "Amla Drink", text: "Refreshing, natural, nourishing.", img: "/assets/products/eat/turmeric-latte.jpg" },
+      { name: "Dried Amla", text: "Pure, natural, versatile.", img: "/assets/products/eat/roasted-nuts.jpg" },
+      { name: "Amla Candy", text: "Naturally tangy, rich in goodness.", img: "/assets/products/eat/date-chocolate-protein-bites.jpg" },
+      { name: "Amla Chutney", text: "Traditional taste, modern format.", img: "/assets/products/eat/digest-ease.jpg" },
+    ],
     img: "/assets/products/eat/immunity-shield.jpg",
   },
   {
