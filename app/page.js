@@ -3,6 +3,7 @@ import IndiaFoodStory from "./components/IndiaFoodStory";
 import IvarJourney from "./components/IvarJourney";
 import WhatIvarDoes from "./components/WhatIvarDoes";
 import FeaturedCarousel from "./components/FeaturedCarousel";
+import MakhanaStory from "./components/MakhanaStory";
 import IngredientLibrary from "./components/IngredientLibrary";
 import IngredientToProduct from "./components/IngredientToProduct";
 import FoodInnovationGrid from "./components/FoodInnovationGrid";
@@ -17,6 +18,7 @@ export default function Home() {
       <IvarJourney />
       <WhatIvarDoes />
       <FeaturedCarousel />
+      <MakhanaStory />
       <IngredientLibrary />
       <IngredientToProduct />
       <FoodInnovationGrid />
