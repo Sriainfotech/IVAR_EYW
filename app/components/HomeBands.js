@@ -16,9 +16,9 @@ function PillLink({ href, children, className = "" }) {
 
 export function CategoryCards() {
   const cards = [
-    { title: "Ivar Foods", text: "Everyday foods for a healthier you", cta: "Explore Foods", href: "/shop", img: "/assets/hero-grain-bowl.jpg" },
-    { title: "Ivar Processed Foods", text: "Traditional taste, modern convenience", cta: "Explore Processed Foods", href: "/shop", img: "/assets/products/eat/peanut-sesame-jaggery-bites.jpg" },
-    { title: "Ivar Ingredients", text: "Pure ingredients for a better food world", cta: "Explore Ingredients", href: "/shop", img: "/assets/hero-veg-spices.jpg" },
+    { title: "Ivar Foods", text: "Everyday foods for a healthier you", cta: "Explore Foods", href: "/shop", img: "/assets/category-ivar-foods.png" },
+    { title: "Ivar Processed Foods", text: "Traditional taste, modern convenience", cta: "Explore Processed Foods", href: "/shop", img: "/assets/products/eat/crunchy-nutrition.jpg" },
+    { title: "Ivar Ingredients", text: "Pure ingredients for a better food world", cta: "Explore Ingredients", href: "/shop", img: "/assets/category-ivar-ingredients.png" },
   ];
   return (
     <section className={`${wrap} py-10 md:py-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8`}>
@@ -168,10 +168,11 @@ export function GlobalBand() {
 
       <div className={`relative ${wrap} py-10 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr_1fr] gap-8 items-center`}>
         <div>
+          <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-sage font-semibold mb-3">Our Global Vision</p>
           <h2 className="font-serif font-semibold text-[28px] md:text-[32px] leading-tight">
-            From India
+            From Indian roots
             <br />
-            To The World
+            to global tables.
           </h2>
           <p className="text-[13px] leading-snug text-[#d5e3d9] mt-3 mb-5 max-w-[300px]">
             Indian goodness. Global possibilities. We are on a mission to take the best of India&apos;s foods to homes across the world.

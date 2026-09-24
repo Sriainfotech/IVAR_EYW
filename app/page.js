@@ -1,16 +1,27 @@
 import IvarHero from "./components/IvarHero";
+import IndiaFoodStory from "./components/IndiaFoodStory";
+import IvarJourney from "./components/IvarJourney";
+import WhatIvarDoes from "./components/WhatIvarDoes";
 import FeaturedCarousel from "./components/FeaturedCarousel";
-import { CategoryCards, ProcessSteps, InnovationTrust, GlobalBand } from "./components/HomeBands";
+import IngredientLibrary from "./components/IngredientLibrary";
+import IngredientToProduct from "./components/IngredientToProduct";
+import FoodInnovationGrid from "./components/FoodInnovationGrid";
+import { GlobalBand } from "./components/HomeBands";
+import ContactCTABand from "./components/ContactCTABand";
 
 export default function Home() {
   return (
-    <main id="home" className="bg-ivar-paper">
+    <main id="home">
       <IvarHero />
-      <CategoryCards />
+      <IndiaFoodStory />
+      <IvarJourney />
+      <WhatIvarDoes />
       <FeaturedCarousel />
-      <ProcessSteps />
-      <InnovationTrust />
+      <IngredientLibrary />
+      <IngredientToProduct />
+      <FoodInnovationGrid />
       <GlobalBand />
+      <ContactCTABand />
     </main>
   );
 }

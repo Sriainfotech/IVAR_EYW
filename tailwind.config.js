@@ -7,30 +7,43 @@ module.exports = {
     extend: {
       colors: {
         ivar: {
-          dark: "#064C35",
-          darker: "#073D2D",
-          green: "#073D2D",
-          leaf: "#668A73",
-          text: "#1A1A1A",
+          // Primary — Ivar Forest
+          dark: "#173A2B",
+          darker: "#0F2A1F",
+          forest: "#173A2B",
+          forestDeep: "#0F2A1F",
+          // Secondary — Ivar Leaf
+          green: "#5F8F3D",
+          leaf: "#5F8F3D",
+          // Light green — Ivar Sage (use sparingly)
+          sage: "#A8BE82",
+          // Cream / Ivory — light section backgrounds & cards
+          cream: "#F5F0E4",
+          paper: "#F5F0E4",
+          beige: "#F5F0E4",
+          mint: "#EDE7D6",
+          sand: "#EDE7D6",
+          ivory: "#FCFAF4",
+          // Earth — Indian ingredient storytelling
+          earth: "#73563E",
+          // Gold — premium accents only, use VERY sparingly
+          gold: "#C7A45A",
+          // Text — never pure black
+          text: "#172019",
+          ink: "#172019",
+          // Utility (errors, badges) — not primary brand colors
           coral: "#E85D3A",
-          cream: "#F5F0E5",
-          sand: "#EFEBE1",
-          teal: "#668A73",
-          lime: "#A8D835",
-          yellow: "#F59E0B",
+          teal: "#5F8F3D",
+          lime: "#C7A45A",
+          yellow: "#C7A45A",
           success: "#10B981",
-          mint: "#EEE6D5",
-          forest: "#064C35",
-          forestDeep: "#073D2D",
-          sage: "#668A73",
-          beige: "#EEE6D5",
-          paper: "#F5F0E5",
         },
       },
       fontFamily: {
-        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        serif: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         script: ["var(--font-script)", "cursive"],
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       keyframes: {
         fadeInUp: {

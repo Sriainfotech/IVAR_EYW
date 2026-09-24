@@ -1,14 +1,14 @@
 export const metadata = {
-  title: "Shop — Ivar | Eat, Yoga & Wellness",
+  title: "Foods — Ivar™",
   description:
-    "Browse Ivar's full range — wholesome foods, yoga essentials and wellness experiences, all in one place.",
+    "Browse Ivar's modern food products, built from India's ingredients and food traditions.",
   alternates: {
     canonical: "/shop",
   },
   openGraph: {
-    title: "Shop — Ivar | Eat, Yoga & Wellness",
+    title: "Foods — Ivar™",
     description:
-      "Browse Ivar's full range — wholesome foods, yoga essentials and wellness experiences, all in one place.",
+      "Browse Ivar's modern food products, built from India's ingredients and food traditions.",
     url: "/shop",
   },
 };

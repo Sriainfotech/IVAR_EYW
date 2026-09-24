@@ -1,19 +1,29 @@
 import Link from "next/link";
 
-const links = [
-  ["Products", "/shop"],
-  ["Company", "/story"],
-  ["Sustainability", "/story"],
-  ["Investor Relations", "/contact"],
+const primaryNav = [
+  ["Foods", "/shop"],
+  ["Processed Foods", "/shop"],
+  ["Ingredients", "/ingredients"],
+  ["Innovation", "/innovation"],
+  ["Packaging", "/packaging"],
+  ["About", "/story"],
   ["Contact", "/contact"],
 ];
 
-const more = [
+const explore = [
+  ["Menu", "/shop"],
   ["Build a Box", "/build"],
   ["AI Planner", "/planner"],
   ["Plans", "/plans"],
   ["Corporate Orders", "/corporate-orders"],
   ["Breakfast", "/breakfast"],
+];
+
+const legal = [
+  ["Privacy Policy", "/contact"],
+  ["Terms of Use", "/contact"],
+  ["Cookie Policy", "/contact"],
+  ["Disclaimer", "/contact"],
 ];
 
 const socials = [
@@ -25,80 +35,89 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-white border-t border-[#ece8da] text-ivar-text">
-      <div className="max-w-[1500px] mx-auto px-[4vw] py-10 grid grid-cols-1 lg:grid-cols-[auto_1fr_auto_auto] items-center gap-8 lg:gap-10">
-        <div className="flex items-center gap-6">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo-full.png" alt="Ivar — Eat | Yoga | Wellness" className="h-12 w-auto" />
-          <span className="hidden sm:block h-10 w-px bg-[#d8d4c4]" />
-          <a href="https://www.ivarlife.com" className="text-ivar-forest font-semibold text-lg hover:underline">
+    <footer id="contact" className="bg-ivar-forest text-white/85">
+      <div className="max-w-[1500px] mx-auto px-[4vw] py-14 md:py-16 grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-10">
+        <div>
+          <div className="size-20 rounded-full overflow-hidden mb-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/logo-circle.png" alt="Ivar" className="w-full h-full object-contain" />
+          </div>
+          <p className="text-white/60 text-[13px] leading-relaxed max-w-[280px]">
+            Innovating Indian food for the world.
+          </p>
+          <a href="https://www.ivarlife.com" className="inline-block mt-3 text-ivar-sage text-sm font-medium hover:underline">
             www.ivarlife.com
           </a>
+          <div className="flex gap-3 mt-6">
+            {socials.map(([label, glyph]) => (
+              <a
+                key={label}
+                href="#"
+                aria-label={label}
+                className="size-9 rounded-full border border-white/20 text-white text-[11px] font-bold flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                {glyph}
+              </a>
+            ))}
+          </div>
         </div>
 
-        <nav className="flex flex-wrap gap-x-2 gap-y-2 text-[12px] items-center lg:justify-center">
-          {links.map(([label, href], i) => (
-            <span key={label} className="flex items-center gap-2">
-              <Link href={href} className="hover:text-ivar-forest">
+        <div>
+          <h4 className="text-[11px] tracking-[0.16em] uppercase text-white/50 mb-4">Ivar</h4>
+          <nav className="flex flex-col gap-2.5 text-[13px]">
+            {primaryNav.map(([label, href]) => (
+              <Link key={label} href={href} className="hover:text-white transition-colors">
                 {label}
               </Link>
-              {i < links.length - 1 && <span className="text-[#c4c0b0]">|</span>}
-            </span>
-          ))}
-        </nav>
-
-        <div className="flex gap-3">
-          {socials.map(([label, glyph]) => (
-            <a
-              key={label}
-              href="#"
-              aria-label={label}
-              className="size-8 rounded-full bg-ivar-text text-white text-[11px] font-bold flex items-center justify-center hover:bg-ivar-forest transition-colors"
-            >
-              {glyph}
-            </a>
-          ))}
+            ))}
+          </nav>
         </div>
 
-        <form className="w-full lg:w-[280px]">
-          <p className="text-[12px] font-semibold mb-2">Join Our Journey</p>
-          <div className="flex h-9">
+        <div>
+          <h4 className="text-[11px] tracking-[0.16em] uppercase text-white/50 mb-4">Explore</h4>
+          <nav className="flex flex-col gap-2.5 text-[13px]">
+            {explore.map(([label, href]) => (
+              <Link key={label} href={href} className="hover:text-white transition-colors">
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div>
+          <h4 className="text-[11px] tracking-[0.16em] uppercase text-white/50 mb-4">Join Our Journey</h4>
+          <form className="flex h-10 mb-5">
             <input
               type="email"
               required
               aria-label="Email address"
               placeholder="Your email address"
-              className="flex-1 min-w-0 border border-[#d8d4c4] bg-white px-3 text-[12px] rounded-l-md rounded-r-none"
+              className="flex-1 min-w-0 border border-white/20 bg-white/5 text-white placeholder:text-white/40 px-3 text-[12px] rounded-l-md rounded-r-none"
               suppressHydrationWarning
             />
             <button
               type="submit"
               aria-label="Subscribe"
-              className="w-10 bg-ivar-forest text-white rounded-r-md flex items-center justify-center hover:bg-ivar-forestDeep cursor-pointer"
+              className="w-10 bg-ivar-sage text-ivar-ink rounded-r-md flex items-center justify-center hover:brightness-95 cursor-pointer"
               suppressHydrationWarning
             >
               →
             </button>
-          </div>
-        </form>
-      </div>
-
-      <div className="border-t border-[#ece8da] bg-ivar-paper">
-        <div className="max-w-[1500px] mx-auto px-[4vw] py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-[#4b564f]">
-          <p>© 2026 Ivar Life. All rights reserved.</p>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 justify-center">
-            {more.map(([label, href]) => (
-              <Link key={label} href={href} className="hover:text-ivar-forest">
+          </form>
+          <h4 className="text-[11px] tracking-[0.16em] uppercase text-white/50 mb-3">Legal</h4>
+          <nav className="flex flex-col gap-2 text-[12px]">
+            {legal.map(([label, href]) => (
+              <Link key={label} href={href} className="hover:text-white transition-colors">
                 {label}
               </Link>
             ))}
-          </div>
-          <div className="flex gap-4">
-            <Link href="/contact" className="hover:text-ivar-forest">Privacy Policy</Link>
-            <Link href="/contact" className="hover:text-ivar-forest">Terms of Use</Link>
-            <Link href="/contact" className="hover:text-ivar-forest">Cookies</Link>
-            <Link href="/sitemap.xml" className="hover:text-ivar-forest">Sitemap</Link>
-          </div>
+          </nav>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="max-w-[1500px] mx-auto px-[4vw] py-4 text-[11px] text-white/50 text-center">
+          © 2026 Ivar Life. All rights reserved.
         </div>
       </div>
     </footer>

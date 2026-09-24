@@ -3,18 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
 import LineIcon from "./LineIcon";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/shop", label: "Menu" },
-  { href: "/build", label: "Build" },
-  { href: "/planner", label: "AI Planner" },
-  { href: "/plans", label: "Plans" },
-  { href: "/breakfast", label: "Breakfast" },
-  { href: "/corporate-orders", label: "Corporate Orders" },
-  { href: "/contact", label: "Contact" },
+  { href: "/shop", label: "Foods" },
+  { href: "/shop", label: "Processed Foods" },
+  { href: "/ingredients", label: "Ingredients" },
+  { href: "/innovation", label: "Innovation" },
+  { href: "/packaging", label: "Packaging" },
+  { href: "/story", label: "About" },
 ];
 
 export default function Header() {
@@ -36,9 +35,9 @@ export default function Header() {
       <input
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search for healthy foods..."
-        aria-label="Search for healthy foods"
-        className="w-full h-10 rounded-full border border-[#dcd9cd] bg-white pl-4 pr-11 text-[13px] text-ivar-text placeholder:text-[#9a9f9a]"
+        placeholder="Search Ivar foods..."
+        aria-label="Search Ivar foods"
+        className="w-full h-10 rounded-full border border-[#dcd9cd] bg-white pl-4 pr-11 text-[13px] text-ivar-ink placeholder:text-[#9a9f9a]"
         suppressHydrationWarning
       />
       <button
@@ -53,20 +52,20 @@ export default function Header() {
   );
 
   return (
-    <header className="bg-white/95 backdrop-blur sticky top-0 z-30 border-b border-[#ece8da]">
-      <div className="h-[64px] flex items-center gap-5 xl:gap-8 px-[4vw] max-w-[1500px] mx-auto">
-        <Link href="/" aria-label="Ivar home" className="shrink-0">
+    <header className="sticky top-0 z-50 bg-white border-b border-[#ece8da]">
+      <div className="h-[68px] flex items-center gap-5 xl:gap-8 px-[4vw] max-w-[1500px] mx-auto">
+        <Link href="/" aria-label="Ivar home" className="shrink-0 size-12 md:size-14 rounded-full overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo-full.png" alt="Ivar — Eat | Yoga | Wellness" className="h-10 md:h-11 w-auto" />
+          <img src="/assets/logo-circle.png" alt="Ivar" className="w-full h-full object-contain" />
         </Link>
 
-        <nav className="hidden xl:flex gap-5 2xl:gap-7 text-[13px] ml-6 whitespace-nowrap">
+        <nav className="hidden xl:flex gap-5 2xl:gap-7 text-[13px] font-medium ml-6 whitespace-nowrap">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className={`transition-colors duration-200 hover:text-ivar-forest underline-offset-8 decoration-2 decoration-ivar-forest ${
-                isActive(link.href) ? "text-ivar-forest font-semibold underline" : "text-ivar-text"
+              className={`transition-colors duration-200 underline-offset-8 decoration-2 decoration-ivar-forest ${
+                isActive(link.href) ? "text-ivar-forest font-semibold underline" : "text-ivar-ink/75 hover:text-ivar-ink"
               }`}
             >
               {link.label}
@@ -74,7 +73,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden xl:block ml-auto w-[170px] 2xl:w-[230px]">{searchForm}</div>
+        <div className="hidden xl:block ml-auto w-[170px] 2xl:w-[210px]">{searchForm}</div>
 
         <button
           onClick={() => setMenuOpen(true)}
@@ -102,45 +101,102 @@ export default function Header() {
 
         <Link
           href="/shop"
-          className="hidden 2xl:flex shrink-0 items-center gap-4 bg-ivar-forest text-white rounded-md pl-4 pr-3 py-2 hover:bg-ivar-forestDeep transition-colors"
+          className="hidden 2xl:inline-flex shrink-0 items-center gap-2 bg-ivar-forest text-white text-[13px] font-semibold rounded-full px-5 py-2.5 hover:bg-ivar-forestDeep transition-colors"
         >
-          <span className="text-[12px] leading-tight text-left">
-            Good Food
-            <br />A Brighter Tomorrow
-          </span>
-          <LineIcon name="arrow" size={18} />
+          Explore Products <LineIcon name="arrow" size={16} stroke={2} />
+        </Link>
+
+        <Link
+          href="/contact"
+          className="hidden 2xl:inline-flex shrink-0 items-center gap-2 border border-ivar-forest/40 text-ivar-forest text-[13px] font-semibold rounded-full px-5 py-2.5 hover:bg-ivar-cream transition-colors"
+        >
+          Contact Us
         </Link>
 
         <button
           className="xl:hidden shrink-0 text-ivar-forest cursor-pointer"
-          aria-label="Toggle menu"
+          aria-label="Open menu"
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((v) => !v)}
+          onClick={() => setMenuOpen(true)}
           suppressHydrationWarning
         >
           <LineIcon name="menu" size={26} />
         </button>
       </div>
 
-      <div
-        className={`xl:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out border-t border-[#ece8da] ${
-          menuOpen ? "max-h-[640px]" : "max-h-0 border-t-0"
-        }`}
-      >
-        <nav className="flex flex-col px-[6vw] py-4 gap-1 text-sm">
-          <div className="mb-3">{searchForm}</div>
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="py-2.5 border-b border-[#f0eee6] last:border-0 hover:text-ivar-forest"
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-40"
               onClick={() => setMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+              className="fixed top-0 right-0 bottom-0 w-[86vw] max-w-sm bg-white z-50 flex flex-col"
             >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
+              <div className="flex items-center justify-between px-6 h-[68px] border-b border-[#ece8da]">
+                <div className="size-12 rounded-full overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/assets/logo-circle.png" alt="Ivar" className="w-full h-full object-contain" />
+                </div>
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  aria-label="Close menu"
+                  className="text-ivar-forest cursor-pointer"
+                  suppressHydrationWarning
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="px-6 pt-5">{searchForm}</div>
+
+              <nav className="flex flex-col px-6 py-4 gap-1 text-[15px]">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, x: 24 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.08 + i * 0.05 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className="block py-3 border-b border-[#f0eee6] text-ivar-ink/85 hover:text-ivar-forest"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              <div className="mt-auto px-6 pb-8 pt-4 flex flex-col gap-3">
+                <Link
+                  href="/shop"
+                  onClick={() => setMenuOpen(false)}
+                  className="inline-flex justify-center items-center gap-2 bg-ivar-forest text-white text-sm font-semibold rounded-full px-5 py-3"
+                >
+                  Explore Products <LineIcon name="arrow" size={16} stroke={2} />
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="inline-flex justify-center items-center gap-2 border border-ivar-forest/40 text-ivar-forest text-sm font-semibold rounded-full px-5 py-3"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

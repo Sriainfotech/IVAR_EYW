@@ -2,20 +2,17 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import LineIcon from "./LineIcon";
 
 const slides = [
-  { img: "/assets/hero-grain-bowl.jpg" },
-  { img: "/assets/hero-vegan-overhead.jpg" },
-  { img: "/assets/hero-veg-spices.jpg" },
+  { img: "/assets/hero-1-brighter-lives.png" },
+  { img: "/assets/hero-2-nourishing-today.png" },
+  { img: "/assets/hero-3-goodness-every-bite.png" },
+  { img: "/assets/hero-4-goodness-brighter-days.png" },
 ];
 
-const pillars = [
-  ["leaf", "Real", "Ingredients"],
-  ["heart", "Better", "Nutrition"],
-  ["people", "Healthier", "Communities"],
-  ["globe", "A Stronger", "Tomorrow"],
-];
+const headingWords = ["Innovating", "Indian", "Food", "for", "the", "World."];
 
 export default function IvarHero() {
   const [active, setActive] = useState(0);
@@ -26,99 +23,103 @@ export default function IvarHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-ivar-paper">
+    <section className="relative min-h-[100vh] overflow-hidden bg-ivar-forest">
       {slides.map((s, i) => (
-        <div
+        <motion.div
           key={s.img}
-          aria-hidden="true"
-          className={`absolute inset-0 transition-opacity duration-[900ms] ${
-            i === active ? "opacity-100" : "opacity-0"
-          }`}
+          aria-hidden={i !== active}
+          initial={false}
+          animate={{ opacity: i === active ? 1 : 0, scale: i === active ? 1 : 1.08 }}
+          transition={{ opacity: { duration: 0.9 }, scale: { duration: 6, ease: "linear" } }}
+          className="absolute inset-0"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={s.img} alt="" className="w-full h-full object-cover" />
-        </div>
+        </motion.div>
       ))}
 
-      <div aria-hidden="true" className="absolute inset-0 bg-ivar-paper/75 md:hidden" />
-      <div
-        aria-hidden="true"
-        className="hidden md:block absolute inset-0"
-        style={{ background: "linear-gradient(90deg, #F5F0E5 0%, rgba(245,240,229,0.92) 24%, rgba(245,240,229,0) 50%)" }}
-      />
-      <div
-        aria-hidden="true"
-        className="hidden md:block absolute top-8 right-[5%] w-[210px] text-right -rotate-[8deg] text-white"
-        style={{ textShadow: "0 2px 10px rgba(0,0,0,0.45)" }}
-      >
-        <p className="font-script text-[36px] leading-[1.02]">
-          India&apos;s
-          <br />
-          Goodness
-          <br />
-          for a Healthier
-          <br />
-          World
-        </p>
-        <LineIcon name="leaf" size={22} stroke={1.6} className="ml-auto mt-1" />
-      </div>
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ivar-forest via-ivar-forest/55 to-ivar-forest/30" />
+      <div aria-hidden="true" className="absolute inset-0 bg-ivar-forest/25" />
 
-      <div className="relative max-w-[1500px] mx-auto px-[4vw] py-8 md:py-10 min-h-[430px] md:min-h-[400px] flex items-center">
-       <div className="w-full max-w-[620px]">
-        <h1 className="font-serif font-semibold text-[40px] md:text-[50px] leading-[1.04] text-[#111111] max-w-[620px]">
-          Food First.
-          <br />
-          Build Strong.
-          <br />
-          <span className="text-ivar-forest">Scale Globally.</span>
-        </h1>
-        <p className="mt-4 text-[15px] md:text-[17px] leading-snug text-[#33413a] max-w-[470px]">
-          Thoughtfully made foods inspired by India, created for everyday life and global markets.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href="/shop"
-            className="inline-flex items-center gap-3 bg-ivar-forest text-white text-[14px] font-semibold rounded-full pl-6 pr-5 py-3 hover:bg-ivar-forestDeep hover:-translate-y-0.5 transition-all"
+      <div className="relative z-10 max-w-[1500px] mx-auto px-[4vw] min-h-[100vh] flex flex-col justify-center pt-24 pb-20">
+        <div className="max-w-[820px]">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-[11px] tracking-[0.24em] uppercase text-ivar-sage font-semibold mb-5"
           >
-            Explore Our Foods <LineIcon name="arrow" size={16} stroke={2} />
-          </Link>
-          <Link
-            href="/story"
-            className="inline-flex items-center border border-ivar-forest text-ivar-forest text-[14px] font-semibold rounded-full px-6 py-3 hover:bg-ivar-forest hover:text-white transition-colors"
+            Ivar™
+          </motion.p>
+
+          <h1 className="font-display text-[40px] sm:text-[56px] md:text-[80px] leading-[1.02] text-white flex flex-wrap gap-x-[0.28em]">
+            {headingWords.map((w, i) => (
+              <motion.span
+                key={w + i}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + i * 0.08, duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
+                className={w === "World." ? "text-ivar-sage" : undefined}
+              >
+                {w}
+              </motion.span>
+            ))}
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="mt-7 text-[16px] md:text-[19px] leading-relaxed text-white/75 max-w-[540px]"
           >
-            Discover Ivar
-          </Link>
+            From India&apos;s ingredients and food traditions to modern food products, Ivar develops, processes and
+            delivers food for today&apos;s world.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.05, duration: 0.6 }}
+            className="mt-9 flex flex-wrap gap-3"
+          >
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-3 bg-white text-ivar-forest text-[14px] font-semibold rounded-full pl-6 pr-5 py-3.5 hover:bg-ivar-sage transition-colors"
+            >
+              Explore Products <LineIcon name="arrow" size={16} stroke={2} />
+            </Link>
+            <Link
+              href="/story"
+              className="inline-flex items-center gap-3 border border-white/50 text-white text-[14px] font-semibold rounded-full pl-6 pr-5 py-3.5 hover:bg-white/10 transition-colors"
+            >
+              Discover Ivar <LineIcon name="arrow" size={16} stroke={2} />
+            </Link>
+          </motion.div>
         </div>
 
-        <ul className="mt-8 flex flex-wrap gap-x-7 gap-y-4">
-          {pillars.map(([icon, a, b]) => (
-            <li key={a} className="flex flex-col items-center text-center w-[86px]">
-              <span className="size-10 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center mb-1.5">
-                <LineIcon name={icon} size={20} />
-              </span>
-              <span className="text-[11.5px] leading-tight text-[#33413a]">
-                {a}
-                <br />
-                {b}
-              </span>
-            </li>
-          ))}
-        </ul>
-       </div>
-
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-9 left-[4vw] flex gap-2">
           {slides.map((s, i) => (
             <button
               key={s.img}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => setActive(i)}
-              className={`size-2 rounded-full border border-ivar-forest transition-colors cursor-pointer ${
-                i === active ? "bg-ivar-forest" : "bg-transparent"
+              className={`h-1.5 rounded-full border border-white/60 transition-all cursor-pointer ${
+                i === active ? "w-7 bg-white" : "w-1.5 bg-transparent"
               }`}
               suppressHydrationWarning
             />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 6, 0] }}
+          transition={{ opacity: { delay: 1.3, duration: 0.6 }, y: { delay: 1.6, duration: 1.8, repeat: Infinity } }}
+          className="absolute bottom-9 right-[4vw] hidden sm:flex items-center gap-2 text-white/70 text-[11px] tracking-[0.18em] uppercase"
+        >
+          Scroll to explore
+          <LineIcon name="arrow" size={14} stroke={2} className="rotate-90" />
+        </motion.div>
       </div>
     </section>
   );

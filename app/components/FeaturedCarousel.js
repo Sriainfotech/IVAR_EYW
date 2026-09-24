@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { products } from "../data/products";
 import { useProductModal } from "../context/ProductModalContext";
 import LineIcon from "./LineIcon";
@@ -21,13 +22,22 @@ export default function FeaturedCarousel() {
   const scroll = (dir) => rail.current?.scrollBy({ left: dir * 340, behavior: "smooth" });
 
   return (
-    <section className="max-w-[1500px] mx-auto px-[4vw] pb-14 md:pb-20">
-      <div className="flex items-end justify-between mb-5">
-        <div>
-          <h2 className="font-serif font-semibold text-[28px] md:text-[32px] text-[#1c2a20] leading-tight">Our Featured Products</h2>
-          <p className="text-[14px] text-[#4b564f]">Wholesome. Nutritious. Naturally Delicious.</p>
-        </div>
-        <Link href="/shop" className="text-[13px] text-ivar-forest font-medium inline-flex items-center gap-2 hover:underline">
+    <section className="bg-ivar-ivory py-12 md:py-16">
+      <div className="max-w-[1500px] mx-auto px-[4vw]">
+      <div className="flex items-end justify-between mb-8 md:mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-forest font-semibold mb-4">Featured Products</p>
+          <h2 className="font-display text-[32px] md:text-[48px] leading-[1.1] text-ivar-ink">
+            Made from ideas.
+            <br />
+            Built into products.
+          </h2>
+        </motion.div>
+        <Link href="/shop" className="hidden sm:inline-flex text-[13px] text-ivar-forest font-medium items-center gap-2 hover:underline shrink-0">
           View All Products <LineIcon name="arrow" size={15} stroke={2} />
         </Link>
       </div>
@@ -81,6 +91,7 @@ export default function FeaturedCarousel() {
         >
           ›
         </button>
+      </div>
       </div>
     </section>
   );
