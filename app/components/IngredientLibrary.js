@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ingredients } from "../data/ingredients";
 
@@ -40,30 +41,35 @@ export default function IngredientLibrary() {
 
       <div ref={rail} className="flex gap-4 overflow-x-auto no-scrollbar px-[4vw] pb-2 cursor-grab active:cursor-grabbing">
         {ingredients.map((ing, i) => (
-          <motion.article
+          <motion.div
             key={ing.slug}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.45, delay: (i % 4) * 0.06 }}
-            className="group relative shrink-0 w-[220px] md:w-[260px] aspect-[3/4] rounded-2xl overflow-hidden"
+            className="shrink-0 w-[220px] md:w-[260px]"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={ing.img}
-              alt={ing.name}
-              loading="lazy"
-              draggable={false}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <h3 className="font-semibold text-white text-[17px] mb-1.5">{ing.name}</h3>
-              <p className="text-white/0 group-hover:text-white/75 max-h-0 group-hover:max-h-20 overflow-hidden text-[12px] leading-relaxed transition-all duration-300">
-                {ing.description}
-              </p>
-            </div>
-          </motion.article>
+            <Link
+              href={`/ingredients/${ing.slug}`}
+              className="group relative block w-full aspect-[3/4] rounded-2xl overflow-hidden"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ing.img}
+                alt={ing.name}
+                loading="lazy"
+                draggable={false}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <h3 className="font-semibold text-white text-[17px] mb-1.5">{ing.name}</h3>
+                <p className="text-white/0 group-hover:text-white/75 max-h-0 group-hover:max-h-20 overflow-hidden text-[12px] leading-relaxed transition-all duration-300">
+                  {ing.description}
+                </p>
+              </div>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </section>
