@@ -56,7 +56,7 @@ export default function Header() {
       <div className="h-[68px] flex items-center gap-5 xl:gap-8 px-[4vw] max-w-[1500px] mx-auto">
         <Link href="/" aria-label="Ivar home" className="shrink-0 size-12 md:size-14 rounded-full overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo-circle.png" alt="Ivar" className="w-full h-full object-contain" />
+          <img src="/assets/logo-circle-v2.png" alt="Ivar" className="w-full h-full object-contain" />
         </Link>
 
         <nav className="hidden xl:flex gap-5 2xl:gap-7 text-[13px] font-medium ml-6 whitespace-nowrap">
@@ -144,7 +144,7 @@ export default function Header() {
               <div className="flex items-center justify-between px-6 h-[68px] border-b border-[#ece8da]">
                 <div className="size-12 rounded-full overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/assets/logo-circle.png" alt="Ivar" className="w-full h-full object-contain" />
+                  <img src="/assets/logo-circle-v2.png" alt="Ivar" className="w-full h-full object-contain" />
                 </div>
                 <button
                   onClick={() => setMenuOpen(false)}

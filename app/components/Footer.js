@@ -40,7 +40,7 @@ export default function Footer() {
         <div>
           <div className="size-20 rounded-full overflow-hidden mb-4 bg-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo-circle.png" alt="Ivar" className="w-full h-full object-contain" />
+            <img src="/assets/logo-circle-v2.png" alt="Ivar" className="w-full h-full object-contain" />
           </div>
           <p className="text-white/60 text-[13px] leading-relaxed max-w-[280px]">
             Innovating Indian food for the world.
