@@ -38,7 +38,7 @@ export default function Footer() {
     <footer id="contact" className="bg-ivar-forest text-white/85">
       <div className="max-w-[1500px] mx-auto px-[4vw] py-14 md:py-16 grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-10">
         <div>
-          <div className="size-20 rounded-full overflow-hidden mb-4">
+          <div className="size-20 rounded-full overflow-hidden mb-4 bg-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/logo-circle.png" alt="Ivar" className="w-full h-full object-contain" />
           </div>
