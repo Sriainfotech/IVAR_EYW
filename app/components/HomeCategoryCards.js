@@ -3,12 +3,18 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import LineIcon from "./LineIcon";
+import SectionHeading from "./SectionHeading";
 import { VISIBLE_FOOD_CATEGORIES } from "../data/foodCategories";
 
 export default function HomeCategoryCards() {
   return (
     <section className="bg-ivar-paper py-14 md:py-20">
       <div className="max-w-[1500px] mx-auto px-[4vw]">
+        <SectionHeading
+          eyebrow="Our Foods"
+          title="Explore by Food Category."
+          className="mb-10 md:mb-14"
+        />
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {VISIBLE_FOOD_CATEGORIES.map((c, i) => (
             <motion.div

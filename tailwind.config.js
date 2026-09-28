@@ -8,34 +8,37 @@ module.exports = {
       colors: {
         ivar: {
           // Primary — Ivar Forest
-          dark: "#173A2B",
-          darker: "#0F2A1F",
-          forest: "#173A2B",
-          forestDeep: "#0F2A1F",
-          // Secondary — Ivar Leaf
-          green: "#5F8F3D",
-          leaf: "#5F8F3D",
-          // Light green — Ivar Sage (use sparingly)
-          sage: "#A8BE82",
+          dark: "#0B351F",
+          darker: "#082719",
+          forest: "#0B351F",
+          forestDeep: "#082719",
+          // Secondary — Brand Green
+          green: "#3F7D20",
+          leaf: "#3F7D20",
+          // Light green — Natural Green accent (use sparingly)
+          sage: "#6FA52D",
+          // Muted botanical green — occasional section background
+          botanical: "#E7EED5",
           // Cream / Ivory — light section backgrounds & cards
-          cream: "#F5F0E4",
-          paper: "#F5F0E4",
-          beige: "#F5F0E4",
-          mint: "#EDE7D6",
-          sand: "#EDE7D6",
-          ivory: "#FCFAF4",
+          cream: "#F7F3E8",
+          paper: "#F7F3E8",
+          beige: "#E8E0D1",
+          mint: "#E7EED5",
+          sand: "#E7EED5",
+          ivory: "#FCFAF3",
           // Earth — Indian ingredient storytelling
           earth: "#73563E",
           // Gold — premium accents only, use VERY sparingly
-          gold: "#C7A45A",
+          gold: "#D7C77A",
           // Text — never pure black
-          text: "#172019",
-          ink: "#172019",
+          text: "#10150F",
+          ink: "#10150F",
+          muted: "#5B6158",
           // Utility (errors, badges) — not primary brand colors
           coral: "#E85D3A",
-          teal: "#5F8F3D",
-          lime: "#C7A45A",
-          yellow: "#C7A45A",
+          teal: "#3F7D20",
+          lime: "#D7C77A",
+          yellow: "#D7C77A",
           success: "#10B981",
         },
       },
@@ -44,6 +47,11 @@ module.exports = {
         display: ["var(--font-display)", "Georgia", "serif"],
         script: ["var(--font-script)", "cursive"],
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        "editorial-hero": ["clamp(2.75rem, 6vw, 5.125rem)", { lineHeight: "1.04" }],
+        "editorial-section": ["clamp(2.25rem, 4vw, 3.625rem)", { lineHeight: "1.1" }],
+        "editorial-body": ["clamp(0.9375rem, 1.3vw, 1.125rem)", { lineHeight: "1.65" }],
       },
       keyframes: {
         fadeInUp: {

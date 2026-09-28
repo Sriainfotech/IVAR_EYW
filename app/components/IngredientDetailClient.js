@@ -137,14 +137,19 @@ export default function IngredientDetailClient({ ing }) {
         <section id="benefits" ref={(el) => (refs.current.benefits = el)} className="bg-ivar-cream py-14 md:py-20">
           <div className="max-w-[1320px] mx-auto px-[6vw]">
             <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-forest font-semibold mb-4">Key Benefits</p>
-            <h2 className="font-display text-[26px] md:text-[32px] text-ivar-ink mb-8 max-w-[440px]">Small Ingredient. Big Benefits.</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {benefits.map((b) => (
-                <div key={b.title} className="bg-white rounded-2xl p-6 text-center transition-transform hover:-translate-y-1">
-                  <span className="size-11 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center mx-auto mb-3">
-                    <LineIcon name={b.icon} size={18} stroke={1.6} />
+            <h2 className="font-display text-editorial-section text-ivar-ink mb-10 max-w-[520px]">Small Ingredient. Big Benefits.</h2>
+            <div className="divide-y divide-ivar-forest/12 border-t border-b border-ivar-forest/12">
+              {benefits.map((b, i) => (
+                <div key={b.title} className="group flex items-center gap-5 md:gap-8 py-5 md:py-6">
+                  <span className="font-display text-[26px] md:text-[32px] text-ivar-forest/40 group-hover:text-ivar-forest transition-colors shrink-0 w-[52px]">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-[13px] font-medium text-ivar-ink">{b.title}</p>
+                  <span className="size-10 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center shrink-0">
+                    <LineIcon name={b.icon} size={17} stroke={1.6} />
+                  </span>
+                  <p className="text-[15px] md:text-[17px] font-medium text-ivar-ink transition-transform group-hover:translate-x-1.5">
+                    {b.title}
+                  </p>
                 </div>
               ))}
             </div>

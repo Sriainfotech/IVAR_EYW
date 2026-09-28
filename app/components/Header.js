@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/innovation", label: "Innovation" },
   { href: "/packaging", label: "Packaging" },
   { href: "/story", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -23,6 +24,16 @@ export default function Header() {
   const isActive = (href) => (href === "/" ? pathname === "/" : pathname?.startsWith(href));
   const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 12);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   function onSearch(e) {
     e.preventDefault();
@@ -52,76 +63,81 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-[#ece8da]">
-      <div className="h-[68px] flex items-center gap-5 xl:gap-8 px-[4vw] max-w-[1500px] mx-auto">
+    <header
+      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled ? "bg-white/85 backdrop-blur-md border-ivar-forest/10" : "bg-white border-transparent"
+      }`}
+    >
+      <div className="h-[68px] md:h-[72px] grid grid-cols-[auto_1fr_auto] items-center gap-4 px-[4vw] max-w-[1500px] mx-auto">
         <Link href="/" aria-label="Ivar home" className="shrink-0 size-12 md:size-14 rounded-full overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo-circle-v2.png" alt="Ivar" className="w-full h-full object-contain" />
         </Link>
 
-        <nav className="hidden xl:flex gap-5 2xl:gap-7 text-[13px] font-medium ml-6 whitespace-nowrap">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`transition-colors duration-200 underline-offset-8 decoration-2 decoration-ivar-forest ${
-                isActive(link.href) ? "text-ivar-forest font-semibold underline" : "text-ivar-ink/75 hover:text-ivar-ink"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden xl:flex justify-center gap-6 2xl:gap-9 text-[13px] font-medium whitespace-nowrap">
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link key={link.label} href={link.href} className="relative py-2">
+                <span className={`transition-colors duration-200 ${active ? "text-ivar-ink font-semibold" : "text-ivar-ink/70 hover:text-ivar-ink"}`}>
+                  {link.label}
+                </span>
+                {active && (
+                  <motion.span
+                    layoutId="nav-underline"
+                    className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-ivar-forest"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="hidden xl:block ml-auto w-[170px] 2xl:w-[210px]">{searchForm}</div>
+        <div className="flex items-center gap-4 xl:gap-5 justify-self-end">
+          <div className="hidden xl:block w-[160px] 2xl:w-[200px]">{searchForm}</div>
 
-        <button
-          onClick={() => setMenuOpen(true)}
-          aria-label="Search"
-          className="xl:hidden shrink-0 text-ivar-forest ml-auto cursor-pointer"
-          suppressHydrationWarning
-        >
-          <LineIcon name="search" size={22} stroke={1.8} />
-        </button>
-
-        <button
-          onClick={openCart}
-          aria-label="Open cart"
-          className="relative shrink-0 text-ivar-forest xl:ml-0 cursor-pointer"
-          suppressHydrationWarning
-        >
-          <LineIcon name="bag" size={24} stroke={1.7} />
-          <span
-            className="absolute -top-2 -right-2 bg-ivar-forest text-white rounded-full min-w-[17px] h-[17px] px-1 text-[10px] font-semibold flex items-center justify-center"
+          <button
+            onClick={() => setMenuOpen(true)}
+            aria-label="Search"
+            className="xl:hidden shrink-0 text-ivar-forest cursor-pointer"
             suppressHydrationWarning
           >
-            {count}
-          </span>
-        </button>
+            <LineIcon name="search" size={22} stroke={1.8} />
+          </button>
 
-        <Link
-          href="/shop"
-          className="hidden 2xl:inline-flex shrink-0 items-center gap-2 bg-ivar-forest text-white text-[13px] font-semibold rounded-full px-5 py-2.5 hover:bg-ivar-forestDeep transition-colors"
-        >
-          Explore Products <LineIcon name="arrow" size={16} stroke={2} />
-        </Link>
+          <button
+            onClick={openCart}
+            aria-label="Open cart"
+            className="relative shrink-0 text-ivar-forest cursor-pointer"
+            suppressHydrationWarning
+          >
+            <LineIcon name="bag" size={24} stroke={1.7} />
+            <span
+              className="absolute -top-2 -right-2 bg-ivar-forest text-white rounded-full min-w-[17px] h-[17px] px-1 text-[10px] font-semibold flex items-center justify-center"
+              suppressHydrationWarning
+            >
+              {count}
+            </span>
+          </button>
 
-        <Link
-          href="/contact"
-          className="hidden 2xl:inline-flex shrink-0 items-center gap-2 border border-ivar-forest/40 text-ivar-forest text-[13px] font-semibold rounded-full px-5 py-2.5 hover:bg-ivar-cream transition-colors"
-        >
-          Contact Us
-        </Link>
+          <Link
+            href="/shop"
+            className="hidden 2xl:inline-flex shrink-0 items-center gap-2 bg-ivar-forest text-white text-[13px] font-semibold rounded-full px-5 py-2.5 hover:bg-ivar-forestDeep transition-colors group"
+          >
+            Explore Products <LineIcon name="arrow" size={16} stroke={2} className="transition-transform group-hover:translate-x-1" />
+          </Link>
 
-        <button
-          className="xl:hidden shrink-0 text-ivar-forest cursor-pointer"
-          aria-label="Open menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(true)}
-          suppressHydrationWarning
-        >
-          <LineIcon name="menu" size={26} />
-        </button>
+          <button
+            className="xl:hidden shrink-0 text-ivar-forest cursor-pointer"
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(true)}
+            suppressHydrationWarning
+          >
+            <LineIcon name="menu" size={26} />
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

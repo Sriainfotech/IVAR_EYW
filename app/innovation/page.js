@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LineIcon from "../components/LineIcon";
+import ProcessTimeline from "../components/ProcessTimeline";
 
 export const metadata = {
   title: "Innovation — Ivar™",
@@ -97,18 +98,12 @@ export default function InnovationPage() {
         </div>
       </section>
 
-      <section className="max-w-[1320px] mx-auto px-[6vw] py-12 md:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {CARDS.map((c) => (
-          <div key={c.n} className="bg-ivar-cream rounded-2xl p-6">
-            <span className="size-10 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center mb-4">
-              <LineIcon name={c.icon} size={17} stroke={1.6} />
-            </span>
-            <p className="text-[11px] text-ivar-forest font-semibold mb-1">{c.n}</p>
-            <h3 className="font-semibold text-[15px] text-ivar-ink mb-1.5">{c.title}</h3>
-            <p className="text-[13px] leading-relaxed text-[#4b564f]">{c.text}</p>
-          </div>
-        ))}
-      </section>
+      <ProcessTimeline
+        eyebrow="Our Approach"
+        title="Where tradition meets innovation."
+        steps={CARDS}
+        dark={false}
+      />
 
       <section className="max-w-[1320px] mx-auto px-[6vw] pb-14 md:pb-20">
         <div className="flex items-end justify-between mb-8">
@@ -185,9 +180,9 @@ export default function InnovationPage() {
               Learn More <LineIcon name="arrow" size={16} stroke={2} />
             </Link>
           </div>
-          <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 divide-y divide-white/10 sm:divide-y-0">
             {LAB_PILLARS.map((p) => (
-              <div key={p.title} className="bg-white/[0.06] border border-white/10 rounded-2xl p-4 hover:border-white/30 hover:-translate-y-1 transition-all">
+              <div key={p.title} className="pt-6 sm:pt-0 first:pt-0">
                 <span className="size-9 rounded-full border border-white/25 text-white flex items-center justify-center mb-3">
                   <LineIcon name={p.icon} size={16} stroke={1.6} />
                 </span>

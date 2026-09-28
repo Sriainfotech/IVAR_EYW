@@ -1,26 +1,29 @@
 "use client";
 
 import { useState } from "react";
+import LineIcon from "./LineIcon";
 
 export default function FAQAccordion({ items }) {
   const [open, setOpen] = useState(null);
 
   return (
-    <div className="rounded-2xl border border-[#e6e3d6] overflow-hidden bg-white">
+    <div className="border-t border-ivar-forest/12">
       {items.map((item, i) => (
-        <div key={item.q} className="border-b border-[#e6e3d6] last:border-0">
+        <div key={item.q} className="border-b border-ivar-forest/12">
           <button
             onClick={() => setOpen(open === i ? null : i)}
             aria-expanded={open === i}
-            className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left cursor-pointer"
+            className="group w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer"
             suppressHydrationWarning
           >
-            <span className="text-[14px] md:text-[15px] font-medium text-ivar-ink">{item.q}</span>
+            <span className="text-[15px] md:text-[16px] font-medium text-ivar-ink group-hover:translate-x-1 transition-transform">
+              {item.q}
+            </span>
             <span
-              className={`shrink-0 text-ivar-forest transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
+              className={`shrink-0 text-ivar-forest transition-transform duration-300 ${open === i ? "rotate-90" : ""}`}
               aria-hidden="true"
             >
-              ▾
+              <LineIcon name="arrow" size={16} stroke={2} />
             </span>
           </button>
           <div
@@ -29,7 +32,7 @@ export default function FAQAccordion({ items }) {
             }`}
           >
             <div className="overflow-hidden">
-              <p className="px-5 pb-4 text-[13.5px] leading-relaxed text-[#4b564f]">{item.a}</p>
+              <p className="pb-5 max-w-[560px] text-[13.5px] leading-relaxed text-ivar-muted">{item.a}</p>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import LineIcon from "../components/LineIcon";
 import ContactForm from "../components/ContactForm";
 import FAQAccordion from "../components/FAQAccordion";
+import ProcessTimeline from "../components/ProcessTimeline";
 
 export const metadata = {
   title: "Contact — Ivar™",
@@ -63,67 +64,41 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="max-w-[1320px] mx-auto px-[6vw] py-10 md:py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {CARDS.map((c) => (
-          <div key={c.title} className="bg-ivar-cream rounded-2xl p-6">
-            <span className="size-10 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center mb-4">
-              <LineIcon name={c.icon} size={17} stroke={1.6} />
-            </span>
-            <h3 className="font-semibold text-[15px] text-ivar-ink mb-2">{c.title}</h3>
-            <p className="text-[13px] leading-relaxed text-[#4b564f] mb-4">{c.text}</p>
-            <span className="text-[12.5px] font-semibold text-ivar-forest inline-flex items-center gap-1.5">
-              {c.cta} <LineIcon name="arrow" size={13} stroke={2.2} />
-            </span>
-          </div>
-        ))}
-      </section>
+      <ProcessTimeline eyebrow="How We Work Together" title="Ways to partner with Ivar." steps={CARDS} dark={false} />
 
-      <section className="max-w-[1320px] mx-auto px-[6vw] pb-14 md:pb-20 grid grid-cols-1 lg:grid-cols-[0.8fr_1.3fr_0.7fr] gap-8">
+      <section className="max-w-[1320px] mx-auto px-[6vw] py-14 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
         <div>
-          <h2 className="font-display text-[26px] md:text-[30px] text-ivar-ink mb-3">Get in Touch</h2>
-          <p className="text-[13.5px] leading-relaxed text-[#4b564f] mb-8">
-            We are always open to new opportunities, collaborations and conversations.
+          <h2 className="font-display text-editorial-section text-ivar-ink mb-5 max-w-[440px]">
+            Let&apos;s Build Something Better.
+          </h2>
+          <p className="text-editorial-body text-ivar-muted mb-10 max-w-[440px]">
+            For ingredients, products, processing, packaging or food innovation — let&apos;s create the next
+            opportunity together.
           </p>
-          <div className="space-y-6">
-            <div className="flex items-start gap-3">
-              <span className="size-10 rounded-full bg-ivar-forest text-white flex items-center justify-center shrink-0">
-                <LineIcon name="bag" size={16} stroke={1.7} />
+          <div className="space-y-6 border-t border-ivar-forest/12 pt-8">
+            <div className="flex items-start gap-4">
+              <span className="size-9 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center shrink-0">
+                <LineIcon name="bag" size={15} stroke={1.7} />
               </span>
               <div>
-                <p className="text-[11px] uppercase tracking-wide text-[#8a938c] mb-1">Phone</p>
+                <p className="text-[11px] uppercase tracking-wide text-ivar-muted mb-1">Phone</p>
                 <p className="text-[14px] font-medium text-ivar-ink">+91 97013 14138</p>
               </div>
             </div>
-            <div className="flex items-start gap-3">
-              <span className="size-10 rounded-full bg-ivar-forest text-white flex items-center justify-center shrink-0">
-                <LineIcon name="globe" size={16} stroke={1.7} />
+            <div className="flex items-start gap-4">
+              <span className="size-9 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center shrink-0">
+                <LineIcon name="globe" size={15} stroke={1.7} />
               </span>
               <div>
-                <p className="text-[11px] uppercase tracking-wide text-[#8a938c] mb-1">Office</p>
+                <p className="text-[11px] uppercase tracking-wide text-ivar-muted mb-1">Office</p>
                 <p className="text-[14px] font-medium text-ivar-ink">India · Serving globally</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="size-10 rounded-full bg-ivar-forest text-white flex items-center justify-center shrink-0">
-                <LineIcon name="check" size={16} stroke={2} />
-              </span>
-              <div>
-                <p className="text-[11px] uppercase tracking-wide text-[#8a938c] mb-1">Business Enquiries</p>
-                <p className="text-[14px] font-medium text-ivar-ink">Connect with our team through the form</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl border border-[#e6e3d6] p-6 md:p-8">
-          <h2 className="font-display text-[22px] text-ivar-ink mb-1.5">Send Us a Message</h2>
-          <p className="text-[13px] text-[#4b564f] mb-6">Fill in the details and our team will get back to you shortly.</p>
+        <div>
           <ContactForm />
-        </div>
-
-        <div className="relative rounded-2xl overflow-hidden min-h-[220px] hidden lg:block">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/hero-veg-fruit-table.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </section>
 
