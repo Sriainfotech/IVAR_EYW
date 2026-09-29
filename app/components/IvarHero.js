@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import LineIcon from "./LineIcon";
 
 const SLIDES = [
-  "/assets/hero-avocado-toast.jpg",
-  "/assets/hero-open-faced-sandwiches.jpg",
-  "/assets/hero-cucumber-toasts.jpg",
+  { img: "/assets/hero-avocado-toast.jpg", word: "Foods.", href: "/foods", cta: "Explore Foods" },
+  { img: "/assets/hero-open-faced-sandwiches.jpg", word: "Health.", href: "/health", cta: "Explore Health" },
+  { img: "/assets/hero-cucumber-toasts.jpg", word: "Essentials.", href: "/foods", cta: "Explore Essentials" },
 ];
 
 export default function IvarHero() {
@@ -21,9 +21,9 @@ export default function IvarHero() {
 
   return (
     <section className="relative min-h-[72vh] overflow-hidden bg-white flex items-center">
-      {SLIDES.map((img, i) => (
+      {SLIDES.map((s, i) => (
         <motion.div
-          key={img}
+          key={s.img}
           aria-hidden={i !== active}
           initial={false}
           animate={{ opacity: i === active ? 1 : 0, scale: i === active ? 1 : 1.06 }}
@@ -31,7 +31,7 @@ export default function IvarHero() {
           className="absolute inset-0"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={img} alt="" className="w-full h-full object-cover" />
+          <img src={s.img} alt="" className="w-full h-full object-cover" />
         </motion.div>
       ))}
       <div className="relative z-10 max-w-[720px] mx-auto px-[6vw] text-center pt-24 pb-16">
@@ -55,14 +55,20 @@ export default function IvarHero() {
           >
             IVAR
           </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.42, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="block font-display text-[44px] sm:text-[58px] md:text-[72px] italic text-ivar-green -mt-2 md:-mt-4"
-          >
-            Foods.
-          </motion.span>
+          <span className="block h-[52px] sm:h-[70px] md:h-[86px] overflow-hidden -mt-2 md:-mt-4">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={SLIDES[active].word}
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -28 }}
+                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="block font-display text-[44px] sm:text-[58px] md:text-[72px] italic text-ivar-green"
+              >
+                {SLIDES[active].word}
+              </motion.span>
+            </AnimatePresence>
+          </span>
         </h1>
 
         <motion.p
@@ -83,10 +89,10 @@ export default function IvarHero() {
           className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="/foods"
+            href={SLIDES[active].href}
             className="group inline-flex items-center gap-3 bg-ivar-forest text-white text-[14px] font-semibold rounded-full pl-6 pr-5 py-3.5 hover:bg-ivar-forestDeep transition-colors"
           >
-            Explore Foods
+            {SLIDES[active].cta}
             <LineIcon name="arrow" size={16} stroke={2} className="transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
@@ -104,9 +110,9 @@ export default function IvarHero() {
           transition={{ delay: 1, duration: 0.6 }}
           className="mt-10 flex items-center justify-center gap-2"
         >
-          {SLIDES.map((img, i) => (
+          {SLIDES.map((s, i) => (
             <button
-              key={img}
+              key={s.img}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => setActive(i)}
               className={`h-1 rounded-full transition-all cursor-pointer ${

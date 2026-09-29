@@ -148,7 +148,7 @@ export default function PlansPage() {
         <div>
           <div className="flex items-center gap-1.5 mb-8">
             {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
-              <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#EEE6D5]"}`} />
+              <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#ECECE9]"}`} />
             ))}
           </div>
 
@@ -176,7 +176,7 @@ export default function PlansPage() {
                       key={meal}
                       onClick={() => setMeals((m) => ({ ...m, [meal]: !m[meal] }))}
                       className={`rounded-2xl border p-4 text-left cursor-pointer transition-colors ${
-                        meals[meal] ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc]"
+                        meals[meal] ? "border-ivar-dark bg-[#ECECE9]" : "border-[#e6e4dc]"
                       }`}
                       suppressHydrationWarning
                     >
@@ -187,7 +187,7 @@ export default function PlansPage() {
                   ))}
                 </div>
                 {selectedMealKeys.length > 0 && (
-                  <div className="rounded-2xl bg-[#EEE6D5] p-4">
+                  <div className="rounded-2xl bg-[#ECECE9] p-4">
                     <p className="text-sm font-semibold">{money(pricePerDay)}/day blended · {selectedMealKeys.length} meal(s) selected</p>
                   </div>
                 )}
@@ -198,12 +198,12 @@ export default function PlansPage() {
               <>
                 <h2 className="font-serif text-xl font-medium">3. Plan Duration</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <button onClick={() => setDuration("weekly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "weekly" ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
+                  <button onClick={() => setDuration("weekly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "weekly" ? "border-ivar-dark bg-[#ECECE9]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
                     <p className="font-serif font-medium mb-1">Weekly</p>
                     <p className="text-xs text-[#6b7771] mb-2">5 delivery days · Most Flexible</p>
                     <p className="text-sm font-semibold text-ivar-dark">{SUBSCRIPTION_DISCOUNT.weekly}% OFF</p>
                   </button>
-                  <button onClick={() => setDuration("monthly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "monthly" ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
+                  <button onClick={() => setDuration("monthly")} className={`text-left rounded-2xl border p-5 cursor-pointer transition-colors ${duration === "monthly" ? "border-ivar-dark bg-[#ECECE9]" : "border-[#e6e4dc]"}`} suppressHydrationWarning>
                     <p className="font-serif font-medium mb-1">Monthly</p>
                     <p className="text-xs text-[#6b7771] mb-2">Choose delivery days · Best Value</p>
                     <p className="text-sm font-semibold text-ivar-dark">{SUBSCRIPTION_DISCOUNT.monthly}% OFF</p>
@@ -233,7 +233,7 @@ export default function PlansPage() {
                   {deliveryDates.map((date) => {
                     const paused = pausedDates.includes(date);
                     return (
-                      <button key={date} onClick={() => togglePause(date)} className={`px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer ${paused ? "line-through text-[#8a938c] border-[#e6e4dc]" : "border-ivar-dark bg-[#EEE6D5]"}`} suppressHydrationWarning>
+                      <button key={date} onClick={() => togglePause(date)} className={`px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer ${paused ? "line-through text-[#8a938c] border-[#e6e4dc]" : "border-ivar-dark bg-[#ECECE9]"}`} suppressHydrationWarning>
                         ▷ {new Date(date).toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" })}
                       </button>
                     );
@@ -359,7 +359,7 @@ export default function PlansPage() {
 
             <div className="flex gap-1.5 overflow-x-auto no-scrollbar">
               {deliveryDates.map((d) => (
-                <span key={d} className="shrink-0 text-[10px] bg-[#EEE6D5] rounded-full px-2 py-1">
+                <span key={d} className="shrink-0 text-[10px] bg-[#ECECE9] rounded-full px-2 py-1">
                   {new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}
                 </span>
               ))}

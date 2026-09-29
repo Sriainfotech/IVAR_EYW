@@ -86,7 +86,7 @@ export default function AskIvarWidget() {
           </div>
 
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
-            <div className="bg-[#EEE6D5] rounded-2xl rounded-tl-sm p-3">
+            <div className="bg-[#ECECE9] rounded-2xl rounded-tl-sm p-3">
               👋 Hi, I'm here to help! Tell me what you're craving — breakfast, snacks, high-protein
               options or something to sip on.
             </div>
@@ -97,7 +97,7 @@ export default function AskIvarWidget() {
                   className={
                     m.role === "user"
                       ? "bg-ivar-dark text-white rounded-2xl rounded-tr-sm p-3 max-w-[85%]"
-                      : "bg-[#EEE6D5] rounded-2xl rounded-tl-sm p-3 max-w-[85%] space-y-2"
+                      : "bg-[#ECECE9] rounded-2xl rounded-tl-sm p-3 max-w-[85%] space-y-2"
                   }
                 >
                   <p>{m.content}</p>
@@ -118,7 +118,7 @@ export default function AskIvarWidget() {
               </div>
             ))}
             {loading && (
-              <div className="bg-[#EEE6D5] rounded-2xl rounded-tl-sm px-4 py-2.5 w-max">
+              <div className="bg-[#ECECE9] rounded-2xl rounded-tl-sm px-4 py-2.5 w-max">
                 <IvarLoader size="sm" label="thinking…" />
               </div>
             )}
@@ -130,7 +130,7 @@ export default function AskIvarWidget() {
                 <button
                   key={q}
                   onClick={() => handleSend(q)}
-                  className="shrink-0 text-xs font-medium bg-[#EEE6D5] rounded-full px-3 py-1.5 hover:bg-[#e2e7de] cursor-pointer"
+                  className="shrink-0 text-xs font-medium bg-[#ECECE9] rounded-full px-3 py-1.5 hover:bg-[#e2e7de] cursor-pointer"
                   suppressHydrationWarning
                 >
                   {q}

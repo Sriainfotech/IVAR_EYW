@@ -219,7 +219,7 @@ export default function BuildPage() {
                   key={p.id}
                   onClick={() => setBaseId(p.id)}
                   className={`text-left flex items-center gap-3.5 rounded-2xl border p-3 cursor-pointer transition-colors ${
-                    baseId === p.id ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc] bg-white hover:border-ivar-dark"
+                    baseId === p.id ? "border-ivar-dark bg-[#ECECE9]" : "border-[#e6e4dc] bg-white hover:border-ivar-dark"
                   }`}
                   suppressHydrationWarning
                 >
@@ -270,21 +270,21 @@ export default function BuildPage() {
           <div className="rounded-3xl border border-[#e6e4dc] bg-white p-6 space-y-5">
             <div className="flex items-center justify-between">
               <p className="font-serif text-lg font-medium">{bowlName()}</p>
-              <span className="text-[10px] font-bold uppercase tracking-wide bg-[#EEE6D5] text-ivar-dark rounded-full px-2.5 py-1 shrink-0 ml-2">
+              <span className="text-[10px] font-bold uppercase tracking-wide bg-[#ECECE9] text-ivar-dark rounded-full px-2.5 py-1 shrink-0 ml-2">
                 Live
               </span>
             </div>
 
             <div className="grid grid-cols-3 gap-2 text-center">
-              <div className="bg-[#EEE6D5] rounded-xl py-2">
+              <div className="bg-[#ECECE9] rounded-xl py-2">
                 <p className="text-sm font-bold">{macros.kcal}</p>
                 <p className="text-[10px] text-[#6b7771]">KCAL</p>
               </div>
-              <div className="bg-[#EEE6D5] rounded-xl py-2">
+              <div className="bg-[#ECECE9] rounded-xl py-2">
                 <p className="text-sm font-bold">{macros.proteinG}g</p>
                 <p className="text-[10px] text-[#6b7771]">PROTEIN</p>
               </div>
-              <div className="bg-[#EEE6D5] rounded-xl py-2">
+              <div className="bg-[#ECECE9] rounded-xl py-2">
                 <p className="text-sm font-bold">{money(finalPrice)}</p>
                 <p className="text-[10px] text-[#6b7771]">TOTAL</p>
               </div>
@@ -309,7 +309,7 @@ export default function BuildPage() {
                     <span>{row.label}</span>
                     <span>{row.value}{row.unit} / {row.target}{row.unit}</span>
                   </div>
-                  <div className="h-1.5 rounded-full bg-[#EEE6D5] overflow-hidden">
+                  <div className="h-1.5 rounded-full bg-[#ECECE9] overflow-hidden">
                     <div
                       className="h-full bg-ivar-dark rounded-full transition-all"
                       style={{ width: `${Math.min(100, (row.value / row.target) * 100)}%` }}

@@ -8,8 +8,9 @@ import { useCart } from "../context/CartContext";
 import LineIcon from "./LineIcon";
 
 const navLinks = [
-  { href: "/foods", label: "Foods" },
-  { href: "/foods/ready-to-cook", label: "Processed Foods" },
+  { href: "/foods", label: "Ivar Essentials" },
+  { href: "/health", label: "Ivar Health" },
+  { href: "/membership", label: "Membership" },
   { href: "/ingredients", label: "Ingredients" },
   { href: "/innovation", label: "Innovation" },
   { href: "/packaging", label: "Packaging" },
@@ -21,7 +22,11 @@ export default function Header() {
   const { count, openCart } = useCart();
   const router = useRouter();
   const pathname = usePathname();
-  const isActive = (href) => (href === "/" ? pathname === "/" : pathname?.startsWith(href));
+  const activeHref = navLinks
+    .map((l) => l.href)
+    .filter((href) => pathname === href || pathname?.startsWith(`${href}/`))
+    .sort((a, b) => b.length - a.length)[0];
+  const isActive = (href) => href === activeHref;
   const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [scrolled, setScrolled] = useState(false);
@@ -69,9 +74,9 @@ export default function Header() {
       }`}
     >
       <div className="h-[68px] md:h-[72px] grid grid-cols-[auto_1fr_auto] items-center gap-4 px-[4vw] max-w-[1500px] mx-auto">
-        <Link href="/" aria-label="Ivar home" className="shrink-0 size-12 md:size-14 rounded-full overflow-hidden">
+        <Link href="/" aria-label="Ivar home" className="shrink-0 h-10 md:h-12 w-[110px] md:w-[130px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo-circle-v2.png" alt="Ivar" className="w-full h-full object-contain" />
+          <img src="/assets/logo-wordmark.png" alt="Ivar" className="w-full h-full object-contain object-left" />
         </Link>
 
         <nav className="hidden xl:flex justify-center gap-6 2xl:gap-9 text-[13px] font-medium whitespace-nowrap">
@@ -158,9 +163,9 @@ export default function Header() {
               className="fixed top-0 right-0 bottom-0 w-[86vw] max-w-sm bg-white z-50 flex flex-col"
             >
               <div className="flex items-center justify-between px-6 h-[68px] border-b border-[#ece8da]">
-                <div className="size-12 rounded-full overflow-hidden">
+                <div className="h-10 w-[110px]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/assets/logo-circle-v2.png" alt="Ivar" className="w-full h-full object-contain" />
+                  <img src="/assets/logo-wordmark.png" alt="Ivar" className="w-full h-full object-contain object-left" />
                 </div>
                 <button
                   onClick={() => setMenuOpen(false)}

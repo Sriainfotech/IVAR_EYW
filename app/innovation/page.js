@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LineIcon from "../components/LineIcon";
+import RevealOnScroll from "../components/RevealOnScroll";
 import ProcessTimeline from "../components/ProcessTimeline";
 
 export const metadata = {
@@ -52,49 +53,42 @@ const PACKAGING_BENEFITS = ["Freshness", "Protection", "Convenience", "Sustainab
 export default function InnovationPage() {
   return (
     <main>
-      <section className="relative bg-ivar-forest overflow-hidden min-h-[420px] md:min-h-[460px] flex items-center">
-        <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/hero-veg-spices.jpg" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ivar-forest via-ivar-forest/85 to-ivar-forest/40" />
-        </div>
+      <section className="bg-white overflow-hidden">
+        <div className="max-w-[1500px] mx-auto px-[4vw] py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <RevealOnScroll>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-forest font-semibold mb-5">Innovation</p>
+            <h1 className="font-display text-editorial-hero leading-[1.05] text-ivar-ink mb-5">
+              Food Innovation, <span className="italic text-ivar-green">Rooted in India.</span>
+            </h1>
+            <p className="text-editorial-body text-ivar-muted max-w-[460px] mb-8">
+              We explore Indian ingredients, traditional recipes and modern food science to create new formats,
+              flavours and food experiences for a healthier tomorrow.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 mb-10">
+              <Link
+                href="/foods"
+                className="group inline-flex items-center gap-3 bg-ivar-forest text-white text-[14px] font-semibold rounded-full pl-6 pr-5 py-3.5 hover:bg-ivar-forestDeep transition-colors"
+              >
+                Our Innovation Journey
+                <LineIcon name="arrow" size={16} stroke={2} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+            <div className="flex gap-8 border-t border-ivar-forest/10 pt-6">
+              {PILLARS.map((p) => (
+                <div key={p.title} className="flex flex-col items-center text-center gap-2 max-w-[90px]">
+                  <span className="size-11 rounded-full border border-ivar-forest/25 text-ivar-forest flex items-center justify-center">
+                    <LineIcon name={p.icon} size={18} stroke={1.6} />
+                  </span>
+                  <span className="text-[11px] leading-tight text-ivar-muted">{p.title}</span>
+                </div>
+              ))}
+            </div>
+          </RevealOnScroll>
 
-        <p
-          aria-hidden="true"
-          className="hidden md:block absolute top-8 right-[6vw] w-[150px] text-right font-script text-[22px] leading-[1.05] text-white -rotate-[6deg] z-10"
-          style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
-        >
-          From Indian Roots to Global Opportunities
-          <LineIcon name="leaf" size={16} stroke={1.6} className="ml-auto mt-1" />
-        </p>
-
-        <div className="relative max-w-[1320px] mx-auto px-[6vw] w-full">
-          <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-sage font-semibold mb-4">Innovation</p>
-          <h1 className="font-display text-[34px] md:text-[50px] leading-[1.08] text-white mb-4">
-            Food Innovation, <span className="text-ivar-sage">Rooted in India.</span>
-          </h1>
-          <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-[480px] mb-7">
-            We explore Indian ingredients, traditional recipes and modern food science to create new formats, flavours and food experiences for a healthier tomorrow.
-          </p>
-          <div className="flex flex-wrap items-center gap-5 mb-9">
-            <Link href="/foods" className="inline-flex items-center gap-2 bg-ivar-sage text-ivar-ink font-semibold text-sm rounded-full px-6 py-3 hover:brightness-95 transition">
-              Our Innovation Journey <LineIcon name="arrow" size={16} stroke={2} />
-            </Link>
-            <Link href="/story" className="inline-flex items-center gap-2.5 text-white font-semibold text-sm hover:text-ivar-sage transition-colors">
-              <span className="size-8 rounded-full border border-white/50 flex items-center justify-center text-[10px]">▶</span>
-              Watch Video
-            </Link>
-          </div>
-          <div className="flex gap-8">
-            {PILLARS.map((p) => (
-              <div key={p.title} className="flex flex-col items-center text-center gap-2 max-w-[90px]">
-                <span className="size-11 rounded-full border border-white/30 text-white flex items-center justify-center">
-                  <LineIcon name={p.icon} size={18} stroke={1.6} />
-                </span>
-                <span className="text-[11px] leading-tight text-white/75">{p.title}</span>
-              </div>
-            ))}
-          </div>
+          <RevealOnScroll y={0} delay={0.1} className="relative aspect-[4/5] lg:aspect-[4/4.5] overflow-hidden rounded-2xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/hero-veg-spices.jpg" alt="Ivar innovation" className="w-full h-full object-cover" />
+          </RevealOnScroll>
         </div>
       </section>
 

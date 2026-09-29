@@ -113,13 +113,8 @@ export default function FoodCategoryPage() {
 
   return (
     <main>
-      <section className="relative bg-ivar-forest overflow-hidden min-h-[420px] md:min-h-[460px] flex items-center">
-        <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/products/eat/makhana-crunch.jpg" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-55" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ivar-forest via-ivar-forest/85 to-ivar-forest/35" />
-        </div>
-        <div className="relative max-w-[1320px] mx-auto px-[4vw] w-full">
+      <section className="bg-ivar-forest py-14 md:py-16">
+        <div className="max-w-[1320px] mx-auto px-[4vw] w-full">
           <nav aria-label="Breadcrumb" className="text-[12px] text-white/60 flex items-center gap-2 mb-6">
             <Link href="/" className="hover:text-white">Home</Link>
             <span aria-hidden="true">›</span>
@@ -127,10 +122,8 @@ export default function FoodCategoryPage() {
             <span aria-hidden="true">›</span>
             <span className="text-white">{cat.label}</span>
           </nav>
-          <h1 className="font-display text-[36px] md:text-[56px] leading-[1.05] text-white max-w-[560px]">
-            {cat.label}
-            <br />
-            <span className="text-ivar-sage">The Natural Way</span>
+          <h1 className="font-display text-[32px] md:text-[46px] leading-[1.08] text-white max-w-[560px]">
+            Shop <span className="italic text-ivar-sage">{cat.label}</span>
           </h1>
           <p className="text-white/70 text-base md:text-lg mt-3 max-w-[480px]">{cat.text}</p>
         </div>
@@ -138,7 +131,8 @@ export default function FoodCategoryPage() {
 
       <FoodCategoryNav activeSlug={cat.slug} />
 
-      <section className="max-w-[1320px] mx-auto px-[4vw] pt-10 md:pt-14 pb-10 md:pb-14 grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10">
+      <section className="bg-[#FAFAF8]">
+      <div className="max-w-[1320px] mx-auto px-[4vw] pt-10 md:pt-14 pb-10 md:pb-14 grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10">
         <Sidebar
           ingredientOptions={ingredientOptions}
           ingredientFilter={ingredientFilter}
@@ -151,17 +145,18 @@ export default function FoodCategoryPage() {
         />
 
         <div id="results">
-          <div className="flex items-end justify-between mb-6 flex-wrap gap-4">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4 border-b border-ivar-forest/10 pb-6">
             <div>
-              <h2 className="font-display text-[26px] md:text-[32px] text-ivar-ink">Our {cat.label}</h2>
-              <p className="text-[13.5px] text-[#4b564f]">{list.length} items for everyday moments.</p>
+              <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-forest font-semibold mb-3">Our Range</p>
+              <h2 className="font-display text-editorial-section leading-[1.1] text-ivar-ink">Our {cat.label}</h2>
+              <p className="text-[13.5px] text-ivar-muted mt-2">{list.length} items for everyday moments.</p>
             </div>
-            <label className="text-[13px] text-[#4b564f] flex items-center gap-2">
+            <label className="text-[13px] text-ivar-muted flex items-center gap-2 shrink-0">
               Sort by
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value)}
-                className="border border-[#dcd9cd] rounded-lg px-3 py-2 text-[13px]"
+                className="border-0 border-b border-ivar-forest/25 bg-transparent px-0 py-1.5 text-[13px] text-ivar-ink focus:outline-none focus:border-ivar-forest"
               >
                 <option value="featured">Featured</option>
                 <option value="price-low">Price: Low to High</option>
@@ -173,7 +168,7 @@ export default function FoodCategoryPage() {
           </div>
 
           {list.length === 0 ? (
-            <p className="text-[#4b564f] py-16 text-center">
+            <p className="text-ivar-muted py-16 text-center">
               {allProducts.length === 0
                 ? `${cat.label} is coming soon — check back shortly.`
                 : "Nothing matches these filters — try clearing one."}
@@ -186,36 +181,37 @@ export default function FoodCategoryPage() {
             </div>
           )}
 
-          <div className="mt-12 rounded-2xl bg-ivar-mint p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
+          <div className="mt-16 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center border-t border-ivar-forest/10 pt-10">
+            <div className="text-center lg:text-left">
               <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-forest font-semibold mb-2">Healthy Snacking</p>
               <h3 className="font-display text-[24px] md:text-[28px] text-ivar-ink mb-1.5">Goodness in Every Bite</h3>
-              <p className="text-[13.5px] text-[#4b564f]">Traditional ingredients. Modern flavours. A healthier tomorrow.</p>
+              <p className="text-[13.5px] text-ivar-muted">Traditional ingredients. Modern flavours. A healthier tomorrow.</p>
             </div>
-            <Link href="/foods" className="shrink-0 inline-flex items-center gap-2 bg-ivar-forest text-white font-semibold text-sm rounded-full px-6 py-3 hover:bg-ivar-forestDeep transition-colors">
-              Explore All Foods <LineIcon name="arrow" size={16} stroke={2} />
+            <Link href="/foods" className="group shrink-0 inline-flex items-center gap-3 bg-ivar-forest text-white font-semibold text-sm rounded-full px-6 py-3.5 hover:bg-ivar-forestDeep transition-colors">
+              Explore All Foods <LineIcon name="arrow" size={16} stroke={2} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 divide-x divide-ivar-forest/10">
             {[
               ["shield", "Premium Ingredients", "Sourced from trusted farms"],
               ["scope", "Quality You Can Trust", "Carefully processed"],
               ["heart", "Healthy Choices", "Better nutrition for you"],
               ["leaf", "Sustainable Packaging", "A greener tomorrow"],
-            ].map(([icon, title, sub]) => (
-              <div key={title} className="flex items-start gap-3">
-                <span className="size-10 rounded-full border border-ivar-forest text-ivar-forest flex items-center justify-center shrink-0">
+            ].map(([icon, title, sub], i) => (
+              <div key={title} className={`flex items-start gap-3 ${i > 0 ? "pl-6" : ""}`}>
+                <span className="size-10 rounded-full border border-ivar-forest/25 text-ivar-forest flex items-center justify-center shrink-0">
                   <LineIcon name={icon} size={17} stroke={1.6} />
                 </span>
                 <div>
                   <p className="text-[13px] font-semibold text-ivar-ink leading-tight">{title}</p>
-                  <p className="text-[11.5px] text-[#4b564f]">{sub}</p>
+                  <p className="text-[11.5px] text-ivar-muted">{sub}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
+      </div>
       </section>
 
       <section className="border-t border-[#ece8da] py-10 md:py-12">

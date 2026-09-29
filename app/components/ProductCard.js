@@ -43,7 +43,7 @@ export default function ProductCard({ product }) {
       <div className="order-2 md:order-1 relative shrink-0 w-24 h-24 md:w-full md:h-[260px]">
         <button
           onClick={() => openProduct(product)}
-          className="block w-full h-full rounded-xl md:rounded-none bg-[#EEE6D5] overflow-hidden"
+          className="block w-full h-full rounded-xl md:rounded-none bg-[#ECECE9] overflow-hidden"
           aria-label={`View ${product.name}`}
           suppressHydrationWarning
         >

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LineIcon from "../components/LineIcon";
+import RevealOnScroll from "../components/RevealOnScroll";
 
 export const metadata = {
   title: "Packaging — Ivar™",
@@ -49,33 +50,40 @@ const CATEGORIES = [
 export default function PackagingPage() {
   return (
     <main>
-      <section className="relative bg-ivar-forest overflow-hidden min-h-[420px] md:min-h-[460px] flex items-center">
-        <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/products/eat/makhana-crunch.jpg" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ivar-forest via-ivar-forest/85 to-ivar-forest/40" />
-        </div>
-        <div className="relative max-w-[1320px] mx-auto px-[6vw] w-full">
-          <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-sage font-semibold mb-4">Packaging Solutions</p>
-          <h1 className="font-display text-[34px] md:text-[50px] leading-[1.08] text-white mb-4">
-            Packaging Is Part <span className="text-ivar-sage">of the Food.</span>
-          </h1>
-          <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-[480px] mb-7">
-            Innovative, safe and sustainable packaging solutions to protect freshness, enhance convenience and bring great food to more people.
-          </p>
-          <Link href="/contact?type=packaging" className="inline-flex items-center gap-2 bg-ivar-sage text-ivar-ink font-semibold text-sm rounded-full px-6 py-3 hover:brightness-95 transition mb-9">
-            Explore Packaging Solutions <LineIcon name="arrow" size={16} stroke={2} />
-          </Link>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-[520px]">
-            {PRINCIPLES.map((p) => (
-              <div key={p.title} className="flex flex-col items-center text-center gap-2">
-                <span className="size-11 rounded-full border border-white/30 text-white flex items-center justify-center">
-                  <LineIcon name={p.icon} size={18} stroke={1.6} />
-                </span>
-                <span className="text-[11px] leading-tight text-white/75">{p.title}</span>
-              </div>
-            ))}
-          </div>
+      <section className="bg-white overflow-hidden">
+        <div className="max-w-[1500px] mx-auto px-[4vw] py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <RevealOnScroll>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-forest font-semibold mb-5">Packaging Solutions</p>
+            <h1 className="font-display text-editorial-hero leading-[1.05] text-ivar-ink mb-5">
+              Packaging Is Part <span className="italic text-ivar-green">of the Food.</span>
+            </h1>
+            <p className="text-editorial-body text-ivar-muted max-w-[460px] mb-8">
+              Innovative, safe and sustainable packaging solutions to protect freshness, enhance convenience and
+              bring great food to more people.
+            </p>
+            <Link
+              href="/contact?type=packaging"
+              className="group inline-flex items-center gap-3 bg-ivar-forest text-white text-[14px] font-semibold rounded-full pl-6 pr-5 py-3.5 hover:bg-ivar-forestDeep transition-colors mb-10"
+            >
+              Explore Packaging Solutions
+              <LineIcon name="arrow" size={16} stroke={2} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-[520px] border-t border-ivar-forest/10 pt-6">
+              {PRINCIPLES.map((p) => (
+                <div key={p.title} className="flex flex-col items-center text-center gap-2">
+                  <span className="size-11 rounded-full border border-ivar-forest/25 text-ivar-forest flex items-center justify-center">
+                    <LineIcon name={p.icon} size={18} stroke={1.6} />
+                  </span>
+                  <span className="text-[11px] leading-tight text-ivar-muted">{p.title}</span>
+                </div>
+              ))}
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll y={0} delay={0.1} className="relative aspect-[4/5] lg:aspect-[4/4.5] overflow-hidden rounded-2xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/products/eat/makhana-crunch.jpg" alt="Ivar packaging" className="w-full h-full object-cover" />
+          </RevealOnScroll>
         </div>
       </section>
 

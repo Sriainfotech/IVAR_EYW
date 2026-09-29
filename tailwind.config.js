@@ -19,13 +19,13 @@ module.exports = {
           sage: "#6FA52D",
           // Muted botanical green — occasional section background
           botanical: "#E7EED5",
-          // Cream / Ivory — light section backgrounds & cards
-          cream: "#F7F3E8",
-          paper: "#F7F3E8",
-          beige: "#E8E0D1",
-          mint: "#E7EED5",
-          sand: "#E7EED5",
-          ivory: "#FCFAF3",
+          // Ash / White — light section backgrounds & cards
+          cream: "#F2F2F0",
+          paper: "#F2F2F0",
+          beige: "#ECECE9",
+          mint: "#EDEEEA",
+          sand: "#EDEEEA",
+          ivory: "#FAFAF9",
           // Earth — Indian ingredient storytelling
           earth: "#73563E",
           // Gold — premium accents only, use VERY sparingly

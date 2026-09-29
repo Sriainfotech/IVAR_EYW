@@ -1,30 +1,32 @@
 import Link from "next/link";
 import { VISIBLE_FOOD_CATEGORIES } from "../data/foodCategories";
 
-export default function FoodCategoryNav({ activeSlug }) {
+export default function FoodCategoryNav({ activeSlug, categories = VISIBLE_FOOD_CATEGORIES, basePath = "/foods" }) {
   return (
-    <div className="relative z-10 -mt-[38px] md:-mt-[46px] px-[6vw]">
-      <nav aria-label="Food categories" className="max-w-[1320px] mx-auto bg-white rounded-2xl shadow-[0_12px_36px_rgba(20,50,25,0.14)] p-3 md:p-4">
-        <div className="grid grid-flow-col auto-cols-[minmax(88px,1fr)] gap-2 md:gap-3 overflow-x-auto no-scrollbar">
-          {VISIBLE_FOOD_CATEGORIES.map((c) => (
+    <nav aria-label="Categories" className="bg-white border-b border-[#ece8da]">
+      <div className="max-w-[1500px] mx-auto px-[4vw] py-4">
+        <div className="flex gap-2.5 overflow-x-auto no-scrollbar">
+          <Link
+            href={basePath}
+            className={`shrink-0 rounded-full px-5 py-2.5 text-[13px] font-semibold tracking-wide transition-colors ${
+              !activeSlug ? "bg-ivar-forest text-white" : "bg-[#EEF0EC] text-ivar-ink hover:bg-[#E4E7DF]"
+            }`}
+          >
+            All
+          </Link>
+          {categories.map((c) => (
             <Link
               key={c.slug}
-              href={`/foods/${c.slug}`}
-              className={`flex flex-col items-center gap-2 rounded-xl px-2 py-3 transition-colors ${
-                c.slug === activeSlug ? "bg-ivar-forest" : "hover:bg-ivar-cream"
+              href={`${basePath}/${c.slug}`}
+              className={`shrink-0 rounded-full px-5 py-2.5 text-[13px] font-semibold tracking-wide transition-colors whitespace-nowrap ${
+                c.slug === activeSlug ? "bg-ivar-forest text-white" : "bg-[#EEF0EC] text-ivar-ink hover:bg-[#E4E7DF]"
               }`}
             >
-              <span className="relative size-12 rounded-full overflow-hidden bg-ivar-cream shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.img} alt="" aria-hidden="true" className="w-full h-full object-cover" />
-              </span>
-              <span className={`text-[12px] font-semibold text-center leading-tight ${c.slug === activeSlug ? "text-white" : "text-ivar-ink"}`}>
-                {c.label}
-              </span>
+              {c.label}
             </Link>
           ))}
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

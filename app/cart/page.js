@@ -50,7 +50,7 @@ export default function CartPage() {
                   <img
                     src={l.product.img}
                     alt={l.product.name}
-                    className="w-20 h-20 object-cover rounded-xl bg-[#EEE6D5]"
+                    className="w-20 h-20 object-cover rounded-xl bg-[#ECECE9]"
                   />
                   <div>
                     <h3 className="font-serif font-medium m-0 mb-1">

@@ -15,7 +15,7 @@ export default function HomeCategoryCards() {
           title="Explore by Food Category."
           className="mb-10 md:mb-14"
         />
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-flow-col auto-cols-[minmax(150px,1fr)] sm:auto-cols-[minmax(170px,1fr)] gap-4 overflow-x-auto no-scrollbar pb-1">
           {VISIBLE_FOOD_CATEGORIES.map((c, i) => (
             <motion.div
               key={c.slug}

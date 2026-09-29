@@ -78,7 +78,7 @@ function Tile({ active, onClick, children }) {
     <button
       onClick={onClick}
       className={`rounded-2xl border p-3 text-left cursor-pointer transition-colors ${
-        active ? "border-ivar-dark bg-[#EEE6D5]" : "border-[#e6e4dc] hover:border-ivar-dark"
+        active ? "border-ivar-dark bg-[#ECECE9]" : "border-[#e6e4dc] hover:border-ivar-dark"
       }`}
       suppressHydrationWarning
     >
@@ -272,7 +272,7 @@ export default function PlannerPage() {
       <section className="max-w-[900px] mx-auto px-[6vw] py-[70px] md:py-[90px]">
         <div className="flex items-center gap-1.5 mb-2">
           {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
-            <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#EEE6D5]"}`} />
+            <div key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-ivar-dark" : "bg-[#ECECE9]"}`} />
           ))}
         </div>
         <p className="text-xs text-[#8a938c] mb-8">Step {step}/{TOTAL_STEPS}</p>

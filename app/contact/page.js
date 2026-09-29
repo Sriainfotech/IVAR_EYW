@@ -3,6 +3,7 @@ import LineIcon from "../components/LineIcon";
 import ContactForm from "../components/ContactForm";
 import FAQAccordion from "../components/FAQAccordion";
 import ProcessTimeline from "../components/ProcessTimeline";
+import RevealOnScroll from "../components/RevealOnScroll";
 
 export const metadata = {
   title: "Contact — Ivar™",
@@ -37,30 +38,33 @@ const FAQS = [
 export default function ContactPage() {
   return (
     <main>
-      <section className="relative bg-ivar-forest overflow-hidden min-h-[420px] md:min-h-[460px] flex items-center">
-        <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/products/eat/immunity-shield.jpg" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ivar-forest via-ivar-forest/85 to-ivar-forest/40" />
-        </div>
-        <div className="relative max-w-[1320px] mx-auto px-[6vw] w-full">
-          <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-sage font-semibold mb-4">Let&apos;s Connect</p>
-          <h1 className="font-display text-[36px] md:text-[58px] leading-[1.08] text-white max-w-[560px]">
-            Partner with Ivar
-          </h1>
-          <p className="text-white/70 mt-4 max-w-[520px] text-base md:text-lg leading-relaxed">
-            For ingredients, products, processing, packaging or innovative food solutions — let&apos;s build a healthier tomorrow together.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-9 max-w-[540px]">
-            {ENTRY_POINTS.map((e) => (
-              <div key={e.title} className="flex flex-col items-center text-center gap-2">
-                <span className="size-11 rounded-full border border-white/30 text-white flex items-center justify-center">
-                  <LineIcon name={e.icon} size={18} stroke={1.6} />
-                </span>
-                <span className="text-[11.5px] leading-tight text-white/80">{e.title}</span>
-              </div>
-            ))}
-          </div>
+      <section className="bg-white overflow-hidden">
+        <div className="max-w-[1500px] mx-auto px-[4vw] py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <RevealOnScroll>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-ivar-forest font-semibold mb-5">Let&apos;s Connect</p>
+            <h1 className="font-display text-editorial-hero leading-[1.05] text-ivar-ink mb-5">
+              Partner with <span className="italic text-ivar-green">Ivar.</span>
+            </h1>
+            <p className="text-editorial-body text-ivar-muted max-w-[460px] mb-8">
+              For ingredients, products, processing, packaging or innovative food solutions — let&apos;s build a
+              healthier tomorrow together.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-[480px] border-t border-ivar-forest/10 pt-6">
+              {ENTRY_POINTS.map((e) => (
+                <div key={e.title} className="flex flex-col items-center text-center gap-2">
+                  <span className="size-11 rounded-full border border-ivar-forest/25 text-ivar-forest flex items-center justify-center">
+                    <LineIcon name={e.icon} size={18} stroke={1.6} />
+                  </span>
+                  <span className="text-[11px] leading-tight text-ivar-muted">{e.title}</span>
+                </div>
+              ))}
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll y={0} delay={0.1} className="relative aspect-[4/5] lg:aspect-[4/4.5] overflow-hidden rounded-2xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/products/eat/immunity-shield.jpg" alt="Ivar" className="w-full h-full object-cover" />
+          </RevealOnScroll>
         </div>
       </section>
 

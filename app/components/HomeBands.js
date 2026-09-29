@@ -26,7 +26,7 @@ export function CategoryCards() {
         <article key={c.title} className="relative overflow-hidden rounded-lg bg-ivar-beige min-h-[160px] border border-[#e6e3d6]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={c.img} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-          <div aria-hidden="true" className="absolute inset-0" style={{ background: "linear-gradient(90deg, #EEE6D5 0%, rgba(238,230,213,0.92) 28%, rgba(238,230,213,0) 60%)" }} />
+          <div aria-hidden="true" className="absolute inset-0" style={{ background: "linear-gradient(90deg, #ECECE9 0%, rgba(238,230,213,0.92) 28%, rgba(238,230,213,0) 60%)" }} />
           <div className="relative p-6 max-w-[68%]">
             <h3 className="font-serif font-semibold text-[22px] md:text-[24px] leading-tight text-[#1c2a20] mb-2">{c.title}</h3>
             <p className="text-[13px] leading-snug text-[#33413a] mb-5">{c.text}</p>
@@ -95,7 +95,7 @@ export function InnovationTrust() {
   ];
   return (
     <section className="mt-4 md:mt-8 grid grid-cols-1 lg:grid-cols-2">
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#EEE6D5] via-[#F5F0E5] to-[#e6dcc4] px-[4vw] lg:pl-[max(4vw,calc((100vw-1500px)/2+4vw))] py-12 min-h-[240px]">
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#ECECE9] via-[#F2F2F0] to-[#e6dcc4] px-[4vw] lg:pl-[max(4vw,calc((100vw-1500px)/2+4vw))] py-12 min-h-[240px]">
         <div aria-hidden="true" className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 text-ivar-forest/25">
           <LineIcon name="flask" size={180} stroke={0.8} />
         </div>
@@ -177,7 +177,7 @@ export function GlobalBand() {
           <p className="text-[13px] leading-snug text-[#d5e3d9] mt-3 mb-5 max-w-[300px]">
             Indian goodness. Global possibilities. We are on a mission to take the best of India&apos;s foods to homes across the world.
           </p>
-          <Link href="/story" className="inline-flex items-center gap-3 bg-white text-ivar-forest text-[12.5px] font-semibold rounded-full pl-5 pr-4 py-2.5 hover:bg-[#F5F0E5] transition-colors">
+          <Link href="/story" className="inline-flex items-center gap-3 bg-white text-ivar-forest text-[12.5px] font-semibold rounded-full pl-5 pr-4 py-2.5 hover:bg-[#F2F2F0] transition-colors">
             Our Global Vision <LineIcon name="arrow" size={14} stroke={2.2} />
           </Link>
         </div>

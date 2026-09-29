@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useCart } from "../context/CartContext";
 import { useProductModal } from "../context/ProductModalContext";
 import { money } from "../data/products";
+import LineIcon from "./LineIcon";
 
 function dietTag(p) {
   const hay = `${p.name} ${p.cat} ${(p.ingredients || []).join(" ")}`;
@@ -51,7 +52,12 @@ export default function BowlCard({ product, tag, discountPct = 0, showTags = tru
             {discountPct}% OFF
           </span>
         )}
-        <span className="absolute bottom-3 right-3 bg-ivar-dark text-white text-xs font-bold px-3 py-2 rounded flex items-baseline gap-1.5">
+        <span
+          className="absolute bottom-3 right-3 bg-ivar-dark text-white text-xs font-bold px-3 py-2 rounded flex items-baseline gap-1.5
+          opacity-100 translate-y-0
+          md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0
+          transition-all duration-300 ease-out"
+        >
           {discounted && <span className="line-through opacity-70 font-normal">{money(product.price)}</span>}
           {money(discounted ?? product.price)}
         </span>
@@ -72,20 +78,33 @@ export default function BowlCard({ product, tag, discountPct = 0, showTags = tru
           </div>
         )}
         <div className="flex gap-2 mt-auto pt-4">
-          <button
-            onClick={() => add(product.id, 1)}
-            className="flex-1 border-2 border-ivar-dark text-ivar-dark text-sm font-bold rounded-3xl py-2.5 hover:bg-ivar-cream transition-colors cursor-pointer"
-            suppressHydrationWarning
-          >
-            Add to Cart
-          </button>
-          <button
-            onClick={orderNow}
-            className="flex-1 bg-ivar-dark text-white text-sm font-bold rounded-3xl py-2.5 hover:bg-ivar-darker hover:-translate-y-0.5 transition-all cursor-pointer"
-            suppressHydrationWarning
-          >
-            Order Now
-          </button>
+          <div className="relative flex-1 group/cart">
+            <button
+              onClick={() => add(product.id, 1)}
+              aria-label="Add to Cart"
+              className="w-full border-2 border-ivar-dark text-ivar-dark rounded-full py-2.5 flex items-center justify-center hover:bg-ivar-cream transition-colors cursor-pointer"
+              suppressHydrationWarning
+            >
+              <LineIcon name="bag" size={18} stroke={1.8} />
+            </button>
+            <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap bg-ivar-ink text-white text-[11px] font-medium px-3 py-1.5 rounded-md opacity-0 scale-95 group-hover/cart:opacity-100 group-hover/cart:scale-100 transition-all duration-150 z-10">
+              Add to cart?
+            </span>
+          </div>
+
+          <div className="relative flex-1 group/order">
+            <button
+              onClick={orderNow}
+              aria-label="Order Now"
+              className="w-full bg-ivar-dark text-white rounded-full py-2.5 flex items-center justify-center hover:bg-ivar-darker hover:-translate-y-0.5 transition-all cursor-pointer"
+              suppressHydrationWarning
+            >
+              <LineIcon name="arrow" size={18} stroke={2.2} />
+            </button>
+            <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap bg-ivar-ink text-white text-[11px] font-medium px-3 py-1.5 rounded-md opacity-0 scale-95 group-hover/order:opacity-100 group-hover/order:scale-100 transition-all duration-150 z-10">
+              Order now?
+            </span>
+          </div>
         </div>
       </div>
     </article>
