@@ -111,6 +111,10 @@ export default function Header() {
             <LineIcon name="search" size={22} stroke={1.8} />
           </button>
 
+          <Link href="/login" aria-label="Sign in" className="hidden sm:block shrink-0 text-ivar-forest">
+            <LineIcon name="user" size={22} stroke={1.7} />
+          </Link>
+
           <button
             onClick={openCart}
             aria-label="Open cart"
@@ -212,6 +216,13 @@ export default function Header() {
                   className="inline-flex justify-center items-center gap-2 border border-ivar-forest/40 text-ivar-forest text-sm font-semibold rounded-full px-5 py-3"
                 >
                   Contact Us
+                </Link>
+                <Link
+                  href="/login"
+                  onClick={() => setMenuOpen(false)}
+                  className="inline-flex justify-center items-center gap-2 text-ivar-forest text-sm font-semibold py-2"
+                >
+                  Sign In / Register
                 </Link>
               </div>
             </motion.div>

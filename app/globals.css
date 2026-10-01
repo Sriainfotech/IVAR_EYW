@@ -96,15 +96,10 @@ textarea:focus-visible {
   }
 }
 
-/* Ivar loader — a happy avocado juggling fruit */
-@keyframes ivarAvocadoBob {
-  0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-5px) rotate(4deg); }
-}
-
-@keyframes ivarFruitToss {
-  0%, 100% { transform: translate(0, 0) scale(0.85); opacity: 0.75; }
-  50% { transform: translate(var(--ivar-fruit-tx, 0), -30px) scale(1.05); opacity: 1; }
+/* Ivar loader — minimal, typography-forward (logo breathe + pulsing dots) */
+@keyframes ivarLogoBreathe {
+  0%, 100% { opacity: 0.55; transform: scale(0.97); }
+  50% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes ivarDotPulse {
@@ -112,15 +107,8 @@ textarea:focus-visible {
   40% { opacity: 1; transform: scale(1); }
 }
 
-.ivar-loader-avocado {
-  animation: ivarAvocadoBob 1.1s ease-in-out infinite;
-  transform-origin: bottom center;
-  display: inline-block;
-}
-
-.ivar-loader-fruit {
-  animation: ivarFruitToss 1.1s ease-in-out infinite;
-  display: inline-block;
+.ivar-loader-logo {
+  animation: ivarLogoBreathe 1.6s ease-in-out infinite;
 }
 
 .ivar-loader-dot {
@@ -128,8 +116,7 @@ textarea:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ivar-loader-avocado,
-  .ivar-loader-fruit,
+  .ivar-loader-logo,
   .ivar-loader-dot {
     animation: none;
   }

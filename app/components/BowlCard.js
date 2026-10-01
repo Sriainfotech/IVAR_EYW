@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
 import { useProductModal } from "../context/ProductModalContext";
 import { money } from "../data/products";
@@ -28,7 +29,13 @@ export default function BowlCard({ product, tag, discountPct = 0, showTags = tru
   }
 
   return (
-    <article className="group bg-white rounded-xl overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="group bg-white rounded-xl overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
+    >
       <button
         onClick={() => openProduct(product)}
         className="relative block w-full aspect-square bg-ivar-cream overflow-hidden"
@@ -36,10 +43,14 @@ export default function BowlCard({ product, tag, discountPct = 0, showTags = tru
         suppressHydrationWarning
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <motion.img
           src={product.img}
           alt={product.name}
           loading="lazy"
+          initial={{ opacity: 0, scale: 1.08 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
         {tag && (
@@ -107,6 +118,6 @@ export default function BowlCard({ product, tag, discountPct = 0, showTags = tru
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

@@ -11,6 +11,7 @@ const CARDS = [
     text: "Consumer-facing food products, made from India's ingredients.",
     href: "/shop",
     img: "/assets/category-ivar-foods.png",
+    big: true,
   },
   {
     n: "02",
@@ -32,8 +33,62 @@ const CARDS = [
     text: "Food-focused packaging that protects freshness and quality.",
     href: "/packaging",
     img: "/assets/hero-veg-fruit-table.jpg",
+    wide: true,
   },
 ];
+
+function Card({ c, i }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, delay: i * 0.08 }}
+      className={c.big ? "lg:col-span-2 lg:row-span-2" : c.wide ? "lg:col-span-2" : "lg:col-span-1"}
+    >
+      <Link
+        href={c.href}
+        className="group relative block overflow-hidden rounded-2xl bg-ivar-cream h-full aspect-[4/3] lg:aspect-auto"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={c.img}
+          alt={c.title}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ivar-ink/85 via-ivar-ink/20 to-transparent" />
+
+        <span
+          aria-hidden="true"
+          className={`absolute top-4 left-6 font-display text-white/[0.18] select-none leading-none ${
+            c.big ? "text-[100px] md:text-[130px]" : "text-[56px]"
+          }`}
+        >
+          {c.n}
+        </span>
+
+        <div className="absolute bottom-0 left-0 right-0 p-6">
+          <h3 className={`font-semibold text-white mb-1.5 ${c.big ? "text-[26px] md:text-[30px]" : "text-[20px] md:text-[22px]"}`}>
+            {c.title}
+          </h3>
+          <p className={`leading-relaxed text-white/75 mb-3 ${c.big ? "text-[14px] max-w-[380px]" : "text-[13px] max-w-[320px]"}`}>
+            {c.text}
+          </p>
+          <span className="inline-flex items-center gap-2 text-white text-[13px] font-semibold">
+            Explore
+            <LineIcon
+              name="arrow"
+              size={15}
+              stroke={2}
+              className="transition-transform duration-300 group-hover:translate-x-1.5"
+            />
+          </span>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
 
 export default function WhatIvarDoes() {
   return (
@@ -51,45 +106,9 @@ export default function WhatIvarDoes() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-5 md:gap-6 lg:h-[620px]">
           {CARDS.map((c, i) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-            >
-              <Link
-                href={c.href}
-                className="group relative block overflow-hidden rounded-2xl aspect-[4/3] bg-ivar-cream"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={c.img}
-                  alt={c.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ivar-ink/85 via-ivar-ink/20 to-transparent" />
-
-                <span className="absolute top-5 left-6 font-display text-[15px] text-white/70">{c.n}</span>
-
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-semibold text-[20px] md:text-[22px] text-white mb-1.5">{c.title}</h3>
-                  <p className="text-[13px] leading-relaxed text-white/75 max-w-[320px] mb-3">{c.text}</p>
-                  <span className="inline-flex items-center gap-2 text-white text-[13px] font-semibold">
-                    Explore
-                    <LineIcon
-                      name="arrow"
-                      size={15}
-                      stroke={2}
-                      className="transition-transform duration-300 group-hover:translate-x-1.5"
-                    />
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
+            <Card key={c.title} c={c} i={i} />
           ))}
         </div>
       </div>

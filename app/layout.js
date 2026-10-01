@@ -2,8 +2,7 @@ import "./globals.css";
 import { DM_Serif_Display, Inter, Caveat } from "next/font/google";
 import { CartProvider } from "./context/CartContext";
 import { ProductModalProvider } from "./context/ProductModalContext";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import SiteChrome from "./components/SiteChrome";
 import CartDrawer from "./components/CartDrawer";
 import Toast from "./components/Toast";
 import MobileTabBar from "./components/MobileTabBar";
@@ -76,9 +75,7 @@ export default function RootLayout({ children }) {
           <ProductModalProvider>
             <NetworkStatus />
             <RouteTransitionOverlay />
-            <Header />
-            {children}
-            <Footer />
+            <SiteChrome>{children}</SiteChrome>
             <CartDrawer />
             <Toast />
             <MobileTabBar />
